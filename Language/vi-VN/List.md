@@ -28,7 +28,6 @@ com.mfashiongallery.emag=MiGalleryLockscreen.apk
 com.xiaomi.mirror=Mirror.apk
 com.miui.accessibility=MiuiAccessibility.apk
 com.miui.aod=MiuiAod.apk
-com.miui.audiomonitor=MiuiAudioMonitor.apk
 com.android.camera=MiuiCamera.apk
 com.miui.contentcatcher=MiuiContentCatcher.apk
 com.miui.extraphoto=MiuiExtraPhoto.apk
@@ -54,7 +53,6 @@ com.android.phone=TeleService.apk
 com.android.server.telecom=Telecom.apk
 com.android.providers.telephony=TelephonyProvider.apk
 com.android.thememanager=ThemeManager.apk
-com.miui.thirdappassistant=ThirdAppAssistant.apk
 com.android.traceur=Traceur.apk
 com.android.vpndialogs=VpnDialogs.apk
 com.miui.weather2=Weather.apk
@@ -63,5 +61,3 @@ com.xiaomi.simactivate.service=XiaomiSimActivateService.apk
 android=framework-res.apk
 com.miui.core=miui.apk
 cn.wps.moffice_eng.xiaomi.lite=wps-lite.apk
-
-
