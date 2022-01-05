@@ -16,7 +16,7 @@ ui_print2 "  $kns"
 ui_print2
 ui_print2 "  1"
 
-vl 2
+vl 1
 chontv=$input
 
 if [ "$chontv" == 1 ];then
