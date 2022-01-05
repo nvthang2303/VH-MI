@@ -17,3 +17,8 @@ fi
 if [ "$pkg" == "com.android.browser" ];then
 sed -i 's|>>|>|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
 fi
+
+if [ "$pkg" == "com.android.settings" ];then
+rm -fr /data/tools/tmp/*/*/main/$path/res/values-mcc460*
+fi
+
