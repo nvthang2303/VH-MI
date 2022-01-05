@@ -1,6 +1,5 @@
 # KAKATHIC
 
-
 if [ "$Language" == "vi" ];then
 kchonlhfd="Chọn ngôn ngữ muốn dịch sang ?"
 else
@@ -8,15 +7,15 @@ kchonlhfd="Select the language you want to translate into ?"
 fi
 
 
-ui_print
-ui_print "  $kchonlhfd"
-ui_print
-ui_print "  1. Tiếng Việt"
-ui_print "  2. Test"
-ui_print
-ui_print "  $kns"
-ui_print
-ui_print "  1"
+ui_print2
+ui_print2 "  $kchonlhfd"
+ui_print2
+ui_print2 "  1. Tiếng Việt"
+ui_print2 "  2. Test"
+ui_print2
+ui_print2 "  $kns"
+ui_print2
+ui_print2 "  1"
 
 vl 2
 chontv=$input
@@ -35,6 +34,6 @@ OnlineL=
 OnlineTL=
 OnlineU=
 else
-echo "  Error: Language"
+ui_print2 "  Error: Language"
 abort
 fi
