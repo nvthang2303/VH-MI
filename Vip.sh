@@ -7,7 +7,6 @@ kchonlhfd="Select the language you want to translate into ?"
 fi
 
 
-ui_print2
 ui_print2 "  $kchonlhfd"
 ui_print2
 ui_print2 "  1. Tiếng Việt"
