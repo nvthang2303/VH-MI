@@ -19,7 +19,7 @@ echo
 echo "$Vol1"
 echo "$Vol2"
 echo
-ui_print2 "  $Vol3"
+ui_print "- $Vol3"
 ui_print2
 ui_print2 "  1. Việt Nam"
 ui_print2 "  2. English"
@@ -89,7 +89,7 @@ fi
 }
 
 Vip () {
-ui_print2 "  $kchonlhfd"
+ui_print "- $kchonlhfd"
 ui_print2
 ui_print2 "  1. Tiếng Việt"
 ui_print2 "  2. Test"
