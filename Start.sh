@@ -4,13 +4,13 @@ Continue () {
 if [ "$Language" == "vi" ];then
 Vol1="- Sử dụng phím âm lượng !"
 Vol2="- Vol- = Chọn, Vol+ = Chuyển đổi, Chạm để hủy !"
-Vol3="- Vui lòng chọn ngôn ngữ của bạn ?"
+Vol3="Vui lòng chọn ngôn ngữ của bạn ?"
 Vol4="Nhập số:"
 Vol5="Chọn:"
 else
 Vol1="- Use volume keys !"
 Vol2="- Vol- = Choose, Vol+ = Options, Tap to cancel !"
-Vol3="- Please select your language ?"
+Vol3="Please select your language ?"
 Vol4="Enter number:"
 Vol5="Choose:"
 fi
