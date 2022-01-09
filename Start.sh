@@ -28,7 +28,7 @@ ui_print2 "  $Vol4"
 ui_print2
 ui_print2 "  1"
 
-vl 2
+Vl 2
 Vi=$input
 
 if [ "$Vi" == 1 ];then
