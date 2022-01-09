@@ -94,7 +94,7 @@ ui_print2
 ui_print2 "  1. Tiếng Việt"
 ui_print2 "  2. Test"
 ui_print2
-ui_print2 "  $kns"
+ui_print2 "  $Vol4"
 ui_print2
 ui_print2 "  1"
 
