@@ -12,6 +12,8 @@ fi
 
 if [ "$pkg" == "com.miui.securitycenter" ];then
 sed -i 's|`||g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
+sed -i 's|once_settings_title|wdcvh123|' /data/tools/tmp/*/*/main/$path/res/*/*.xml
+
 fi
 
 if [ "$pkg" == "com.android.browser" ];then
