@@ -11,7 +11,7 @@ sed -i -e 's|<string name="status_bar_clock_date_weekday_format">EEE, d MMM</str
 fi
 
 if [ "$pkg" == "com.miui.securitycenter" ];then
-pktesst=/data/tools/tmp/*/*/main/$path/res/*/*.xml
+pktesst="/data/tools/tmp/*/*/main/$path/res/*/*.xml"
 sed -i 's|`||g' $pktesst
 [ "$(grep -c 'once_settings_title' $pktesst)" == 2 ] && sed -i 's/once_settings_title/wdcvh123/' $pktesst
 fi
