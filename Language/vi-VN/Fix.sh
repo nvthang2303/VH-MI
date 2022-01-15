@@ -13,7 +13,7 @@ fi
 if [ "$pkg" == "com.miui.securitycenter" ];then
 pktesst=/data/tools/tmp/*/*/main/$path/res/*/*.xml
 sed -i 's|`||g' $pktesst
-[ "$(grep -c '\"once_settings_title\"' $pktesst)" == 2 ] && sed -i 's/once_settings_title/wdcvh123/' $pktesst
+[ "$(grep -c 'once_settings_title' $pktesst)" == 2 ] && sed -i 's/once_settings_title/wdcvh123/' $pktesst
 fi
 
 if [ "$pkg" == "com.android.browser" ];then
