@@ -92,7 +92,7 @@ Vip () {
 ui_print "- $kchonlhfd"
 ui_print2
 ui_print2 "  1. Tiếng Việt"
-ui_print2 "  2. Russia"
+ui_print2 "  2. Brazilian"
 ui_print2
 ui_print2 "  $Vol4"
 ui_print2
@@ -111,9 +111,9 @@ OnlineTL="Tiếng Việt"
 # Liên kết tới file zip
 OnlineU="https://github.com/Belmont-Gabriel/MIUI-12-XML-Vietnamese/archive/refs/heads/master.zip"
 elif [ "$chontv" == 2 ];then
-OnlineL=ru-RU
-OnlineTL=Russia
-OnlineU=https://github.com/ingbrzy/MA-XML-13-RUSSIAN/archive/refs/heads/master.zip
+OnlineL=pt-BR
+OnlineTL=Brazilian
+OnlineU=https://github.com/RicardoGuariento/MIUI-XML-13-BRAZILIAN/archive/refs/heads/main.zip
 else
 ui_print2 "  Error: Language"
 abort
