@@ -14,3 +14,15 @@ ui_print2 "1"
 
 Vl 2
 Onlinekk=$input
+
+ui_print "- Chọn danh sách ứng dụng cần dịch ?"
+ui_print
+ui_print2 "1. Online"
+ui_print2 "2. List có sẵn"
+ui_print
+ui_print2 "Nhập số:"
+ui_print
+ui_print2 "1"
+
+Vl 2
+litapp=$input
