@@ -1,4 +1,4 @@
-Test=Test
+Test=Kakathic
 
 ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy."
