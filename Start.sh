@@ -1,6 +1,6 @@
 Test=Test
 
-ui_print2 "Sử dụng phím âm lượng !"
+ui_print "! Sử dụng phím âm lượng"
 ui_print "- Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy !"
 ui_print
 ui_print "- Chọn chế độ cài đặt Việt hóa rom ?"
