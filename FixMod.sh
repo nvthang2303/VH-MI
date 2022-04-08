@@ -1,3 +1,0 @@
-# KAKATHIC
-
-Test=kakathic
