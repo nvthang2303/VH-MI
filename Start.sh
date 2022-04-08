@@ -1,4 +1,4 @@
-Test=Kakathic
+Vip=Kakathic
 
 ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy."
@@ -26,3 +26,15 @@ ui_print2 "1"
 
 Vl 2
 litapp=$input
+
+ui_print "- Cài Gapps thêm các dịch vụ Google ?"
+ui_print
+ui_print2 "1. Có"
+ui_print2 "2. Không"
+ui_print
+ui_print2 "Nhập số:"
+ui_print
+ui_print2 "1"
+
+Vl 2
+gapp=$input
