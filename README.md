@@ -15,6 +15,6 @@ Sẽ thêm các tính năng còn thiếu trong tương lai.
 
 Nhật ký thay đổi:
 
-1.1 Thêm tính năng offline
+1.1: Thêm tính năng offline
 
-1.0 Không có
+1.0: Không có
