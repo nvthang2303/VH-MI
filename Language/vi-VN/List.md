@@ -61,3 +61,4 @@ com.xiaomi.simactivate.service=XiaomiSimActivateService.apk
 android=framework-res.apk
 com.miui.core=miui.apk
 cn.wps.moffice_eng.xiaomi.lite=wps-lite.apk
+com.mi.health=MiFitness.apk
