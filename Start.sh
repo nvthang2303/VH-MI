@@ -1,5 +1,6 @@
 Vip=Kakathic
-
+ui_print2 "Ủng hộ: Teckombank: 19034902604017, Momo, Viettel Pay: 0344413159"
+ui_print
 ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy."
 ui_print
