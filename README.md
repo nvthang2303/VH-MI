@@ -26,16 +26,13 @@ Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật 
 
 2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `Appvault` nó sẽ tự tải nếu như có.
 
-#### 📌 Mới nhất: 11/4/2022
+#### 🆕 Mới nhất: 11/4/2022
 
 Fix lỗi cơ bản.
 
-Ủng hộ:
+#### ☕ Ủng hộ:
 
-Teckombank: 19034902604017
-
-Momo , Viettel Pay: 0344413159
-
+Teckombank: 19034902604017, Momo, Viettel Pay: 0344413159,
 Paypal: [kakathic](http://paypal.me/kakathic)
 
 Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn tin tới Telegram: [kakathic](http://t.me/kakathic)
