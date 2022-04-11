@@ -40,4 +40,5 @@ Paypal: [kakathic](http://paypal.me/kakathic)
 
 Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn tin tới Telegram: [kakathic](http://t.me/kakathic)
 
-Nhóm: [Telegram](http://t.me/miuiviet) | Kênh: [Telegram](http://t.me/modmiui)
+Nhóm: [Telegram](http://t.me/miuiviet),
+Kênh: [Telegram](http://t.me/modmiui)
