@@ -1,5 +1,13 @@
 Test=kakathic
 
+if [ -e /system/bin/curl ];then
+Taive () { curl -skL "$1" -o "$2"; }
+Xem () { curl -skGL "$1"; }
+else
+Taive () { /data/adb/magisk/busybox wget -q --no-check-certificate "$1" -O "$2" >&2; }
+Xem () { /data/adb/magisk/busybox wget -q --no-check-certificate -O - "$1"; }
+fi
+
 # KAKATHIC
 
 Caidat () {
