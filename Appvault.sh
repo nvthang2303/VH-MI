@@ -19,6 +19,7 @@ Taive "https://github.com/kakathic/VH-MI/releases/download/Widgets/Widget$1.zip"
 echo "- Cài đặt..."
 unzip -qo /data/local/tmp/Appvault/Test.zip -d /data/data/com.miui.personalassistant/files/maml/res
 rm -fr /data/local/tmp/Appvault/*.zip
+echo "- Xong."
 fi
 }
 
@@ -29,6 +30,7 @@ Taive "https://github.com/kakathic/VH-MI/releases/download/Widgets/Widget$1.zip"
 echo "- Cài đặt..."
 unzip -qo /data/local/tmp/Appvault/Test.zip -d /data/data/com.miui.personalassistant/files/maml/res/0
 rm -fr /data/local/tmp/Appvault/*.zip
+echo "- Xong."
 fi
 }
 
