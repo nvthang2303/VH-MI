@@ -33,7 +33,9 @@ Fix lỗi cơ bản.
 Ủng hộ:
 
 Teckombank: 19034902604017
+
 Momo , Viettel Pay: 0344413159
+
 Paypal: http://paypal.me/kakathic
 
 Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn tin tới Telegram: http://t.me/kakathic
