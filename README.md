@@ -1,20 +1,41 @@
 # VH-MI
 
-Mô-đun dịch tự động cho rom miui
+Tools Việt Hoá MIUI Offline và Online
 
-Có các tính năng sau:
+🎁 Tính năng có sẵn:
 
-+ Font đã Việt hóa
-+ Mở khóa ứng dụng chủ đề và bỏ qc
-+ Gỡ cài đặt Getapps
-+ Mở khóa tính năng hiển thị bàn phím nâng cao cho ứng dụng bàn phím đang dùng.
-+ Việt hóa Widget
-+ Thêm chế độ Offline
+1. Thêm tính năng nâng cao bàn phím
 
-Sẽ thêm các tính năng còn thiếu trong tương lai.
+2. Mod Hack Theme có thể áp dụng được theme bên ngoài mà không bị diss
 
-Nhật ký thay đổi:
+3. Mod Xoá GetApps và ngăn hệ thống bị treo khi xoá.
 
-1.1: Thêm tính năng offline
+4. Thêm lịch âm vào Thanh thông báo.
 
-1.0: Không có
+5. Thêm cuộc gọi video và VoLTE
+ 
+6. Thêm bộ cài Gapps các dịch vụ cơ bản của Google hỗ trợ Android 11 sắp có cho 12.
+
+7. Thêm Font chữ tiếng Việt
+
+🎉 Tính năng sẽ có trong tương lai:
+
++ Việt hóa bộ Widget tính năng này có 2 chế độ để cập nhật bộ Widgets:
+
+1. Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
+
+2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: Appvault nó sẽ tự tải nếu như có.
+
+📌 Mới nhất: 06:54-11/4/2022
+
+Fix lỗi cơ bản.
+
+Ủng hộ:
+
+Teckombank: 19034902604017
+Momo , Viettel Pay: 0344413159
+Paypal: http://paypal.me/kakathic
+
+Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn tin tới Telegram: http://t.me/kakathic
+
+Nhóm: http://t.me/miuiviet | Kênh: http://t.me/modmiui
