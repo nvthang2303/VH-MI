@@ -8,6 +8,8 @@ Taive () { /data/adb/magisk/busybox wget -q --no-check-certificate "$1" -O "$2" 
 Xem () { /data/adb/magisk/busybox wget -q --no-check-certificate -O - "$1"; }
 fi
 
+mkdir -p /data/data/com.miui.personalassistant/files/maml/res/0
+
 # KAKATHIC
 
 Caidat () {
