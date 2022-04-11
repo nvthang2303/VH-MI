@@ -31,8 +31,6 @@ Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật 
 Teckombank: 19034902604017, Momo, Viettel Pay: 0344413159,
 Paypal: [kakathic](http://paypal.me/kakathic)
 
-Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn tin tới Telegram: [kakathic](http://t.me/kakathic)
-
 Nhóm: [Telegram](http://t.me/miuiviet),
 Kênh: [Telegram](http://t.me/modmiui)
 
