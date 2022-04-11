@@ -26,10 +26,6 @@ Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật 
 
 2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `Appvault` nó sẽ tự tải nếu như có.
 
-#### 🆕 Mới nhất: 11/4/2022
-
-Fix lỗi cơ bản.
-
 #### ☕ Ủng hộ:
 
 Teckombank: 19034902604017, Momo, Viettel Pay: 0344413159,
@@ -39,3 +35,8 @@ Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn 
 
 Nhóm: [Telegram](http://t.me/miuiviet),
 Kênh: [Telegram](http://t.me/modmiui)
+
+#### 🆕 Mới nhất: 11/4/2022
+
+Fix lỗi cơ bản.
+
