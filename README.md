@@ -36,8 +36,8 @@ Teckombank: 19034902604017
 
 Momo , Viettel Pay: 0344413159
 
-Paypal: http://paypal.me/kakathic
+Paypal: [kakathic](http://paypal.me/kakathic)
 
-Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn tin tới Telegram: http://t.me/kakathic
+Vui lòng không gọi điện vào số điện thoại của tôi hãy nhắn tin tới Telegram: [kakathic](http://t.me/kakathic)
 
-Nhóm: http://t.me/miuiviet | Kênh: http://t.me/modmiui
+Nhóm: [Telegram](http://t.me/miuiviet) | Kênh: [Telegram](http://t.me/modmiui)
