@@ -24,7 +24,7 @@ Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật 
 
 1. Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
-2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `Appvault` nó sẽ tự tải nếu như có.
+2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `su -c Appvault` nó sẽ tự tải nếu như có.
 
 #### ☕ Ủng hộ:
 
