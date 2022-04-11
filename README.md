@@ -1,8 +1,8 @@
 # VH-MI
 
-Tools Việt Hoá MIUI Offline và Online
+## Tools Việt Hoá MIUI Offline và Online
 
-🎁 Tính năng có sẵn:
+### 🎁 Tính năng có sẵn:
 
 1. Thêm tính năng nâng cao bàn phím
 
@@ -18,15 +18,15 @@ Tools Việt Hoá MIUI Offline và Online
 
 7. Thêm Font chữ tiếng Việt
 
-🎉 Tính năng sẽ có trong tương lai:
+### 🎉 Tính năng sẽ có trong tương lai:
 
-+ Việt hóa bộ Widget tính năng này có 2 chế độ để cập nhật bộ Widgets:
+Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
 
 1. Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
 2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: Appvault nó sẽ tự tải nếu như có.
 
-📌 Mới nhất: 06:54-11/4/2022
+### 📌 Mới nhất: 06:54-11/4/2022
 
 Fix lỗi cơ bản.
 
