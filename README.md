@@ -2,7 +2,7 @@
 
 Tools Việt Hoá MIUI Offline và Online
 
-### 🎁 Tính năng có sẵn:
+#### 🎁 Tính năng có sẵn:
 
 1. Thêm tính năng nâng cao bàn phím
 
@@ -18,7 +18,7 @@ Tools Việt Hoá MIUI Offline và Online
 
 7. Thêm Font chữ tiếng Việt
 
-### 🎉 Tính năng sẽ có trong tương lai:
+#### 🎉 Tính năng sắp có:
 
 Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
 
@@ -26,7 +26,7 @@ Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật 
 
 2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: Appvault nó sẽ tự tải nếu như có.
 
-### 📌 Mới nhất: 06:54-11/4/2022
+#### 📌 Mới nhất: 11/4/2022
 
 Fix lỗi cơ bản.
 
