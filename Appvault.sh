@@ -9,27 +9,19 @@ Xem () { /data/adb/magisk/busybox wget -q --no-check-certificate -O - "$1"; }
 fi
 
 mkdir -p /data/data/com.miui.personalassistant/files/maml/res/0
+mkdir -p /sdcard/Android/data/com.android.thememanager/files/maml.widget
 
 # KAKATHIC
 
 Caidat () {
-if [ ! -e /data/data/com.miui.personalassistant/files/maml/res/Widget$1 ];then
-echo "- Đang tải dữ liệu."
-Taive "https://github.com/kakathic/VH-MI/releases/download/Widgets/Widget$1.zip" "/data/local/tmp/Appvault/Test.zip"
-echo "- Cài đặt..."
-unzip -qo /data/local/tmp/Appvault/Test.zip -d /data/data/com.miui.personalassistant/files/maml/res
-rm -fr /data/local/tmp/Appvault/*.zip
-echo "- Xong."
-fi
-}
-
-Caidat2 () {
 if [ ! -e /data/data/com.miui.personalassistant/files/maml/res/0/Widget$1 ];then
 echo "- Đang tải dữ liệu."
 Taive "https://github.com/kakathic/VH-MI/releases/download/Widgets/Widget$1.zip" "/data/local/tmp/Appvault/Test.zip"
 echo "- Cài đặt..."
-unzip -qo /data/local/tmp/Appvault/Test.zip -d /data/data/com.miui.personalassistant/files/maml/res/0
+unzip -qo /data/local/tmp/Appvault/Test.zip -d /data/local/tmp/Appvault
 rm -fr /data/local/tmp/Appvault/*.zip
+cp -rf /data/local/tmp/Appvault/*/*/* /sdcard/Android/data/com.android.thememanager/files/maml.widget
+cp -rf /data/local/tmp/Appvault/* /data/data/com.miui.personalassistant/files/maml/res/0
 echo "- Xong."
 fi
 }
