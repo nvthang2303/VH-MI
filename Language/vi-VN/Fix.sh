@@ -23,5 +23,5 @@ sed -i -e 's|: )||g' -e 's|: (||g' -e 's|<string name="edit_event_reminder_summa
 fi
 
 if [ "$pkg" == "com.miui.home" ];then
-sed -i 's|<string name="system_shortcuts_more_operation">Thông tin ứng dụng</string>|<string name="system_shortcuts_more_operation">Thông tin</string>|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
+sed -i 's|<string name="recents_app_info_button_label">Thông tin ứng dụng</string>|<string name="recents_app_info_button_label">Thông tin</string>|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
 fi
