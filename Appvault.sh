@@ -20,6 +20,9 @@ Taive "https://raw.githubusercontent.com/kakathic/VH-MI/main/Appvault/$1.zip" "/
 echo "- Cài đặt..."
 unzip -qo /data/local/tmp/Appvault/$1.zip -d /data/data/com.miui.personalassistant/files/maml/res/0
 cp -rf /data/data/com.miui.personalassistant/files/maml/res/0/$1/*/* /sdcard/Android/data/com.android.thememanager/files/maml.widget
+if [ "$1" == "b8006e83-c497-4642-9815-f674b82842b0" ] || [ "$1" == "a71db3f8-fc64-428c-8a80-5d11cf75be09" ];then
+cp -rf /data/data/com.miui.personalassistant/files/maml/res/0/$1/*/* /data/data/com.miui.personalassistant/files/maml/res
+fi
 echo "- Xong."
 echo > /data/data/com.miui.personalassistant/files/maml/res/0/$1/Vip
 fi
