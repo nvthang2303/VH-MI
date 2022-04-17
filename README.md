@@ -18,13 +18,11 @@ Tools Việt Hoá MIUI Offline và Online
 
 7. Thêm Font chữ tiếng Việt
 
-#### 🎉 Tính năng sắp có:
+8. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
 
-Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
+- Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
-1. Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
-
-2. Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `su -c Appvault` nó sẽ tự tải nếu như có.
+- Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `su -c Appvault` nó sẽ tự tải nếu như có.
 
 #### ☕ Ủng hộ:
 
