@@ -34,7 +34,7 @@ Paypal: [kakathic](http://paypal.me/kakathic)
 Nhóm: [Telegram](http://t.me/miuiviet),
 Kênh: [Telegram](http://t.me/modmiui)
 
-#### 🆕 Mới nhất: 15/4/2022
+#### 🆕 Mới nhất: 17/4/2022
 
-Fix lỗi cơ bản.
+Fix lỗi.
 
