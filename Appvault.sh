@@ -14,18 +14,21 @@ mkdir -p /sdcard/Android/data/com.android.thememanager/files/maml.widget
 # KAKATHIC
 
 Caidat () {
-if [ ! -e /data/data/com.miui.personalassistant/files/maml/res/0/Widget$1 ];then
-echo "- Đang tải dữ liệu."
-Taive "https://github.com/kakathic/VH-MI/releases/download/Widgets/Widget$1.zip" "/data/local/tmp/Appvault/Test.zip"
+if [ ! -e /data/data/com.miui.personalassistant/files/maml/res/0/$1/Vip ];then
+echo "- Đang tải: $1"
+Taive "https://raw.githubusercontent.com/kakathic/VH-MI/main/Appvault/$1.zip" "/data/local/tmp/Appvault/$1.zip"
 echo "- Cài đặt..."
-unzip -qo /data/local/tmp/Appvault/Test.zip -d /data/local/tmp/Appvault
-rm -fr /data/local/tmp/Appvault/*.zip
-cp -rf /data/local/tmp/Appvault/*/*/* /sdcard/Android/data/com.android.thememanager/files/maml.widget
-cp -rf /data/local/tmp/Appvault/* /data/data/com.miui.personalassistant/files/maml/res/0
+unzip -qo /data/local/tmp/Appvault/$1.zip -d /data/data/com.miui.personalassistant/files/maml/res/0
+cp -rf /data/data/com.miui.personalassistant/files/maml/res/0/$1/*/* /sdcard/Android/data/com.android.thememanager/files/maml.widget
 echo "- Xong."
+echo > /data/data/com.miui.personalassistant/files/maml/res/0/$1/Vip
 fi
 }
 
-Caidat 1
+Caidat f45ca1ae-5574-45d5-98da-f3601d07fab1
+Caidat c48cd1fa-c71f-468e-823f-f417c7d8f4c0
+Caidat a71db3f8-fc64-428c-8a80-5d11cf75be09
+Caidat 31c9a11e-d376-49ce-afd0-945dd4d8aeeb
+Caidat 0caa7aab-9e03-4ae8-9eaf-8540cf3550dc
 
 rm -fr /data/local/tmp/Appvault
