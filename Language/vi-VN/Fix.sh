@@ -33,7 +33,7 @@ sed -i \
 -e 's|lunar_nian">20<|lunar_nian">2<|g' \
 -e 's|lunar_chu">Tết D.lịch<|lunar_chu">0<|g' \
 -e 's|lunar_shi">10<|lunar_shi">1<|g' \
--e 's|event_lunar_month">Tháng<|event_lunar_month">/1<|g' \
+-e 's|event_lunar_month">Tháng<|event_lunar_month">/01<|g' \
 -e 's|<string name="edit_event_reminder_summary_3_days_before">Trước %2$d ngày và vào ngày đó lúc %1$s</string>|<string name="edit_event_reminder_summary_3_days_before">Trước 3 ngày và vào ngày đó lúc %1$s</string>|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
 fi
 
