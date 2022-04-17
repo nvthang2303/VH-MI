@@ -39,7 +39,7 @@ fi
 
 if [ "$pkg" == "com.miui.home" ];then
 sed -i \
--e 's/status_bar_recent_memory_info1">%1$s | %2$s</status_bar_recent_memory_info1">%1$s đã dùng | %2$s khả dụng</g' \
+-e 's/status_bar_recent_memory_info1">%1$s | %2$s</status_bar_recent_memory_info1">%1$s trống | %2$s khả dụng</g' \
 -e 's|recents_tv_small_window_text">Ứng dụng cửa sổ nhỏ<|recents_tv_small_window_text">Cửa sổ nhỏ<|g' \
 -e 's|>Thông tin ứng dụng<|>Thông tin<|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
 fi
