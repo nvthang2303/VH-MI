@@ -32,8 +32,8 @@ litapp=$input
 
 ui_print "- Cài Gapps thêm các dịch vụ Google ?"
 ui_print
-ui_print2 "1. Có"
-ui_print2 "2. Không"
+ui_print2 "1. Không"
+ui_print2 "2. Có"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
