@@ -32,7 +32,8 @@ Paypal: [kakathic](http://paypal.me/kakathic)
 Nhóm: [Telegram](http://t.me/miuiviet),
 Kênh: [Telegram](http://t.me/modmiui)
 
-#### 🆕 Mới nhất: 23/4/2022
+#### 🆕 Mới nhất:
 
 Thêm tính năng mở khóa cài đặt ứng dụng hệ thống.
 
+Fix
