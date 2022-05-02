@@ -18,7 +18,9 @@ Tools Việt Hoá MIUI Offline và Online
 
 7. Thêm Font chữ tiếng Việt
 
-8. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
+8. Thêm tính năng mở khóa cài đặt ứng dụng hệ thống.
+
+9. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
 
 - Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
@@ -34,6 +36,4 @@ Kênh: [Telegram](http://t.me/modmiui)
 
 #### 🆕 Mới nhất:
 
-Thêm tính năng mở khóa cài đặt ứng dụng hệ thống.
-
-Fix
+Sửa nhiều lỗi
