@@ -31,7 +31,7 @@ Vl 2
 litapp=$input
 
 ui_print "- Cài Gapps thêm các dịch vụ Google ?"
-ui_print "! Nên dùng cho các rom china gốc."
+ui_print "! Nên dùng cho các rom china gốc, đã bỏ mã hóa"
 ui_print "! Có thể bị treo và tự tắt module."
 ui_print
 ui_print2 "1. Không"
