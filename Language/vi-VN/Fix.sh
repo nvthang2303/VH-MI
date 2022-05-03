@@ -44,3 +44,7 @@ sed -i \
 -e 's|recents_tv_small_window_text">Ứng dụng cửa sổ nhỏ<|recents_tv_small_window_text">Cửa sổ nhỏ<|g' \
 -e 's|>Thông tin ứng dụng<|>Thông tin<|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
 fi
+
+if [ "$pkg" == "com.miui.weather2" ];then
+sed -i 's|indices_title_feel">Cảm giác như<|indices_title_feel">Cảm giác<|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
+fi
