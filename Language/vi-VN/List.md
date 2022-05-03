@@ -65,3 +65,5 @@ com.mi.health=MiFitness.apk
 com.miui.home=MiuiHome.apk
 com.miui.phrase=MiuiFrequentPhrase.apk
 com.miui.audiomonitor=com.miui.audiomonitor.apk
+com.miui.thirdappassistant=com.miui.thirdappassistant.apk
+
