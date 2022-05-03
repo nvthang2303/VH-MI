@@ -8,6 +8,9 @@ ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy."
 ui_print
 
 if [ "$(Getp VH)" == 1 ];then
+if [ "$(Getp online)" ];then
+Onlinekk=$(Getp online)
+else
 ui_print "- Chọn chế độ cài đặt Việt hóa rom ?"
 ui_print
 ui_print2 "1. Online"
@@ -19,8 +22,11 @@ ui_print2 "1"
 
 Vl 2
 Onlinekk=$input
+fi
 
-
+if [ "$(Getp dsonline)" ];then
+litapp=$(Getp dsonline)
+else
 ui_print "- Chọn danh sách ứng dụng cần dịch ?"
 ui_print
 ui_print2 "1. Online"
@@ -32,6 +38,7 @@ ui_print2 "1"
 
 Vl 2
 litapp=$input
+fi
 fi
 
 if [ "$(Getp gapp)" ];then
