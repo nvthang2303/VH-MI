@@ -3,14 +3,14 @@ ui_print2 "Ủng hộ: Teckombank: 19034902604017"
 ui_print
 ui_print2 "Momo, Viettel Pay: 0344413159"
 ui_print
-ui_print "! Sử dụng phím âm lượng"
-ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy."
-ui_print
 
 if [ "$(Getp VH)" == 1 ];then
 if [ "$(Getp online)" ];then
 Onlinekk=$(Getp online)
 else
+ui_print "! Sử dụng phím âm lượng"
+ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy."
+ui_print
 ui_print "- Chọn chế độ cài đặt Việt hóa rom ?"
 ui_print
 ui_print2 "1. Online"
