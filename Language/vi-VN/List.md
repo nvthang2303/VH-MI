@@ -64,3 +64,4 @@ cn.wps.moffice_eng.xiaomi.lite=wps-lite.apk
 com.mi.health=MiFitness.apk
 com.miui.home=MiuiHome.apk
 com.miui.phrase=MiuiFrequentPhrase.apk
+com.miui.audiomonitor=com.miui.audiomonitor.apk
