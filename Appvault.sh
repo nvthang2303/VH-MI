@@ -41,5 +41,9 @@ Caidat 47e41a44-878b-4acf-9899-776089453eff
 Caidat fbad2925-6ae4-4fe2-bdf4-6a99eec13ff4
 Caidat b531f1ff-774b-417e-bdba-5655d794c532
 Caidat 7d5f47e3-0476-4a6e-a40f-6cfa67d604cb
+Caidat 02e6db77-970d-477e-91f1-ea26a9f7f68e
+Caidat 028845d4-0b3a-4b1f-8990-b8f19d3623ae
+Caidat 49429c4d-a6fa-4ab6-a5a7-4e8808a7157d
+Caidat f50a7143-ff7d-4a0c-a261-420b04953244
 
 rm -fr /data/local/tmp/Appvault
