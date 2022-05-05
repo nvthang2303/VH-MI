@@ -26,7 +26,7 @@ Tools Việt Hoá MIUI Offline và Online
 
 #### ☕ Ủng hộ:
 
-Teckombank: 19034902604017, Momo, Viettel Pay: 0344413159,
+Teckombank: `19034902604017`, Momo, Viettel Pay: `0344413159`,
 Paypal: [kakathic](http://paypal.me/kakathic)
 
 Nhóm: [Telegram](http://t.me/miuiviet),
