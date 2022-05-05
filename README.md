@@ -34,6 +34,6 @@ Kênh: [Telegram](http://t.me/modmiui)
 
 #### 🆕 Mới nhất:
 
-Tối ưu hóa toàn bộ module
++ Tối ưu hóa toàn bộ module
 
-Việt hóa thêm một số Widget
++ Sửa đổi kho widget đã Việt hóa
