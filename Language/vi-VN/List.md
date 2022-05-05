@@ -67,3 +67,4 @@ com.miui.phrase=MiuiFrequentPhrase.apk
 com.miui.audiomonitor=com.miui.audiomonitor.apk
 com.miui.thirdappassistant=com.miui.thirdappassistant.apk
 com.miui.mediaeditor=MiuiGallery.apk
+com.miui.fm=FM.apk
