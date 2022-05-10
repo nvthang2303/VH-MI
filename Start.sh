@@ -7,6 +7,10 @@ ui_print
 if [ "$(Getp VH)" == 1 ];then
 if [ "$(Getp online)" ];then
 Onlinekk=$(Getp online)
+ui_print "- Chọn chế độ cài đặt Việt hóa rom ?"
+ui_print
+[ $Onlinekk == 1 ] && ui_print2 "Online" || ui_print2 "Offline"
+ui_print
 else
 ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Chạm để hủy."
@@ -26,6 +30,10 @@ fi
 
 if [ "$(Getp dsonline)" ];then
 litapp=$(Getp dsonline)
+ui_print "- Chọn danh sách ứng dụng cần dịch ?"
+ui_print
+[ $litapp == 1 ] && ui_print2 "Online" || ui_print2 "List có sẵn"
+ui_print
 else
 ui_print "- Chọn danh sách ứng dụng cần dịch ?"
 ui_print
@@ -43,6 +51,10 @@ fi
 
 if [ "$(Getp gapp)" ];then
 gapp=$(Getp gapp)
+ui_print "- Cài Gapps thêm các dịch vụ Google ?"
+ui_print
+[ $gapp == 2 ] && ui_print2 "Có" || ui_print2 "Không"
+ui_print
 else
 ui_print "- Cài Gapps thêm các dịch vụ Google ?"
 ui_print "! Nên dùng cho các rom china gốc"
