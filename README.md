@@ -34,6 +34,4 @@ Kênh: [Telegram](http://t.me/modmiui)
 
 #### 🆕 Mới nhất:
 
-+ Tối ưu hóa toàn bộ module
-
-+ Sửa đổi kho widget đã Việt hóa
++ Sửa lại bàn phím nâng cao cho phù hợp thiết bị Android 12
