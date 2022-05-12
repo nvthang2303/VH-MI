@@ -35,4 +35,5 @@ Kênh: [Telegram](http://t.me/modmiui)
 #### 🆕 Mới nhất:
 
 + Sửa lại bàn phím nâng cao cho phù hợp thiết bị Android 12
-+ Thêm Font SF V4
+
++ Thêm Font SF V4, MiSan VH MIUI 13
