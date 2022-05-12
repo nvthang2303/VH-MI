@@ -66,3 +66,22 @@ else
 Vl 2
 gapp=$input
 fi
+
+ui_print "- Cài đặt kho Widget đã Việt hóa ?"
+ui_print
+ui_print2 "1. Có"
+ui_print2 "2. Không"
+ui_print
+ui_print2 "Nhập số:"
+ui_print
+ui_print2 "1"
+
+if [ "$(Getp widget)" ];then
+widget2=$(Getp widget)
+ui_print
+ui_print2 "Chọn: $widget2"
+ui_print
+else
+Vl 2
+widget2=$input
+fi
