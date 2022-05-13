@@ -34,6 +34,6 @@ Kênh: [Telegram](http://t.me/modmiui)
 
 #### 🆕 Mới nhất:
 
-🆘🆘 Lưu ý: Bản 2.6 không được cài đè hoặc cập nhật
+🆘🆘 Lưu ý: Bản 2.6 không được cài đè hoặc cập nhật 🆘🆘
 
 + Bản 2.6 trở nên mới được phép cập nhật
