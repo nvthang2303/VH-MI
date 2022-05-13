@@ -34,6 +34,6 @@ Kênh: [Telegram](http://t.me/modmiui)
 
 #### 🆕 Mới nhất:
 
-+ Sửa lại bàn phím nâng cao cho phù hợp thiết bị Android 12
+🆘🆘 Lưu ý: Bản 2.6 không được cài đè hoặc cập nhật
 
-+ Thêm Font SF V4, MiSan VH MIUI 13
++ Bản 2.6 trở nên mới được phép cập nhật
