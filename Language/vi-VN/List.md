@@ -28,7 +28,6 @@ com.mfashiongallery.emag=MiGalleryLockscreen.apk
 com.xiaomi.mirror=Mirror.apk
 com.miui.accessibility=MiuiAccessibility.apk
 com.miui.aod=MiuiAod.apk
-com.android.camera=MiuiCamera.apk
 com.miui.contentcatcher=MiuiContentCatcher.apk
 com.miui.extraphoto=MiuiExtraPhoto.apk
 com.miui.freeform=MiuiFreeformService.apk
