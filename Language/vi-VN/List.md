@@ -67,3 +67,5 @@ com.miui.audiomonitor=com.miui.audiomonitor.apk
 com.miui.thirdappassistant=com.miui.thirdappassistant.apk
 com.miui.mediaeditor=MiuiGallery.apk
 com.miui.fm=FM.apk
+com.android.contacts=Contacts.apk
+com.android.phone=TeleService.apk
