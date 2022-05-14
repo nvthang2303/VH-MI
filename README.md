@@ -42,4 +42,4 @@ Kênh: [Telegram](http://t.me/modmiui)
 
 + Thêm tính năng tắt chữ ký của hệ thống
 
-+ Đối với phiên bản mới 2.7 vui lòng xoá tất cả các mô-đun fix bootloop vì mô-đun VH-Mi đã chỉnh sửa sâu vào hệ thống nên thời gian khởi động lại sẽ mất khoảng 100 giây
++ Đối với phiên bản mới 2.7 vui lòng xoá tất cả các mô-đun fix bootloop vì mô-đun VH-Mi đã chỉnh sửa sâu vào hệ thống nên thời gian khởi động lại sẽ mất khoảng 100~200 giây
