@@ -18,7 +18,9 @@ Tools Việt Hoá MIUI Offline và Online
 
 7. Thêm Font chữ tiếng Việt
 
-8. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
+8. Tắt kiểm tra chữ ký của hệ thống
+
+9. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
 
 - Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
@@ -37,3 +39,5 @@ Kênh: [Telegram](http://t.me/modmiui)
 🆘🆘 Lưu ý: Từ 2.5 lên 2.6 không được cài đè hoặc cập nhật 🆘🆘
 
 + Bản 2.6 trở nên mới được phép cập nhật
+
++ Thêm tính năng tắt chữ ký của hệ thống
