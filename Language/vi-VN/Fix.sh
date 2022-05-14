@@ -27,6 +27,7 @@ sed -i 's|privacy_settings_new">Sao lưu, khôi phục, hoặc đặt lại<|pri
 rm -fr /data/tools/tmp/*/*/main/$path/res/values-mcc460*
 fi
 
+if [ "$pkg" == "com.android.calendar" ];then
 sed -i \
 -e 's|: )||g' \
 -e 's|: (||g' \
@@ -35,6 +36,7 @@ sed -i \
 -e 's|lunar_shi">10<|lunar_shi">1<|g' \
 -e 's|event_lunar_month">Tháng<|event_lunar_month">/01<|g' \
 -e 's|<string name="edit_event_reminder_summary_3_days_before">Trước %2$d ngày và vào ngày đó lúc %1$s</string>|<string name="edit_event_reminder_summary_3_days_before">Trước 3 ngày và vào ngày đó lúc %1$s</string>|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
+fi
 
 if [ "$pkg" == "com.miui.home" ];then
 sed -i \
