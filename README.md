@@ -18,9 +18,7 @@ Tools Việt Hoá MIUI Offline và Online
 
 7. Thêm Font chữ tiếng Việt
 
-8. Tắt kiểm tra chữ ký của hệ thống
-
-9. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
+8. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
 
 - Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
