@@ -38,4 +38,4 @@ Kênh: [Telegram](http://t.me/modmiui)
 
 + Bản 2.6 trở nên mới được phép cập nhật
 
-+ Bỏ tính năng tắt chữ ký
++ 2.9 hỗ trợ phù hợp cho các Android 12
