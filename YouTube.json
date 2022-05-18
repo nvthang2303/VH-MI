@@ -1,1 +1,6 @@
-Test
+{
+    "version": "17.03.38",
+    "versionCode": "1",
+    "zipUrl": "https://github.com/kakathic/VH-MI/releases/download/YouTube/TK-YT.Zip",
+    "changelog": "https://raw.githubusercontent.com/kakathic/VH-MI/main/YouTube.md"
+}
