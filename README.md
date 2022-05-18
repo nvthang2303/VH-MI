@@ -31,11 +31,3 @@ Paypal: [kakathic](http://paypal.me/kakathic)
 
 Nhóm: [Telegram](http://t.me/miuiviet),
 Kênh: [Telegram](http://t.me/modmiui)
-
-#### 🆕 Mới nhất:
-
-🆘🆘 Lưu ý: Từ 2.5 lên 2.6 không được cài đè hoặc cập nhật 🆘🆘
-
-+ Bản 2.6 trở nên mới được phép cập nhật
-
-+ 2.9 hỗ trợ phù hợp cho các Android 12
