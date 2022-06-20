@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 18:23-20/06/2022
+
++ Fix tự động chạy
+
 Cập nhật: 18:42-18/06/2022
 
 + Thêm tính năng tắt thông báo nhắc nhở dùng bộ nhớ tạm
