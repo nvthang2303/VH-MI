@@ -4,7 +4,7 @@ ui_print
 ui_print2 "Momo, Viettel Pay: 0344413159"
 ui_print
 ui_print "! Sử dụng phím âm lượng"
-ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Sau 10s tự hủy."
+ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Ấn nút nguồn để hủy."
 ui_print
 
 if [ "$(Getp VH)" == 1 ];then
