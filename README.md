@@ -33,3 +33,6 @@ Paypal: [kakathic](http://paypal.me/kakathic)
 
 Nhóm: [Telegram](http://t.me/toolvn),
 Kênh: [Telegram](http://t.me/toolvi)
+
+Xem video tùy chỉnh nâng cao: [Link Video](https://t.me/toolvi/282)
+
