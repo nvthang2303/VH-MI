@@ -83,3 +83,42 @@ else
 Vl 2
 widget2=$input
 fi
+
+ui_print "- Chuyển nền China thành Global ( beta ) ?"
+ui_print "- Sửa lỗi thông báo chậm !"
+ui_print
+ui_print2 "1. Không"
+ui_print2 "2. Có"
+ui_print
+ui_print2 "Nhập số:"
+ui_print
+ui_print2 "1"
+
+if [ "$(Getp global)" ];then
+globals=$(Getp global)
+ui_print
+ui_print2 "Chọn: $globals"
+ui_print
+else
+Vl 2
+globals=$input
+fi
+
+ui_print "- Tắt thông báo bộ nhớ tạm ở Rom DEV ?"
+ui_print
+ui_print2 "1. Có"
+ui_print2 "2. Không"
+ui_print
+ui_print2 "Nhập số:"
+ui_print
+ui_print2 "1"
+
+if [ "$(Getp modsecc)" ];then
+modsecs=$(Getp modsecc)
+ui_print
+ui_print2 "Chọn: $modsecs"
+ui_print
+else
+Vl 2
+modsecs=$input
+fi
