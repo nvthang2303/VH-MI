@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 17:50-01/07/2022
+
++ Thêm tính năng chuyển nền global ( fix thông báo chậm beta)
+
 Cập nhật: 20:19-30/06/2022
 
 + Fix lỗi bị lỗi ứng dụng chủ đề khi cập nhật
