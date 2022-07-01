@@ -12,13 +12,15 @@ Tools Việt Hoá MIUI Offline và Online
 
 4. Thêm lịch âm vào Thanh thông báo.
 
-5. Thêm cuộc gọi video và VoLTE
+5. Fix thông báo chuyển nền global ( beta )
  
 6. Thêm bộ cài Gapps các dịch vụ cơ bản của Google hỗ trợ Android 11 sắp có cho 12.
 
 7. Thêm Font chữ tiếng Việt
 
-8. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
+8. Tắt thông báo khay nhớ tạm nền china
+
+9. Việt hóa bộ Widget tính năng này có hai chế độ để cập nhật bộ Widgets:
 
 - Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
@@ -26,7 +28,7 @@ Tools Việt Hoá MIUI Offline và Online
 
 #### ☕ Ủng hộ:
 
-Teckombank: `19034902604017`, Momo, Viettel Pay: `0344413159`,
+Teckombank: `19034902604017`,
 Paypal: [kakathic](http://paypal.me/kakathic)
 
 Nhóm: [Telegram](http://t.me/miuiviet),
