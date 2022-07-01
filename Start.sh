@@ -104,6 +104,7 @@ Vl 2
 globals=$input
 fi
 
+if [ "$globals" == 1 ];then
 ui_print "- Tắt thông báo bộ nhớ tạm ở Rom DEV ?"
 ui_print
 ui_print2 "1. Có"
@@ -121,4 +122,5 @@ ui_print
 else
 Vl 2
 modsecs=$input
+fi
 fi
