@@ -31,5 +31,5 @@ Tools Việt Hoá MIUI Offline và Online
 Teckombank: `19034902604017`,
 Paypal: [kakathic](http://paypal.me/kakathic)
 
-Nhóm: [Telegram](http://t.me/miuiviet),
-Kênh: [Telegram](http://t.me/modmiui)
+Nhóm: [Telegram](http://t.me/toolvn),
+Kênh: [Telegram](http://t.me/toolvi)
