@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 18:02-04/07/2022
+
++ Tính năng trả phí bắt đầu áp dụng hãy cân nhắc trước khi cập nhật!
+
 Cập nhật: 17:50-01/07/2022
 
 + Thêm tính năng chuyển nền global ( fix thông báo chậm beta)
