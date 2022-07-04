@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 06:20-05/07/2022
+
++ Sửa lỗi toàn bộ
+
 Cập nhật: 18:02-04/07/2022
 
 + Tính năng trả phí bắt đầu áp dụng hãy cân nhắc trước khi cập nhật!
