@@ -87,7 +87,7 @@ fi
 
 ui_print "- Chuyển nền China thành Global ( beta ) ?"
 ui_print "- Sửa lỗi thông báo chậm !"
-ui_print "! Nếu muốn quay lại nền china vui lòng gỡ module trước."
+ui_print "! Muốn quay lại nền china vui lòng gỡ module trước."
 ui_print
 ui_print2 "1. Không"
 ui_print2 "2. Có"
