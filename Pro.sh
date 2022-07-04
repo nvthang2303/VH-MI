@@ -2,8 +2,6 @@ Vip=Kakathic
 
 [ "$(Xem "$Lituss" | grep -cm1 $kkihh)" == 1 ] || abort
 
-ui_print2 "Ủng hộ: Teckombank: 19034902604017"
-ui_print
 ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Ấn nút nguồn để hủy."
 ui_print
