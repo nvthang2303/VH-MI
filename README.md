@@ -36,6 +36,6 @@ Kênh: [Telegram](http://t.me/toolvi)
 
 Xem video tùy chỉnh nâng cao: [Link Video](https://t.me/toolvi/282)
 
-Kho Apk, Widget: [Upload File](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
+Kho lưu trữ Apk, Widget: [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
 
 
