@@ -3,6 +3,10 @@
 Cập nhật: 18:02-04/07/2022
 
 + Tính năng trả phí bắt đầu áp dụng hãy cân nhắc trước khi cập nhật!
++ Hãy gửi thiết bị và id khi thông báo lỗi
++ Và gửi 10k vào Techcombank
++ Chỉ sử dụng cho thiết bị hiện tại và tài khoản mi account hiện tại
++ Có thể liên hệ tài khoản Telegram: @kakathic hoặc tài khoản Facebook: fb.com/kakathic 
 
 Cập nhật: 17:50-01/07/2022
 
