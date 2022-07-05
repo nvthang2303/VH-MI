@@ -7,11 +7,11 @@ Vip=Kakathic
 
     id: $kkihh
 
-    Lý do lỗi: Chưa đăng ký tài khoản!
+    Lý do lỗi: Chưa ủng hộ nhà phát triển!
   
-    Cách đăng ký tài khoản:
+    Cách ủng hộ:
   
-    Gửi 10k vào Teckombank: 19034902604017
+    Gửi 10k trở nên vào Teckombank: 19034902604017
 
     Nội dung gửi tiền kèm id và tên thiết bị.
   
