@@ -11,13 +11,17 @@ Vip=Kakathic
   
     Cách ủng hộ:
   
-    Gửi 10k trở nên vào Teckombank: 19034902604017
+    Ủng hộ 10k trở nên vào
+
+    Teckombank: 19034902604017
 
     Nội dung gửi tiền kèm id và tên thiết bị.
   
     Chụp ảnh màn hình này hoặc gửi log
 
     Cho người làm module.
+
+    id là tài khoản mi account, còn thiết bị là tên máy
 "
 
 ui_print "! Sử dụng phím âm lượng"
