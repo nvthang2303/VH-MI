@@ -1,6 +1,25 @@
 Vip=Kakathic
 
-[ "$(Xem "$Lituss" | grep -cm1 $kkihh)" == 1 ] || abort
+
+[ "$(Xem "$Lituss" | grep -cm1 $kkihh)" == 1 ] || abort "
+! Phát hiện lỗi
+
+  Thiết bị: $(getprop ro.product.device)
+
+  id: $kkihh
+
+  Lý do lỗi: Chưa đăng ký tài khoản!
+  
+  Cách đăng ký tài khoản:
+  
+  Gửi 10k vào Teckombank: 19034902604017
+
+  Nội dung gửi tiền kèm id và tên thiết bị.
+  
+  Chụp ảnh màn hình này hoặc gửi log
+
+  Cho người làm module.
+"
 
 ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Ấn nút nguồn để hủy."
