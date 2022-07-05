@@ -3,9 +3,9 @@ Vip=Kakathic
 
 [ "$(Xem "$Lituss" | grep -cm1 $kkihh)" == 1 ] || abort "    ! Phát hiện lỗi
 
-    Thiết bị: $(getprop ro.product.device)
+    Tên máy: $(getprop ro.product.device)
 
-    id: $kkihh
+    Tài khoản Mi: $kkihh
 
     Lý do lỗi: Chưa ủng hộ nhà phát triển!
   
@@ -15,13 +15,11 @@ Vip=Kakathic
 
     Teckombank: 19034902604017
 
-    Nội dung gửi tiền kèm id và tên thiết bị.
+    Nội dung gửi tiền kèm tài khoản mi và tên máy.
   
     Chụp ảnh màn hình này hoặc gửi log
 
     Cho người làm module.
-
-    id là tài khoản mi account, còn thiết bị là tên máy
 "
 
 ui_print "! Sử dụng phím âm lượng"
