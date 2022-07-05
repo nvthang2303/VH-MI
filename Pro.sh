@@ -44,7 +44,7 @@ else
 Vl 2
 litapp=$input
 fi
-fi
+
 
 ui_print "- Cài Gapps thêm các dịch vụ Google ?"
 ui_print "! Nên dùng cho các rom china gốc"
