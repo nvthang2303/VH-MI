@@ -24,24 +24,7 @@ ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Ấn nút nguồn để hủy."
 ui_print
 
-if [ "$(Getp VH)" == 1 ];then
-ui_print "- Chọn chế độ cài đặt Việt hóa rom ?"
-ui_print
-ui_print2 "1. Online"
-ui_print2 "2. Offline"
-ui_print
-ui_print2 "Nhập số:"
-ui_print
-ui_print2 "1"
-if [ "$(Getp online)" ];then
-Onlinekk=$(Getp online)
-ui_print
-ui_print2 "Chọn: $Onlinekk"
-ui_print
-else
-Vl 2
-Onlinekk=$input
-fi
+Onlinekk=1
 
 ui_print "- Chọn danh sách ứng dụng cần dịch ?"
 ui_print
