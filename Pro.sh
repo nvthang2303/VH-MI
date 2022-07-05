@@ -24,8 +24,8 @@ ui_print "! Sử dụng phím âm lượng"
 ui_print "! Vol- = Chọn, Vol+ = Chuyển số, Ấn nút nguồn để hủy."
 ui_print
 
+if [ "$(Getp VH)" == 1 ];then
 Onlinekk=1
-
 ui_print "- Chọn danh sách ứng dụng cần dịch ?"
 ui_print
 ui_print2 "1. Online"
@@ -43,6 +43,7 @@ ui_print
 else
 Vl 2
 litapp=$input
+fi
 fi
 
 
