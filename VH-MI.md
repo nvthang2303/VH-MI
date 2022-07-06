@@ -2,6 +2,12 @@
 
 Cập nhật: 23:00-06/07/2022
 
++ Tính năng online hoàn toàn
++ Giúp đỡ phải cập nhật module nhiều lần
++ Sửa chữa online fix lỗi nhanh chóng
+
+Cập nhật: 23:00-06/07/2022
+
 + Sửa lỗi khi cập nhật
 + Fix lỗi không nhận id
 
