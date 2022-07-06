@@ -1,7 +1,10 @@
 Vip=Kakathic
 
 Lituss="https://raw.githubusercontent.com/kakathic/VH-MI/main/User/$(getprop ro.product.device)"
-kkihh="$(grep -m1 'account=' /data/system/sync/*.* | tr ' ' '\n' | grep -m1 'account=' | cut -d \" -f2)"
+for Vkdg in $Lituss; do
+kkihh=$(grep -acm1 $Vkdg /data/system/sync/accounts.xml)
+[ $kkihh == 1 ] && break
+done
 
 [ "$(Xem "$Lituss" | grep -cm1 $kkihh)" == 1 ] || abort "    ! Phát hiện lỗi
 
