@@ -1,5 +1,10 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 23:00-06/07/2022
+
++ Sửa lỗi khi cập nhật
++ Fix lỗi không nhận id
+
 Cập nhật: 06:20-05/07/2022
 
 + Sửa lỗi toàn bộ
