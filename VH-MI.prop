@@ -12,12 +12,10 @@ author=kakathic
 description=Phần mềm dịch tự động rom miui, và mod thêm một số tính năng.
 updateJson=https://raw.githubusercontent.com/kakathic/VH-MI/main/update.json
 
-# Đường dẫn đến tệp bản dịch miui .zip (/test/fileurl.zip)
-Linkfile=
-
 # Liên kết đến liên kết tải xuống bản dịch .zip (http://test.zip)
 Linkurl=https://github.com/Belmont-Gabriel/MIUI-12-XML-Vietnamese/archive/refs/heads/master.zip
-
+Linkdata=https://github.com/kakathic/VH-MI/releases/download/V1.0/Java.tar.xz
+Linktool=https://github.com/kakathic/VH-MI/releases/download/V1.0/Tool.zip
 # Thêm ngôn ngữ bạn muốn dịch (Ví dụ: vi-VN )
 Linknn=vi-VN
 
@@ -33,7 +31,7 @@ LinkTn=Tiếng Việt
 #----------------------#
 
 # Bật tắt dịch ngôn ngữ: 1 là bật, 2 là tắt
-VH=0
+VH=1
 
 #----------------------#
 
@@ -42,37 +40,37 @@ VH=0
 #--------------------------------------#
 
 # Danh sách dịch ứng dụng online: 1 ONLINE, 2 List có sẵn
-dsonline=1
+dsonline=
 
 # Cài gói gapp tự động: 1 tắt, 2 BẬT
-gapp=1
+gapp=
 
 # Hiện tên nhà mạng ở phần thông báo nền china: 1 là BẬT, 2 là tắt
-Systemui=2
+Systemui=
 
 # Chuyển nền china thành global: 1 tắt, 2 BẬT
 # Một số tính năng sẽ bị ngừng hoạt động: modsecc, theme, Systemui
-global=2
+global=
 
 # Tắt thông báo bộ nhớ tạm ở Rom DEV: 1 là BẬT, 2 là tắt
-modsecc=2
+modsecc=
 
-# Tải về kho widget đã Việt hóa: 1 Không, 2 Có
-widget=1
+# Tải về kho widget đã Việt hóa: 1 Không, 2 CÓ
+widget=
 
 # Xoá bỏ ứng dụng GetApps mà không bị treo logo: 1 BẬT, 2 tắt
-gettapp=2
+gettapp=
 
 # Cho phép cài đặt chủ đề bên thứ ba: 1 BẬT, 2 tắt
-theme=2
+theme=
 
 # Hiện thị bàn phím nâng cao: 1 Bật, 2 tắt
-banphim=2
+banphim=
 
 # Thêm font chữ tiếng Việt: 1 Font ios, 2 Font sf v4, 3 MiSan VH, 4 không
-fontchu=4
+fontchu=
 
 # Sau khi cài đặt xong module có khởi động lại thiết bị không: 1 tắt, 2 BẬT
-khoidl=1
+khoidl=
 
 #--------------------------------------#
