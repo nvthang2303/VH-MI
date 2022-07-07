@@ -1002,6 +1002,9 @@ for Bala in product vendor system_ext; do
 [ -e $MODPATH/$Bala ] && mv -f $MODPATH/$Bala $MODPATH/system
 done
 
+setprop ro.vendor.miui.cust_variant vn
+setprop ro.miui.cust_variant vn
+
 ui_print2 "OK: $Tc, Error: $Tb"
 ui_print
 }
