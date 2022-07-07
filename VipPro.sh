@@ -38,14 +38,11 @@ echo "$Testksks" >> $TMPDIR/module.prop
 fi
 
 Fix () {
-if [ "$litapp" == 1 ];then
+
 Taive "https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/$(Getp Linknn)/Fix.sh" $TMPDIR/Fix.sh
 chmod -R 777 $TMPDIR/Fix.sh
 . $TMPDIR/Fix.sh
-else
-chmod -R 777 $TMPDIR/Fix2.sh
-. $TMPDIR/Fix2.sh
-fi
+
 }
 
 
@@ -164,7 +161,7 @@ done
 
     Tên máy: $(getprop ro.product.device)
 
-    Tài khoản Mi: $kkihh
+    Tài khoản Mi: $(grep -m1 account_name /data/system/sync/*.* | tr ' ' '\n' | grep -m1 account_name | cut -d \" -f2)
 
     Lý do lỗi: Chưa ủng hộ nhà phát triển!
   
@@ -421,15 +418,16 @@ rm -fr /data/tools/tmp/*
 unzip -qo "$ZIPFILE" "system/*" -d $MODPATH >&2
 unzip -qo "$ZIPFILE" "Test/*" -d /data/tools/tmp >&2
 unzip -qo "$ZIPFILE" "Pack/*" -d /data/tools/tmp >&2
+
+if [ ! -e /data/tools/bin/java ];then
+Taive "$(Getp Linkdata)" $TMPDIR/Java.tar.xz
+Taive "$(Getp Linktool)" $TMPDIR/Tool.zip
 tar x -Jf $TMPDIR/Java.tar.xz -C /data/tools >&2
 unzip -qo $TMPDIR/Tool.zip -d /data/tools >&2
+fi
 
 # Tải và giải nén tệp dịch
-if [ "$(Getp Linkfile)" ];then
-unzip -qo "$(Getp Linkfile)" -d /data/tools/tmp >&2
-unzip -qo "$TMPDIR/Language.zip" -d /data/tools/tmp >&2
-cp -rf /data/tools/tmp/*/Language/*/* /data/tools/tmp/*/*/main
-else
+
 if [ "$Onlinekk" == 1 ];then
 Taive "$(Getp Linkurl)" "$TMPDIR/Test.zip"
 Taive https://github.com/kakathic/VH-MI/archive/refs/heads/main.zip "$TMPDIR/Testvh.zip"
@@ -437,10 +435,8 @@ Taive https://github.com/kakathic/VH-MI/archive/refs/heads/main.zip "$TMPDIR/Tes
 [ -e "$TMPDIR/Test.zip" ] || abort
 unzip -qo "$TMPDIR/Testvh.zip" -d /data/tools/tmp >&2
 cp -rf /data/tools/tmp/*/Language/*/* /data/tools/tmp/*/*/main
-else
-unzip -qo "$TMPDIR/VHs.zip" -d /data/tools/tmp >&2
 fi
-fi
+
 
 # Quyền và đường dẫn
 export PATH="/data/tools/bin:$PATH"
@@ -657,51 +653,24 @@ fi
 
 fi
 
-
 if [ "$globals" != 1 ];then
 ui_print2 "Chuyển nền Global"
 ui_print
 
 AutoTv () {
-
 pm uninstall $1 >&2
+mkdir -p /data/local/tmp/apks
 bmmmm="$(pm path "$1" | cut -d : -f2)"
 mkdir -p "$MODPATH${bmmmm%/*}"
-Taive "$2" "$MODPATH$bmmmm"
-mkdir -p /data/local/tmp/apks
-cp -rf "$MODPATH$bmmmm" /data/local/tmp/apks/test.apk
-pm install -r /data/local/tmp/apks/test.apk >&2
-pm uninstall -k $1 >&2
-unzip -qo $MODPATH$bmmmm lib/arm64-v8a/* -d "$MODPATH${bmmmm%/*}"
-mv -f $MODPATH${bmmmm%/*}/lib/arm64-v8a $MODPATH${bmmmm%/*}/lib/arm64
+Taive "$2" /data/local/tmp/apks/test.apk
+[ "$bmmmm" ] && cp -rf /data/local/tmp/apks/test.apk "$MODPATH$bmmmm"
+[ "$bmmmm" ] || pm install -r /data/local/tmp/apks/test.apk >&2
 rm -fr /data/local/tmp/apks/*
-
 }
 
-AutoTv com.miui.securitycenter "https://github.com/kakathic/VH-MI/releases/download/Apk/SecurityCenter_global.apk"
 AutoTv com.android.thememanager "https://github.com/kakathic/VH-MI/releases/download/Apk/Theme.apk"
-
-[ "$(pm path com.android.calendar)" ] && AutoTv com.android.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Calendar.apk" || AutoTv com.xiaomi.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Calendar.apk"
 [ "$(pm path com.miui.personalassistant)" ] && AutoTv com.miui.personalassistant "https://github.com/kakathic/VH-MI/releases/download/Apk/App_vault.apk" || AutoTv com.mi.globalminusscreen "https://github.com/kakathic/VH-MI/releases/download/Apk/App_vault.apk"
-
-pm uninstall com.miui.weather2 >&2
-bmmmm2="$(pm path "com.miui.weather2" | cut -d : -f2)"
-if [ "$bmmmm2" ];then
-mkdir -p "$MODPATH${bmmmm2%/*}"
-Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk" $MODPATH$bmmmm2
-cp -rf $MODPATH$bmmmm2 /data/local/tmp/apks/test.apk
-[ -e $MODPATH$bmmmm2 ] && pm install -r /data/local/tmp/apks/test.apk >&2 || abort "- Lỗi tải file thất bại!
-"
-pm uninstall -k com.miui.weather2 >&2
-unzip -qo $MODPATH$bmmmm2 lib/arm64-v8a/* -d "$MODPATH${bmmmm2%/*}"
-mv -f "$MODPATH${bmmmm2%/*}"/lib/arm64-v8a "$MODPATH${bmmmm2%/*}"/lib/arm64
-
-else
-mkdir -p $MODPATH/system/app/Weather2
-Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk" $MODPATH/system/app/Weather2/Weather2.apk
-unzip -qo $MODPATH/system/app/Weather2/Weather2.apk lib/arm64-v8a/* -d $MODPATH/system/app/Weather2
-mv -f $MODPATH/system/app/Weather2/lib/arm64-v8a $MODPATH/system/app/Weather2/lib/arm64
-fi
+AutoTv com.miui.weather2 "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk"
 
 Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk" /data/local/tmp/apks/test2.apk
 [ -e /data/local/tmp/apks/test2.apk ] && pm install -r /data/local/tmp/apks/test2.apk >&2 || abort "- Lỗi tải file thất bại!
@@ -713,9 +682,6 @@ rm -fr /data/local/tmp/apks
 
 rm -fr $MODPATH/system/*/overlay/Z.com.miui.weather2
 rm -fr $MODPATH/system/*/overlay/Z.com.android.thememanager
-rm -fr $MODPATH/system/*/overlay/Z.com.miui.securitycenter
-rm -fr $MODPATH/system/*/overlay/Z.com.miui.personalassistant
-rm -fr $MODPATH/system/*/overlay/Z.com.android.calendar
 
 echo 'ro.product.mod_device=kakathic_global' >> $TMPDIR/system.prop
 
@@ -1001,13 +967,6 @@ mkdir -p $MODPATH/system/framework
 for Bala in product vendor system_ext; do
 [ -e $MODPATH/$Bala ] && mv -f $MODPATH/$Bala $MODPATH/system
 done
-
-setprop ro.vendor.miui.cust_variant vn
-setprop ro.miui.cust_variant vn
-setprop ro.vendor.miui.region VN
-setprop ro.product.locale.region VN
-setprop ro.vendor.miui.region VN
-setprop ro.miui.region VN
 
 ui_print2 "OK: $Tc, Error: $Tb"
 ui_print
