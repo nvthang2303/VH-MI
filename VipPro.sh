@@ -663,8 +663,13 @@ mkdir -p /data/local/tmp/apks
 bmmmm="$(pm path "$1" | cut -d : -f2)"
 mkdir -p "$MODPATH${bmmmm%/*}"
 Taive "$2" /data/local/tmp/apks/test.apk
-[ "$bmmmm" ] && cp -rf /data/local/tmp/apks/test.apk "$MODPATH$bmmmm"
-[ "$bmmmm" ] || pm install -r /data/local/tmp/apks/test.apk >&2
+if [ "$bmmmm" ];then
+cp -rf /data/local/tmp/apks/test.apk "$MODPATH$bmmmm"
+unzip -qo /data/local/tmp/apks/test.apk lib/arm64-v8a/* -d "$MODPATH${bmmmm%/*}"
+mv -f "$MODPATH${bmmmm%/*}"/lib/arm64-v8a "$MODPATH${bmmmm%/*}"/lib/arm64
+else
+pm install -r /data/local/tmp/apks/test.apk >&2
+fi
 rm -fr /data/local/tmp/apks/*
 }
 
