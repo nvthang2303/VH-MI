@@ -1004,6 +1004,10 @@ done
 
 setprop ro.vendor.miui.cust_variant vn
 setprop ro.miui.cust_variant vn
+setprop ro.vendor.miui.region VN
+setprop ro.product.locale.region VN
+setprop ro.vendor.miui.region VN
+setprop ro.miui.region VN
 
 ui_print2 "OK: $Tc, Error: $Tb"
 ui_print
