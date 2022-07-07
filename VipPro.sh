@@ -667,6 +667,7 @@ if [ "$bmmmm" ];then
 cp -rf /data/local/tmp/apks/test.apk "$MODPATH$bmmmm"
 unzip -qo /data/local/tmp/apks/test.apk lib/arm64-v8a/* -d "$MODPATH${bmmmm%/*}"
 mv -f "$MODPATH${bmmmm%/*}"/lib/arm64-v8a "$MODPATH${bmmmm%/*}"/lib/arm64
+pm install -r /data/local/tmp/apks/test.apk >&2
 else
 pm install -r /data/local/tmp/apks/test.apk >&2
 fi
