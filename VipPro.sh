@@ -151,7 +151,7 @@ ui_print
 on_install() {
 
 Lituss="https://raw.githubusercontent.com/kakathic/VH-MI/main/User/$(getprop ro.product.device)"
-for Vkdg in $(Xem $Lituss); do
+for Vkdg in $(Xem "$Lituss"); do
 kkihh=$(grep -acm1 $Vkdg /data/system/sync/accounts.xml)
 [ $kkihh == 1 ] && break
 done
@@ -690,6 +690,9 @@ rm -fr $MODPATH/system/*/overlay/Z.com.android.thememanager
 
 echo 'ro.product.mod_device=kakathic_global' >> $TMPDIR/system.prop
 
+am start com.miui.personalassistant/.settings.PASettingActivity >&2
+sleep 6
+input keyevent 4
 fi
 
 
