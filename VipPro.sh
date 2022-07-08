@@ -156,7 +156,7 @@ kkihh=$(grep -acm1 $Vkdg /data/system/sync/accounts.xml)
 [ $kkihh == 1 ] && break
 done
 
-[ "$(Xem "$Lituss" | grep -cm1 $kkihh)" == 1 ] || abort "    ! Phát hiện lỗi
+[ "$kkihh" == 1 ] || abort "    ! Phát hiện lỗi
 
     Tên máy: $(getprop ro.product.device)
 
@@ -246,7 +246,7 @@ fi
 
 ui_print "- Chuyển nền China thành Global ( beta ) ?"
 ui_print "- Sửa lỗi thông báo chậm !"
-ui_print "! Muốn quay lại nền china vui lòng gỡ module trước."
+ui_print "! Trở lại nền china vui lòng gỡ module trước."
 ui_print
 ui_print2 "1. Không"
 ui_print2 "2. Có"
