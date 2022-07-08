@@ -665,6 +665,10 @@ Taive "$2" /data/local/tmp/apks/test.apk
 if [ "$bmmmm" ];then
 cp -rf /data/local/tmp/apks/test.apk "$MODPATH$bmmmm"
 pm install -r /data/local/tmp/apks/test.apk >&2
+if [ "$1" == "com.miui.home" ];then
+pm uninstall -k $1 >&2
+Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Home.apk" "$MODPATH$bmmmm"
+fi
 else
 pm install -r /data/local/tmp/apks/test.apk >&2
 fi
@@ -672,12 +676,10 @@ rm -fr /data/local/tmp/apks/*
 }
 
 AutoTv com.android.thememanager "https://github.com/kakathic/VH-MI/releases/download/Apk/Theme.apk"
-[ "$(pm path com.miui.personalassistant)" ] && AutoTv com.miui.personalassistant "https://github.com/kakathic/VH-MI/releases/download/Apk/App_vault.apk" || AutoTv com.mi.globalminusscreen "https://github.com/kakathic/VH-MI/releases/download/Apk/App_vault.apk"
 AutoTv com.miui.weather2 "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk"
+AutoTv com.xiaomi.discover "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk"
 
-Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk" /data/local/tmp/apks/test2.apk
-[ -e /data/local/tmp/apks/test2.apk ] && pm install -r /data/local/tmp/apks/test2.apk >&2 || abort "- Lỗi tải file thất bại!
-"
+AutoTv com.miui.home "https://github.com/kakathic/VH-MI/releases/download/Apk/Home0.apk"
 
 rm -fr $MODPATH/system/etc
 rm -fr $MODPATH/system/bin
