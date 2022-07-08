@@ -665,10 +665,6 @@ Taive "$2" /data/local/tmp/apks/test.apk
 if [ "$bmmmm" ];then
 cp -rf /data/local/tmp/apks/test.apk "$MODPATH$bmmmm"
 pm install -r /data/local/tmp/apks/test.apk >&2
-if [ "$1" == "com.miui.home" ];then
-pm uninstall -k $1 >&2
-Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Home.apk" "$MODPATH$bmmmm"
-fi
 else
 pm install -r /data/local/tmp/apks/test.apk >&2
 fi
@@ -679,8 +675,6 @@ AutoTv com.android.thememanager "https://github.com/kakathic/VH-MI/releases/down
 AutoTv com.miui.weather2 "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk"
 AutoTv com.xiaomi.discover "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk"
 
-AutoTv com.miui.home "https://github.com/kakathic/VH-MI/releases/download/Apk/Home0.apk"
-
 rm -fr $MODPATH/system/etc
 rm -fr $MODPATH/system/bin
 rm -fr /data/local/tmp/apks
@@ -690,9 +684,6 @@ rm -fr $MODPATH/system/*/overlay/Z.com.android.thememanager
 
 echo 'ro.product.mod_device=kakathic_global' >> $TMPDIR/system.prop
 
-am start com.miui.personalassistant/.settings.PASettingActivity >&2
-sleep 6
-input keyevent 4
 fi
 
 
