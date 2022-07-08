@@ -675,6 +675,8 @@ AutoTv com.android.thememanager "https://github.com/kakathic/VH-MI/releases/down
 AutoTv com.miui.weather2 "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk"
 AutoTv com.xiaomi.discover "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk"
 
+[ "$(pm path com.android.calendar)" ] && AutoTv com.android.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk" || AutoTv com.xiaomi.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk"
+
 rm -fr $MODPATH/system/etc
 rm -fr $MODPATH/system/bin
 rm -fr /data/local/tmp/apks
