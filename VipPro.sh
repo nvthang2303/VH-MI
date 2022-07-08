@@ -151,7 +151,7 @@ ui_print
 on_install() {
 
 Lituss="https://raw.githubusercontent.com/kakathic/VH-MI/main/User/$(getprop ro.product.device)"
-for Vkdg in $Lituss; do
+for Vkdg in $(Xem $Lituss); do
 kkihh=$(grep -acm1 $Vkdg /data/system/sync/accounts.xml)
 [ $kkihh == 1 ] && break
 done
