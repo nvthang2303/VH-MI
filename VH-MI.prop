@@ -12,65 +12,74 @@ author=kakathic
 description=Phần mềm dịch tự động rom miui, và mod thêm một số tính năng.
 updateJson=https://raw.githubusercontent.com/kakathic/VH-MI/main/update.json
 
-# Liên kết đến liên kết tải xuống bản dịch .zip (http://test.zip)
-Linkurl=https://github.com/Belmont-Gabriel/MIUI-12-XML-Vietnamese/archive/refs/heads/master.zip
-Linkdata=https://github.com/kakathic/VH-MI/releases/download/V1.0/Java.tar.xz
-Linktool=https://github.com/kakathic/VH-MI/releases/download/V1.0/Tool.zip
 # Thêm ngôn ngữ bạn muốn dịch (Ví dụ: vi-VN )
 Linknn=vi-VN
-
 # Tên ngôn ngữ: (Tiếng Việt)
 LinkTn=Tiếng Việt
 
-##
-##
-
-# Tùy chọn tự động
-# Auto option
-
-#----------------------#
-
-# Bật tắt dịch ngôn ngữ: 1 là bật, 2 là tắt
+# Bật tắt dịch ngôn ngữ: 
+# 1 Bật
+# 2 Tắt
 VH=1
 
-#----------------------#
 
-## Để trống là sẽ hiện chọn trong quá trình cài đặt
+# Để trống là sẽ hiện chọn trong quá trình cài đặt
+# Tùy chọn tự động
 
 #--------------------------------------#
 
-# Danh sách dịch ứng dụng online: 1 ONLINE, 2 List có sẵn
+# Danh sách dịch ứng dụng online:
+# 1 Online
+# 2 List có sẵn
 dsonline=
 
-# Cài gói gapp tự động: 1 tắt, 2 BẬT
+# Cài gói gapp tự động cho rom china gốc:
+# 1 Tắt
+# 2 Bật
 gapp=
 
-# Hiện tên nhà mạng ở phần thông báo nền china: 1 là BẬT, 2 là tắt
+# Hiện tên nhà mạng ở phần thông báo nền china:
+# 1 Tắt
+# 2 Bật
 Systemui=
 
-# Chuyển nền china thành global: 1 tắt, 2 BẬT
-# Một số tính năng sẽ bị ngừng hoạt động: modsecc, theme, Systemui
-global=
-
-# Tắt thông báo bộ nhớ tạm ở Rom DEV: 1 là BẬT, 2 là tắt
-modsecc=
-
-# Tải về kho widget đã Việt hóa: 1 Không, 2 CÓ
-widget=
-
-# Xoá bỏ ứng dụng GetApps mà không bị treo logo: 1 BẬT, 2 tắt
-gettapp=
-
-# Cho phép cài đặt chủ đề bên thứ ba: 1 BẬT, 2 tắt
+# Cho phép cài đặt chủ đề bên thứ ba:
+# 1 Tắt
+# 2 Bật
 theme=
 
-# Hiện thị bàn phím nâng cao: 1 Bật, 2 tắt
+# Chuyển nền china thành Global:
+# Tính năng này sẽ fix lỗi thông báo ứng dụng
+# Một số tính năng sẽ bị ngừng hoạt động: theme, Systemui
+# 1 Tắt
+# 2 Bật
+global=
+
+# Tải về kho widget đã Việt hóa:
+# 1 Tắt
+# 2 Bật
+widget=
+
+# Xoá bỏ ứng dụng GetApps mà không bị treo logo:
+# 1 Tắt
+# 2 Bật
+gettapp=
+
+# Hiện thị bàn phím nâng cao:
+# 1 Tắt
+# 2 Bật
 banphim=
 
-# Thêm font chữ tiếng Việt: 1 Font ios, 2 Font sf v4, 3 MiSan VH, 4 không
+# Thêm font chữ tiếng Việt: 
+# 1 Font IOS
+# 2 Font SF V4
+# 3 MiSan VH
+# 4 Không
 fontchu=
 
-# Sau khi cài đặt xong module có khởi động lại thiết bị không: 1 tắt, 2 BẬT
+# Sau khi cài đặt xong module có khởi động lại thiết bị không:
+# 1 Tắt
+# 2 Bật
 khoidl=
 
 #--------------------------------------#
