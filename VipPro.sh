@@ -96,8 +96,7 @@ unapk () {
 [ "$(pm path $1 | grep -cm1 '/data/')" == 1 ] && cp -rf "$(pm path $1 | cut -d : -f2)" /data/tools/$1.apk
 [ -e /data/tools/$1.apk ] && cp -rf /data/tools/$1.apk /data/tools/tmp/$1.apk || cp -rf "$(pm path $1 | cut -d : -f2)" /data/tools/tmp/$1.apk
 
-Xtk=$(find /data/app -name *$1*)
-[ -e $Xtk ] && rm -fr ${Xtk%/*}
+pm uninstall -k $1 >&2
 
 pathapk="$(pm path $1 | cut -d : -f2)"
 mkdir -p "$MODPATH${pathapk%/*}"
@@ -245,9 +244,9 @@ Vl 2
 widget2=$input
 fi
 
-ui_print "- Chuyển nền China thành Global ( beta ) ?"
+ui_print "- Chuyển nền China thành Global ?"
 ui_print "- Sửa lỗi thông báo chậm !"
-ui_print "! Trở lại nền china vui lòng gỡ module trước."
+ui_print "! Trở lại nền china vui lòng gỡ mô-đun trước."
 ui_print
 ui_print2 "1. Không"
 ui_print2 "2. Có"
@@ -266,32 +265,10 @@ Vl 2
 globals=$input
 fi
 
-if [ "$globals" == 1 ];then
-ui_print "- Tắt thông báo bộ nhớ tạm ở Rom DEV ?"
-ui_print
-ui_print2 "1. Có"
-ui_print2 "2. Không"
-ui_print
-ui_print2 "Nhập số:"
-ui_print
-ui_print2 "1"
-
-if [ "$(Getp modsecc)" ];then
-modsecs=$(Getp modsecc)
-ui_print
-ui_print2 "Chọn: $modsecs"
-ui_print
-else
-Vl 2
-modsecs=$input
-fi
-fi
-
-
 ui_print "- Gỡ cài đặt ứng dụng Getapps ?"
 ui_print
-ui_print2 "1. Có"
-ui_print2 "2. Không"
+ui_print2 "1. Không"
+ui_print2 "2. Có"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -311,8 +288,8 @@ fi
 if [ "$globals" == 1 ];then
 ui_print "- Hiển thị nhà mạng ở thông báo ?"
 ui_print
-ui_print2 "1. Có"
-ui_print2 "2. Không"
+ui_print2 "1. Không"
+ui_print2 "2. Có"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -330,8 +307,8 @@ fi
 
 ui_print "- Cho phép cài đặt chủ đề bên thứ ba ?"
 ui_print
-ui_print2 "1. Có"
-ui_print2 "2. Không"
+ui_print2 "1. Không"
+ui_print2 "2. Có"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -351,8 +328,8 @@ fi
 
 ui_print "- Mở khóa tính năng bàn phím nâng cao ?"
 ui_print
-ui_print2 "1. Có"
-ui_print2 "2. Không"
+ui_print2 "1. Không"
+ui_print2 "2. Có"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -420,8 +397,8 @@ unzip -qo "$ZIPFILE" "Test/*" -d /data/tools/tmp >&2
 unzip -qo "$ZIPFILE" "Pack/*" -d /data/tools/tmp >&2
 
 if [ ! -e /data/tools/bin/java ];then
-Taive "$(Getp Linkdata)" $TMPDIR/Java.tar.xz
-Taive "$(Getp Linktool)" $TMPDIR/Tool.zip
+Taive "https://github.com/kakathic/VH-MI/releases/download/V1.0/Java.tar.xz" $TMPDIR/Java.tar.xz
+Taive "https://github.com/kakathic/VH-MI/releases/download/V1.0/Tool.zip" $TMPDIR/Tool.zip
 tar x -Jf $TMPDIR/Java.tar.xz -C /data/tools >&2
 unzip -qo $TMPDIR/Tool.zip -d /data/tools >&2
 fi
@@ -429,7 +406,7 @@ fi
 # Tải và giải nén tệp dịch
 
 if [ "$Onlinekk" == 1 ];then
-Taive "$(Getp Linkurl)" "$TMPDIR/Test.zip"
+Taive "https://github.com/Belmont-Gabriel/MIUI-12-XML-Vietnamese/archive/refs/heads/master.zip" "$TMPDIR/Test.zip"
 Taive https://github.com/kakathic/VH-MI/archive/refs/heads/main.zip "$TMPDIR/Testvh.zip"
 [ -e "$TMPDIR/Test.zip" ] && unzip -qo "$TMPDIR/Test.zip" -d /data/tools/tmp >&2 || ui_print "- Lỗi tải dữ liệu thất bại !"
 [ -e "$TMPDIR/Test.zip" ] || abort
@@ -662,12 +639,12 @@ pm uninstall $1 >&2
 mkdir -p /data/local/tmp/apks
 bmmmm="$(pm path "$1" | cut -d : -f2)"
 mkdir -p "$MODPATH${bmmmm%/*}"
-Taive "$2" /data/local/tmp/apks/test.apk
+Taive "$2" /data/local/tmp/apks/$1.apk
 if [ "$bmmmm" ];then
-cp -rf /data/local/tmp/apks/test.apk "$MODPATH$bmmmm"
-pm install -r /data/local/tmp/apks/test.apk >&2
+cp -rf /data/local/tmp/apks/$1.apk "$MODPATH$bmmmm"
+pm install -r /data/local/tmp/apks/$1.apk >&2
 else
-pm install -r /data/local/tmp/apks/test.apk >&2
+pm install -r /data/local/tmp/apks/$1.apk >&2
 fi
 rm -fr /data/local/tmp/apks/*
 }
@@ -676,7 +653,7 @@ AutoTv com.android.thememanager "https://github.com/kakathic/VH-MI/releases/down
 AutoTv com.miui.weather2 "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk"
 AutoTv com.xiaomi.discover "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk"
 
-[ "$(pm path com.android.calendar)" ] && AutoTv com.android.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk" || AutoTv com.xiaomi.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Updatemiui.apk"
+[ "$(pm path com.android.calendar)" ] && AutoTv com.android.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Calendar.apk" || AutoTv com.xiaomi.calendar "https://github.com/kakathic/VH-MI/releases/download/Apk/Calendar.apk"
 
 rm -fr $MODPATH/system/etc
 rm -fr $MODPATH/system/bin
@@ -690,26 +667,8 @@ echo 'ro.product.mod_device=kakathic_global' >> $TMPDIR/system.prop
 fi
 
 
-if [ "$modsecs" == 1 ] && [ "$globals" == 1 ];then
-ui_print2 "Tắt thông báo bộ nhớ tạm"
-ui_print
-pm uninstall com.miui.securitycenter >&2
-mkdir -p /data/local/tmp/apks
-Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/SecurityCenter0.apk" /data/local/tmp/apks/test.apk
-
-pm install -r /data/local/tmp/apks/test.apk >&2
-rm -fr /data/local/tmp/apks
-pm uninstall -k com.miui.securitycenter >&2
-hhfgh="$(pm path "com.miui.securitycenter" | cut -d : -f2)"
-mkdir -p "$MODPATH${hhfgh%/*}"
-Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/SecurityCenter.apk" $MODPATH$hhfgh
-
-unzip -qo $MODPATH$hhfgh lib/arm64-v8a/* -d "$MODPATH${hhfgh%/*}"
-mv -f "$MODPATH${hhfgh%/*}"/lib/arm64-v8a "$MODPATH${hhfgh%/*}"/lib/arm64
-fi
-
 # Fix lỗi gỡ getapps
-if [ "$getapps" == 1 ];then
+if [ "$getapps" != 1 ];then
 ui_print2 "Gỡ Getapps"
 ui_print
 
@@ -740,7 +699,7 @@ FREEZE "${Timpkg%/*}"
 fi
 fi
 
-if [ $Systemii == 1 ] && [ "$globals" == 1 ];then
+if [ $Systemii != 1 ] && [ "$globals" == 1 ];then
 ui_print2 "Hiện tên nhà mạng"
 ui_print
 
@@ -766,7 +725,7 @@ fi
 fi
 
 
-if [ "$theme3" == 1 ] && [ "$globals" == 1 ];then
+if [ "$theme3" != 1 ] && [ "$globals" == 1 ];then
 ui_print2 "Hack Theme"
 ui_print2
 
@@ -818,7 +777,7 @@ fi
 fi
 
 
-if [ "$keyboard" == 1 ];then
+if [ "$keyboard" != 1 ];then
 ui_print2 "Bàn phím nâng cao"
 ui_print
 
@@ -970,7 +929,7 @@ for Bala in product vendor system_ext; do
 [ -e $MODPATH/$Bala ] && mv -f $MODPATH/$Bala $MODPATH/system
 done
 
-ui_print2 "OK: $Tc, Error: $Tb"
+[ "$Tc" != 0 ] && ui_print2 "OK: $Tc, Error: $Tb" || ui_print2 "Hoàn thành"
 ui_print
 }
 
