@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 22:00-09/07/2022
+
++ Sửa lỗi và căn chỉnh lại chọn lựa
+
 Cập nhật: 23:00-06/07/2022
 
 + Tính năng online hoàn toàn
