@@ -642,12 +642,14 @@ mkdir -p "$MODPATH${bmmmm%/*}"
 Taive "$2" /data/local/tmp/apks/$1.apk
 if [ "$bmmmm" ];then
 cp -rf /data/local/tmp/apks/$1.apk "$MODPATH$bmmmm"
-pm install -r /data/local/tmp/apks/$1.apk >&2
+unzip -oq "$MODPATH$bmmmm" lib/arm64-v8a/* -d "$MODPATH${bmmmm%/*}"
+mv -f "$MODPATH${bmmmm%/*}"/lib/arm64-v8a "$MODPATH${bmmmm%/*}"/lib/arm64
 else
 pm install -r /data/local/tmp/apks/$1.apk >&2
 fi
 rm -fr /data/local/tmp/apks/*
 }
+AutoTv com.miui.securitycenter "https://github.com/kakathic/VH-MI/releases/download/Apk/SecurityCenter_global.apk"
 
 AutoTv com.android.thememanager "https://github.com/kakathic/VH-MI/releases/download/Apk/Theme.apk"
 AutoTv com.miui.weather2 "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk"
