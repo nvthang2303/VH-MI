@@ -701,7 +701,7 @@ FREEZE "${Timpkg%/*}"
 fi
 fi
 
-if [ $Systemii != 1 ] && [ "$globals" == 1 ];then
+if [ "$Systemii" != 1 ] && [ "$globals" == 1 ];then
 ui_print2 "Hiện tên nhà mạng"
 ui_print
 
