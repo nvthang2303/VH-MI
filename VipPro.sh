@@ -132,6 +132,30 @@ mount -o ro,remount "/system" >&2
 mount -o ro,remount "/" >&2 || mount -o ro,remount "/" >&2
 }
 
+STime () {
+BatdauT=$(date +%s)
+}
+
+ETime () {
+time="Tổng thời gian"
+h="giờ"
+m="phút"
+s="giây"
+KetthucT=$(date +%s)
+TongTG=$(($KetthucT - $BatdauT))
+Gio=$(printf '%d' $((TongTG/3600%24)))
+Phut=$(printf '%d' $((TongTG/60%60)))
+if [ "$Gio" != 0 ];then
+ui_print2 "$time: $(printf '%d '$h', %d '$m', %d '$s'.' $((TongTG/3600%24)) $((TongTG/60%60)) $((TongTG%60)))"
+elif [ "$Phut" != 0 ];then
+ui_print2 "$time: $(printf '%d '$m', %d '$s'.' $((TongTG/60%60)) $((TongTG%60)))"
+else
+ui_print2 "$time: $(printf '%d '$s'.' $((TongTG%60)))"
+fi
+}
+
+STime
+
 # Giới thiệu
 print_modname() {
 
@@ -148,6 +172,10 @@ ui_print
 
 # Bắt đầu cài đặt
 on_install() {
+
+# Cấp quyền ứng dụng 
+pm grant com.android.calendar android.permission.WRITE_CALENDAR >&2
+pm grant com.android.calendar android.permission.READ_CALENDAR >&2
 
 Lituss="$(Xem https://raw.githubusercontent.com/kakathic/VH-MI/main/User/$(getprop ro.product.device))"
 
@@ -244,12 +272,11 @@ Vl 2
 widget2=$input
 fi
 
-ui_print "- Chuyển nền China thành Global ?"
-ui_print "- Sửa lỗi thông báo chậm !"
-ui_print "! Trở lại nền china vui lòng gỡ mô-đun trước."
+ui_print "- Sửa lỗi thông báo chậm hoặc chuyển nền Global ?"
 ui_print
-ui_print2 "1. Không"
-ui_print2 "2. Có"
+ui_print2 "1. Fix thông báo"
+ui_print2 "2. Global"
+ui_print2 "3. Không"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -285,7 +312,7 @@ getapps=$input
 fi
 
 
-if [ "$globals" == 1 ];then
+if [ "$globals" != 3 ];then
 ui_print "- Hiển thị nhà mạng ở thông báo ?"
 ui_print
 ui_print2 "1. Không"
@@ -350,7 +377,8 @@ ui_print
 ui_print2 "1. Font IOS"
 ui_print2 "2. Font SF V4"
 ui_print2 "3. MiSan VH MIUI 13"
-ui_print2 "4. Không"
+ui_print2 "4. Bo tròn"
+ui_print2 "5. Không"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -526,9 +554,6 @@ mkdir -p $MODPATH/system/vendor/overlay
 cp -rf /data/tools/tmp/Apk/Z.* $MODPATH/system/vendor/overlay
 fi
 
-if [ -e /system/product/overlay/GmsCnConfigOverlay.apk ] || [ -e /system/vendor/overlay/GmsCnConfigOverlay.apk ];then
-[ -e /system/product/overlay ] && unzip -qo $TMPDIR/overlay.zip -d $MODPATH/system/product >&2 || unzip -qo $TMPDIR/overlay.zip -d $MODPATH/system/vendor/overlay >&2
-fi
 
 if [ "$(echo "$List" | grep -cm1 'com.miui.core=miui.apk')" == 1 ];then
 ui_print2 "Dịch 3 ứng dụng hệ thống"
@@ -630,7 +655,7 @@ fi
 
 fi
 
-if [ "$globals" != 1 ];then
+if [ "$globals" == 3 ];then
 ui_print2 "Chuyển nền Global"
 ui_print
 
@@ -665,9 +690,85 @@ rm -fr $MODPATH/system/*/overlay/Z.com.miui.weather2
 rm -fr $MODPATH/system/*/overlay/Z.com.android.thememanager
 
 echo 'ro.product.mod_device=kakathic_global' >> $TMPDIR/system.prop
+elif [ "$globals" == 1 ];then
+sleep 1
+else
+ui_print2 "Fix thông báo"
+ui_print
+
+[ -e /system/framework/oat ] && Xoamount
+
+if [ -e /system/framework/oat ];then
+ui_print2 "Vui lòng xoá các mục sau nếu không sẽ bị bootloop !"
+ui_print
+ui_print2 "/system/framework/oat"
+ui_print2 "/system/framework/arm64"
+ui_print2 "/system/framework/arm"
+ui_print "$(find /system/framework/*.vdex)" | awk '{print "    " $1}'
+abort
+fi
+
+if [ -e /system/media/Key.txt ];then
+mkdir -p $MODPATH/system/framework
+[ -e /system/framework/miui-services.jar ] && cp -rf /system/framework/miui-services.jar $MODPATH/system/framework
+cp -rf /system/framework/services.jar $MODPATH/system/framework
+echo > $MODPATH/system/media/Key.txt
+else
+echo > $MODPATH/system/media/Key.txt
+[ -e /data/tools/tmp/services ] || unbaksmali /system/framework/services.jar
+if [ ! -e /data/tools/tmp/miui-services ];then
+[ -e /system/framework/miui-services.jar ] && unbaksmali /system/framework/miui-services.jar
+fi
+
+[ -e /data/tools/tmp/services ] && mkdir -p /data/tools/tmp/services/classes/miuix/os
+[ -e /data/tools/tmp/miui-services ] && mkdir -p /data/tools/tmp/miui-services/classes/miuix/os
+[ -e /data/tools/tmp/miui-services ] && cp -rf $TMPDIR/Build.smali /data/tools/tmp/miui-services/classes/miuix/os
+[ -e /data/tools/tmp/services ] && cp -rf $TMPDIR/Build.smali /data/tools/tmp/services/classes/miuix/os
+
+for vahhf in $(Timkiem "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "/data/tools/tmp/*services/classes*"); do
+echo "Mod: $vahhf" >&2
+sed -i "s|Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z|Lmiuix/os/Build;->IS_INTERNATIONAL_BUILD:Z|g" $vahhf
+done
+
 
 fi
 
+fi
+
+
+if [ "$globals" != 1 ];then
+ui_print2 "Thời tiết mod"
+ui_print
+pm uninstall com.miui.weather2 >&2
+Pakff="$(pm path "com.miui.weather2" | cut -d : -f2)"
+if [ -e "$Pakff" ];then
+mkdir -p "$MODPATH${Pakff%/*}"
+Taive https://github.com/kakathic/VH-MI/releases/download/Apk/Thoitiet_china.apk "$MODPATH$Pakff"
+unzip -oq "$MODPATH$Pakff" lib/arm64-v8a/* -d "$MODPATH${Pakff%/*}"
+mv -f "$MODPATH${Pakff%/*}"/lib/arm64-v8a "$MODPATH${Pakff%/*}"/lib/arm64
+else
+mkdir -p "$MODPATH/system/app/ThoiTiet"
+Taive https://github.com/kakathic/VH-MI/releases/download/Apk/Thoitiet_china.apk "$MODPATH/system/app/ThoiTiet/ThoiTiet.apk"
+unzip -oq "$MODPATH/system/app/ThoiTiet/ThoiTiet.apk" lib/arm64-v8a/* -d "$MODPATH/system/app/ThoiTiet"
+mv -f "$MODPATH/system/app/ThoiTiet"/lib/arm64-v8a "$MODPATH/system/app/ThoiTiet"/lib/arm64
+fi
+
+
+
+fi
+
+# Bỏ Gms china
+if [ -e /product/etc/permissions/services.cn.google.xml ];then
+mkdir -p $MODPATH/system/product/etc/permissions
+cp -rf /product/etc/permissions/services.cn.google.xml $MODPATH/system/product/etc/permissions
+sed -i '/cn.google.services/d' $MODPATH/system/product/etc/permissions/services.cn.google.xml
+sed -i '/services_updater/d' $MODPATH/system/product/etc/permissions/services.cn.google.xml
+else
+mkdir -p $MODPATH/system/vendor/etc/permissions
+cp -rf /vendor/etc/permissions/services.cn.google.xml $MODPATH/system/vendor/etc/permissions
+sed -i '/cn.google.services/d' $MODPATH/system/vendor/etc/permissions/services.cn.google.xml
+sed -i '/services_updater/d' $MODPATH/system/vendor/etc/permissions/services.cn.google.xml
+fi
 
 # Fix lỗi gỡ getapps
 if [ "$getapps" != 1 ];then
@@ -685,8 +786,12 @@ mkdir -p $MODPATH/system/framework
 cp -rf /system/framework/services.jar $MODPATH/system/framework
 FREEZE "${Ssys%/*}"
 else
+
+if [ ! -e /data/tools/tmp/miui-services ];then
 [ -e /system/framework/miui-services.jar ] && unbaksmali /system/framework/miui-services.jar
-unbaksmali /system/framework/services.jar
+fi
+
+[ -e /data/tools/tmp/services ] || unbaksmali /system/framework/services.jar
 Vsmali ".method private checkSystemSelfProtection(Z)V" \
 ".end method" \
 '.method private checkSystemSelfProtection(Z)V
@@ -701,7 +806,7 @@ FREEZE "${Timpkg%/*}"
 fi
 fi
 
-if [ "$Systemii" != 1 ] && [ "$globals" == 1 ];then
+if [ "$Systemii" != 1 ] && [ "$globals" != 3 ];then
 ui_print2 "Hiện tên nhà mạng"
 ui_print
 
@@ -727,7 +832,7 @@ fi
 fi
 
 
-if [ "$theme3" != 1 ] && [ "$globals" == 1 ];then
+if [ "$theme3" != 1 ] && [ "$globals" != 3 ];then
 ui_print2 "Hack Theme"
 ui_print2
 
@@ -828,8 +933,10 @@ Dso1=$(($Dso1 + 1))
 [ "$Dso1" == 4 ] && Keyk=com.android.cts.mockime
 
 if [ "$Dso1" -le 4 ];then
-sed -i "s|$Keyk|$Vaki|g" $(Timkiem "$Keyk" "/data/tools/tmp/*services/classes*/com/android/server/inputmethod/*")
-sed -i "s|$Keyk|$Vaki|g" $(Timkiem "$Keyk" "/data/tools/tmp/*framework/classes*/android/inputmethodservice/*")
+Te3="$(Timkiem "$Keyk" "/data/tools/tmp/*services/classes*/com/android/server/*")"
+Te4="$(Timkiem "$Keyk" "/data/tools/tmp/*framework/classes*/android/*")"
+[ "$Te3" ] && sed -i "s|$Keyk|$Vaki|g" $Te3 || echo "Error: Te3" >&2
+[ "$Te4" ] && sed -i "s|$Keyk|$Vaki|g" $Te4 || echo "Error: Te4" >&2
 else
 break
 fi
@@ -848,7 +955,8 @@ Dso1=$(($Dso1 + 1))
 [ "$Dso1" == 4 ] && Keyk=com.android.cts.mockime
 
 if [ "$Dso1" -le 4 ];then
-sed -i "s|$Keyk|$Vaki|g" $(Timkiem "$Keyk" "/data/tools/tmp/$1/smali*/com/miui/inputmethod/*")
+Te2="$(Timkiem "$Keyk" "/data/tools/tmp/$1/smali*/com/miui/inputmethod/*")"
+[ "$Te2" ] && sed -i "s|$Keyk|$Vaki|g" $Te2 || echo "Error: Te2" >&2
 else
 break
 fi
@@ -879,7 +987,8 @@ Dso1=$(($Dso1 + 1))
 [ "$Dso1" == 4 ] && Keyk=com.android.cts.mockime
 
 if [ "$Dso1" -le 4 ];then
-sed -i "s|$Keyk|$Vaki|g" $(Timkiem "$Keyk" "/data/tools/tmp/$1/smali*/com/android/settings/inputmethod/*")
+Te1="$(Timkiem "$Keyk" "/data/tools/tmp/$1/smali*/com/android/settings/inputmethod/*")"
+[ "$Te1" ] && sed -i "s|$Keyk|$Vaki|g" $Te1 || echo "Error: Te1" >&2
 else
 break
 fi
@@ -932,6 +1041,8 @@ for Bala in product vendor system_ext; do
 done
 
 [ "$Tc" != 0 ] && ui_print2 "OK: $Tc, Error: $Tb" || ui_print2 "Hoàn thành"
+ui_print
+ETime
 ui_print
 }
 
