@@ -50,7 +50,6 @@ com.android.providers.telephony=TelephonyProvider.apk
 com.android.thememanager=ThemeManager.apk
 com.android.traceur=Traceur.apk
 com.android.vpndialogs=VpnDialogs.apk
-com.miui.weather2=Weather.apk
 com.xiaomi.account=XiaomiAccount.apk
 com.xiaomi.simactivate.service=XiaomiSimActivateService.apk
 android=framework-res.apk
