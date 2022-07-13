@@ -394,7 +394,7 @@ ui_print
 ui_print2 "Chọn: $fontvh"
 ui_print
 else
-Vl 4
+Vl 5
 fontvh=$input
 fi
 
@@ -796,7 +796,7 @@ fi
 
 
 
-if true;then
+if false;then
 ui_print2 "Thời tiết mod"
 ui_print
 pm uninstall com.miui.weather2 >&2
