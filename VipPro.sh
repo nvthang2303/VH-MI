@@ -45,6 +45,11 @@ chmod -R 777 $TMPDIR/Fix.sh
 
 }
 
+DATE=$(date +"%Y-%d-%m")
+
+PAPP () {
+Lapp="$(pm path "$1" | cut -d : -f2)"
+}
 
 # Tìm kiếm
 Timkiem () { find $2 -name '*.smali' -exec grep -Rl "$1" {} +; }
@@ -89,25 +94,23 @@ smali "$vks" -o "$vks.dex"
 rm -fr "$vks"
 done
 cd /data/tools/tmp/$1
-zip -qr /data/tools/tmp/$1.$2 * >&2
+zip -qr "$3/$1.$2" * >&2
 }
 
 unapk () {
 [ "$(pm path $1 | grep -cm1 '/data/')" == 1 ] && cp -rf "$(pm path $1 | cut -d : -f2)" /data/tools/$1.apk
 [ -e /data/tools/$1.apk ] && cp -rf /data/tools/$1.apk /data/tools/tmp/$1.apk || cp -rf "$(pm path $1 | cut -d : -f2)" /data/tools/tmp/$1.apk
-
 pm uninstall -k $1 >&2
-
 pathapk="$(pm path $1 | cut -d : -f2)"
-mkdir -p "$MODPATH${pathapk%/*}"
-echo > "$MODPATH${pathapk%.*}.txt"
+mkdir -p "$MODPATH/${pathapk%/*}"
+echo > $MODPATH/${pathapk%.*}.txt
 apktool d -qrf /data/tools/tmp/$1.apk -o /data/tools/tmp/$1
-
 }
 
 repapk () {
+pathapk2="$(pm path $1 | cut -d : -f2)"
 apktool b -qc /data/tools/tmp/$1 -f -o /data/tools/tmp/$1.apk
-zipalign -f 4 "/data/tools/tmp/$1.apk" "$MODPATH$pathapk"
+zipalign -f 4 "/data/tools/tmp/$1.apk" "$MODPATH/$pathapk2"
 }
 
 
@@ -274,9 +277,9 @@ fi
 
 ui_print "- Sửa lỗi thông báo chậm hoặc chuyển nền Global ?"
 ui_print
-ui_print2 "1. Fix thông báo"
-ui_print2 "2. Global"
-ui_print2 "3. Không"
+ui_print2 "1. Tắt"
+ui_print2 "2. Fix thông báo"
+ui_print2 "3. Global"
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -374,11 +377,12 @@ fi
 
 ui_print "- Sử dụng Font chữ Việt hóa ?"
 ui_print
-ui_print2 "1. Font IOS"
-ui_print2 "2. Font SF V4"
-ui_print2 "3. MiSan VH MIUI 13"
-ui_print2 "4. Bo tròn"
-ui_print2 "5. Không"
+ui_print2 "1. Tắt"
+ui_print2 "2. Font IOS"
+ui_print2 "3. Font SF V4"
+ui_print2 "4. MiSan VH MIUI 13"
+ui_print2 "5. Bo tròn"
+
 ui_print
 ui_print2 "Nhập số:"
 ui_print
@@ -417,6 +421,9 @@ ui_print2 "Tự động xử lý..."
 ui_print
 
 # Giải nén
+[ -e /data/tools/Vip/Tmp-$DATE/system ] || rm -fr /data/tools/Vip/Tmp-*
+mkdir -p /data/tools/Vip/Tmp-$DATE/system/media/theme/default
+MPATH="/data/tools/Vip/Tmp-$DATE"
 mkdir -p /data/tools/tmp
 rm -fr /data/tools/tmp/*
 
@@ -461,21 +468,17 @@ ui_print2 "Ngôn ngữ: $(Getp LinkTn)"
 ui_print
 ui_print2 "Code: $(Getp Linknn)"
 ui_print
-
-if [ -e /system/media/VH-$(date +"%Y-%d-%m").txt ];then
+[ -e /system/product/overlay ] && Overlay=/system/product/overlay || Overlay=/system/vendor/overlay
+if [ -e /data/tools/Vip/VH-$DATE.txt ];then
 ui_print2 "Cài VH thành công"
 ui_print
-if [ -e /system/product/overlay ];then
-mkdir -p $MODPATH/system/product/overlay
-cp -rf /system/product/overlay/Z.* $MODPATH/system/product/overlay
+
+mkdir -p $MODPATH$Overlay
+cp -rf $MPATH/system/product/overlay/Z.* $MODPATH$Overlay
+cp -rf $MPATH/system/media/theme/default/framework-miui-res $MODPATH/system/media/theme/default
+
 else
-mkdir -p $MODPATH/system/vendor/overlay
-cp -rf /system/vendor/overlay/Z.* $MODPATH/system/vendor/overlay
-fi
-cp -rf /system/media/theme/default/framework-miui-res $MODPATH/system/media/theme/default
-cp -rf /system/media/VH-*.txt $MODPATH/system/media
-else
-echo > $MODPATH/system/media/VH-$(date +"%Y-%d-%m").txt
+echo > /data/tools/Vip/VH-$DATE.txt
 # Danh sách dịch
 if [ "$litapp" == 1 ];then
 Taive "https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/$(Getp Linknn)/List.md" "$TMPDIR/List.md"
@@ -533,27 +536,18 @@ Fix
 # Đóng gói bằng apktool và ký
 
 apktool b -q /data/tools/tmp/*/*/main/$path -f -o "/data/tools/tmp/Apk/tmp/Z.$pkg.apk"
-mkdir -p "/data/tools/tmp/Apk/Z.$pkg"
-apksign "/data/tools/tmp/Apk/tmp/Z.$pkg.apk" "/data/tools/tmp/Apk/Z.$pkg/Z.$pkg.apk"
-rm -fr "/data/tools/tmp/Apk/Z.$pkg/Z.$pkg.apk.idsig"
+mkdir -p "$MPATH/system/product/overlay/Z.$pkg"
+apksign "/data/tools/tmp/Apk/tmp/Z.$pkg.apk" "$MPATH/system/product/overlay/Z.$pkg/Z.$pkg.apk"
+rm -fr "$MPATH/system/product/overlay/Z.$pkg/Z.$pkg.apk.idsig"
 
 fi
 # Đếm ứng dụng đã được dịch và thông báo
-[ -s "/data/tools/tmp/Apk/Z.$pkg/Z.$pkg.apk" ] && Tc=$(($Tc + 1)) || Tb=$(($Tb + 1))
-spt=$(($spt + 1))
-ui_print2 "Xong $spt"
-ui_print
+[ -s "$MPATH/system/product/overlay/Z.$pkg/Z.$pkg.apk" ] && Tc=$(($Tc + 1)) || Tb=$(($Tb + 1))
+#spt=$(($spt + 1))
 done
 
-# Dán apk vào MODPATH
-if [ -e /system/product/overlay ];then
-mkdir -p $MODPATH/system/product/overlay
-cp -rf /data/tools/tmp/Apk/Z.* $MODPATH/system/product/overlay
-else
-mkdir -p $MODPATH/system/vendor/overlay
-cp -rf /data/tools/tmp/Apk/Z.* $MODPATH/system/vendor/overlay
-fi
-
+[ "$Tc" != 0 ] && ui_print2 "OK: $Tc, Error: $Tb"
+ui_print
 
 if [ "$(echo "$List" | grep -cm1 'com.miui.core=miui.apk')" == 1 ];then
 ui_print2 "Dịch 3 ứng dụng hệ thống"
@@ -592,22 +586,22 @@ cp -rf /data/tools/tmp/res /data/tools/tmp/Pack
 
 
 cd /data/tools/tmp/Pack
-zip -r $MODPATH/system/media/theme/default/framework-miui-res * >&2
-mv $MODPATH/system/media/theme/default/framework-miui-res.zip $MODPATH/system/media/theme/default/framework-miui-res
+zip -r $MPATH/system/media/theme/default/framework-miui-res * >&2
+mv $MPATH/system/media/theme/default/framework-miui-res.zip $MPATH/system/media/theme/default/framework-miui-res
 fi
 
 fi
 
 
 # Tạo font
-if [ "$fontvh" == 1 ];then
+if [ "$fontvh" == 2 ];then
 ui_print2 "Cài Font"
 ui_print
 cd $MODPATH/system/fonts
 ln -sf MiLanProVF.ttf MiSansVF.ttf
 ln -sf MiLanProVF.ttf RobotoVF.ttf
 ln -sf MiLanProVF.ttf Roboto-Regular.ttf
-elif [ "$fontvh" == 4 ];then
+elif [ "$fontvh" == 1 ];then
 ui_print2 "Xoá Font"
 ui_print
 rm -fr $MODPATH/system/fonts
@@ -628,17 +622,15 @@ ui_print2 "Tải Widget"
 ui_print
 chmod 777 $MODPATH/system/bin/Appvault
 . $MODPATH/system/bin/Appvault >&2
-else
-rm -fr $MODPATH/system/bin/Appvault
 fi
 
 
 if [ "$gapp" != 1 ];then
 ui_print2 "Cài Gapps"
 ui_print
-[ -e "/data/tools/Testgapp_$(date +"%Y-%d-%m").zip" ] || rm -fr /data/tools/Testgapp_*.zip
-[ -e "/data/tools/Testgapp_$(date +"%Y-%d-%m").zip" ] || Taive "https://github.com/kakathic/VH-MI/releases/download/Gapps/Gapp$API.zip" "/data/tools/Testgapp_$(date +"%Y-%d-%m").zip"
-unzip -qo "/data/tools/Testgapp_$(date +"%Y-%d-%m").zip" -d $MODPATH >&2
+[ -e "/data/tools/Testgapp_$DATE.zip" ] || rm -fr /data/tools/Testgapp_*.zip
+[ -e "/data/tools/Testgapp_$DATE.zip" ] || Taive "https://github.com/kakathic/VH-MI/releases/download/Gapps/Gapp$API.zip" "/data/tools/Testgapp_$DATE.zip"
+unzip -qo "/data/tools/Testgapp_$DATE.zip" -d $MODPATH >&2
 if [ -e $MODPATH/system/product/app/LatinImeGoogle/LatinImeGoogle.apk ];then
 mkdir -p /data/local/tmp/apks
 cp -f $MODPATH/system/product/app/LatinImeGoogle/LatinImeGoogle.apk /data/local/tmp/apks
@@ -655,10 +647,13 @@ fi
 
 fi
 
-if [ "$globals" == 3 ];then
+
+if [ "$globals" == 1 ];then
+sleep 1
+elif [ "$globals" == 3 ];then
 ui_print2 "Chuyển nền Global"
 ui_print
-
+echo > /data/tools/Vip/Global.txt
 AutoTv () {
 pm uninstall $1 >&2
 mkdir -p /data/local/tmp/apks
@@ -686,12 +681,9 @@ rm -fr $MODPATH/system/etc
 rm -fr $MODPATH/system/bin
 rm -fr /data/local/tmp/apks
 
-rm -fr $MODPATH/system/*/overlay/Z.com.miui.weather2
 rm -fr $MODPATH/system/*/overlay/Z.com.android.thememanager
 
 echo 'ro.product.mod_device=kakathic_global' >> $TMPDIR/system.prop
-elif [ "$globals" == 1 ];then
-sleep 1
 else
 ui_print2 "Fix thông báo"
 ui_print
@@ -708,35 +700,103 @@ ui_print "$(find /system/framework/*.vdex)" | awk '{print "    " $1}'
 abort
 fi
 
-if [ -e /system/media/Key.txt ];then
+
+AUTOTT () {
+for vahhf in $(grep -Rl "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" /data/tools/tmp/$1); do
+echo "Mod: $vahhf" >&2
+
+while true; do
+DSOTK1="$(grep -c 'Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z' $vahhf)"
+[ "$DSOTK1" == 0 ] && break
+DVBTK="$(grep -m1 'Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z' $vahhf)"
+TTh1="$(echo "$DVBTK" | sed -e 's|sget-boolean|const|' -e 's|Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z|0x1|')"
+sed -i "s|$DVBTK|$TTh1|" $vahhf
+done
+
+done
+}
+
+Lisit () {
+for Mak in $2; do
+AUTOTT "$1$Mak/*.smali"
+done
+}
+
+
+if [ -e /system/media/Fix.txt ];then
+echo > $MODPATH/system/media/Fix.txt
+
 mkdir -p $MODPATH/system/framework
-[ -e /system/framework/miui-services.jar ] && cp -rf /system/framework/miui-services.jar $MODPATH/system/framework
-cp -rf /system/framework/services.jar $MODPATH/system/framework
-echo > $MODPATH/system/media/Key.txt
+[ -e /system/framework/miui-services.jar ] && cp -rf /system/framework/miui-services.jar $MODPATH/system/framework || cp -rf /system/framework/services.jar $MODPATH/system/framework
+
+[ -e /system/framework/miui-framework.jar ] && cp -rf /system/framework/miui-framework.jar $MODPATH/system/framework || cp -rf /system/framework/framework.jar $MODPATH/system/framework
+
+PAPP com.android.systemui
+mkdir -p "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
+
+PAPP com.miui.powerkeeper
+mkdir -p "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
 else
-echo > $MODPATH/system/media/Key.txt
-[ -e /data/tools/tmp/services ] || unbaksmali /system/framework/services.jar
+
+echo > $MODPATH/system/media/Fix.txt
 if [ ! -e /data/tools/tmp/miui-services ];then
 [ -e /system/framework/miui-services.jar ] && unbaksmali /system/framework/miui-services.jar
 fi
 
-[ -e /data/tools/tmp/services ] && mkdir -p /data/tools/tmp/services/classes/miuix/os
-[ -e /data/tools/tmp/miui-services ] && mkdir -p /data/tools/tmp/miui-services/classes/miuix/os
-[ -e /data/tools/tmp/miui-services ] && cp -rf $TMPDIR/Build.smali /data/tools/tmp/miui-services/classes/miuix/os
-[ -e /data/tools/tmp/services ] && cp -rf $TMPDIR/Build.smali /data/tools/tmp/services/classes/miuix/os
-
-for vahhf in $(Timkiem "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "/data/tools/tmp/*services/classes*"); do
-echo "Mod: $vahhf" >&2
-sed -i "s|Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z|Lmiuix/os/Build;->IS_INTERNATIONAL_BUILD:Z|g" $vahhf
-done
-
-
+if [ ! -e /data/tools/tmp/services ];then
+[ -e /system/framework/miui-services.jar ] || unbaksmali /system/framework/services.jar
 fi
 
+Lisit "*services/classes*/" "com/android/server
+com/android/server/am
+com/android/server/backup
+com/android/server/clipboard
+com/android/server/connectivity
+com/android/server/fingerprint
+com/android/server/location
+com/android/server/net
+com/android/server/notification
+com/miui/server"
+
+
+if [ ! -e /data/tools/tmp/miui-framework ];then
+[ -e /system/framework/miui-framework.jar ] && unbaksmali /system/framework/miui-framework.jar
+fi
+
+if [ ! -e /data/tools/tmp/framework ];then
+[ -e /system/framework/miui-framework.jar ] || unbaksmali /system/framework/framework.jar
+fi
+
+Lisit "*framework/classes*/" "android/content/pm
+android/hardware/miuiface
+android/miui
+android/view
+com/android/internal/app
+miui/security
+miui/view"
+
+[ -e /data/tools/tmp/com.android.systemui ] || unapk com.android.systemui
+Lisit "com.android.systemui/smali*/" "com/android/systemui/qs"
+
+[ -e /data/tools/tmp/com.miui.powerkeeper ] || unapk com.miui.powerkeeper
+Lisit "com.miui.powerkeeper/smali*/" "com/miui/powerkeeper/ai
+com/miui/powerkeeper/bucket
+com/miui/powerkeeper/customerpower
+com/miui/powerkeeper/powerchecker
+com/miui/powerkeeper/statemachine
+com/miui/powerkeeper/ui
+com/miui/powerkeeper/utils
+miui/provider
+miui/telephony"
+
+fi
 fi
 
 
-if [ "$globals" != 1 ];then
+
+if true;then
 ui_print2 "Thời tiết mod"
 ui_print
 pm uninstall com.miui.weather2 >&2
@@ -752,9 +812,6 @@ Taive https://github.com/kakathic/VH-MI/releases/download/Apk/Thoitiet_china.apk
 unzip -oq "$MODPATH/system/app/ThoiTiet/ThoiTiet.apk" lib/arm64-v8a/* -d "$MODPATH/system/app/ThoiTiet"
 mv -f "$MODPATH/system/app/ThoiTiet"/lib/arm64-v8a "$MODPATH/system/app/ThoiTiet"/lib/arm64
 fi
-
-
-
 fi
 
 # Bỏ Gms china
@@ -791,7 +848,10 @@ if [ ! -e /data/tools/tmp/miui-services ];then
 [ -e /system/framework/miui-services.jar ] && unbaksmali /system/framework/miui-services.jar
 fi
 
-[ -e /data/tools/tmp/services ] || unbaksmali /system/framework/services.jar
+if [ ! -e /data/tools/tmp/services ];then
+[ -e /system/framework/miui-services.jar ] || unbaksmali /system/framework/services.jar
+fi
+
 Vsmali ".method private checkSystemSelfProtection(Z)V" \
 ".end method" \
 '.method private checkSystemSelfProtection(Z)V
@@ -819,17 +879,17 @@ echo "Mod: $Tkllg" >&2
 sed -i "s|$tk|$kk|g" $Tkllg
 }
 
-checkui="$(pm path "com.android.systemui" | cut -d : -f2)"
-if [ "$(echo "$checkui" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${checkui%.*}.txt" ];then
-unapk com.android.systemui
+PAPP com.android.systemui
+if [ "$(echo "$Lapp" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${Lapp%.*}.txt" ];then
+[ -e /data/tools/tmp/com.android.systemui ] || unapk com.android.systemui
 modui com.android.systemui
-repapk com.android.systemui
 else
-mkdir -p "$MODPATH${checkui%/*}"
-cp -rf "${checkui%/*}"/*.apk "$MODPATH${checkui%/*}"
-cp -rf "${checkui%/*}"/*.txt "$MODPATH${checkui%/*}"
+mkdir -p "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%.*}.2.txt" "$MODPATH${Lapp%/*}"
 fi
 fi
+
 
 
 if [ "$theme3" != 1 ] && [ "$globals" != 3 ];then
@@ -844,8 +904,10 @@ HTk4="$(grep -Rl "DRM_ERROR_UNKNOWN" /data/tools/tmp/$1/smali*)"
 [ "$HTk4" ] && sed -i 's/DRM_ERROR_UNKNOWN/DRM_SUCCESS/g' $HTk4 || ui_print2 "Lỗi: DRM_ERROR_UNKNOWN" >&2
 
 HTk1="$(find /data/tools/tmp/$1/smali* -type f -name 'OnlineResourceDetailPresenter.smali' | xargs grep -Rl '.OnlineResourceDetail;->bought:Z')"
-
 [ "$HTk1" ] && sed -i -e '/OnlineResourceDetail;->bought:Z/i\    const/4 v0, 0x1' -e '/OnlineResourceDetail;->bought:Z/i\    return v0' $HTk1 || ui_print2 "Lỗi: OnlineResourceDetail" >&2
+
+HTk21="$(find /data/tools/tmp/$1/smali* -type f -name 'j.smali' | xargs grep -Rl '.OnlineResourceDetail;->bought:Z')"
+[ "$HTk21" ] && sed -i -e '/OnlineResourceDetail;->bought:Z/i\    const/4 v0, 0x1' -e '/OnlineResourceDetail;->bought:Z/i\    return v0' $HTk21 || ui_print2 "Lỗi: OnlineResourceDetail" >&2
 
 Vsmali ".method public isVideoAd()Z" \
 ".end method" \
@@ -871,16 +933,15 @@ Vsmali ".method private static isAdValid" \
 
 }
 
-checktheme="$(pm path "com.android.thememanager" | cut -d : -f2)"
-if [ "$(echo "$checktheme" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${checktheme%.*}.txt" ];then
-unapk com.android.thememanager
+
+PAPP com.android.thememanager
+if [ "$(echo "$Lapp" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${Lapp%.*}.txt" ];then
+[ -e /data/tools/tmp/com.android.thememanager ] || unapk com.android.thememanager
 modtheme com.android.thememanager
-repapk com.android.thememanager
 else
-mkdir -p "$MODPATH${checktheme%/*}"
-cp -rf "${checktheme%/*}"/*.apk "$MODPATH${checktheme%/*}"
-cp -rf "${checktheme%/*}"/*.txt "$MODPATH${checktheme%/*}"
-fi
+mkdir -p "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%.*}.txt" "$MODPATH${Lapp%/*}"
 fi
 
 
@@ -906,23 +967,30 @@ Listbp="$(ime list -s | cut -d '/' -f1 | sed -e '/com.iflytek.inputmethod.miui/d
 
 
 if [ -e /system/media/Key.txt ];then
-mkdir -p $MODPATH/system/framework
-[ -e /system/framework/miui-services.jar ] && cp -rf /system/framework/miui-services.jar $MODPATH/system/framework
-[ -e /system/framework/miui-framework.jar ] && cp -rf /system/framework/miui-framework.jar $MODPATH/system/framework
 
-cp -rf /system/framework/framework.jar $MODPATH/system/framework/framework.jar
-cp -rf /system/framework/services.jar $MODPATH/system/framework
+mkdir -p $MODPATH/system/framework
+[ -e /system/framework/miui-services.jar ] && cp -rf /system/framework/miui-services.jar $MODPATH/system/framework || cp -rf /system/framework/services.jar $MODPATH/system/framework
+
+[ -e /system/framework/miui-framework.jar ] && cp -rf /system/framework/miui-framework.jar $MODPATH/system/framework || cp -rf /system/framework/framework.jar $MODPATH/system/framework
 echo > $MODPATH/system/media/Key.txt
 else
+
 echo > $MODPATH/system/media/Key.txt
+if [ ! -e /data/tools/tmp/miui-framework ];then
+[ -e /system/framework/miui-framework.jar ] && unbaksmali /system/framework/miui-framework.jar
+fi
+
+if [ ! -e /data/tools/tmp/framework ];then
+[ -e /system/framework/miui-framework.jar ] || unbaksmali /system/framework/framework.jar
+fi
 
 if [ ! -e /data/tools/tmp/miui-services ];then
 [ -e /system/framework/miui-services.jar ] && unbaksmali /system/framework/miui-services.jar
 fi
-[ -e /data/tools/tmp/services ] || unbaksmali /system/framework/services.jar
 
-unbaksmali /system/framework/framework.jar
-[ -e /system/framework/miui-framework.jar ] && unbaksmali /system/framework/miui-framework.jar
+if [ ! -e /data/tools/tmp/services ];then
+[ -e /system/framework/miui-services.jar ] || unbaksmali /system/framework/services.jar
+fi
 
 for Vaki in $Listbp; do
 if [ "$Vaki" ];then
@@ -942,6 +1010,7 @@ break
 fi
 fi
 done
+fi
 fi
 
 modphrase () {
@@ -965,15 +1034,14 @@ done
 
 }
 
-checkphrase="$(pm path "com.miui.phrase" | cut -d : -f2)"
-if [ "$(echo "$checkphrase" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${checkphrase%.*}.txt" ];then
-unapk com.miui.phrase
+PAPP com.miui.phrase
+if [ "$(echo "$Lapp" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${Lapp%.*}.txt" ];then
+[ -e /data/tools/tmp/com.miui.phrase ] || unapk com.miui.phrase
 modphrase com.miui.phrase
-repapk com.miui.phrase
 else
-mkdir -p "$MODPATH${checkphrase%/*}"
-cp -rf "${checkphrase%/*}"/*.apk "$MODPATH${checkphrase%/*}"
-cp -rf "${checkphrase%/*}"/*.txt "$MODPATH${checkphrase%/*}"
+mkdir -p "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%.*}.txt" "$MODPATH${Lapp%/*}"
 fi
 
 modset () {
@@ -1006,17 +1074,16 @@ Vsmali '.method public static isMiuiImeBottomSupport()Z' \
 "/data/tools/tmp/$1/smali*/*"
 }
 
-checkset="$(pm path "com.android.settings" | cut -d : -f2)"
-if [ "$(echo "$checkset" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${checkset%.*}.txt" ];then
-unapk com.android.settings
-modset com.android.settings
-repapk com.android.settings
-else
-mkdir -p "$MODPATH${checkset%/*}"
-cp -rf "${checkset%/*}"/*.apk "$MODPATH${checkset%/*}"
-cp -rf "${checkset%/*}"/*.txt "$MODPATH${checkset%/*}"
-fi
 
+PAPP com.android.settings
+if [ "$(echo "$Lapp" | grep -cm1 '/data/')" == 1 ] || [ ! -e "${Lapp%.*}.txt" ];then
+[ -e /data/tools/tmp/com.android.settings ] || unapk com.android.settings
+modset com.android.settings
+else
+mkdir -p "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%.*}.2.txt" "$MODPATH${Lapp%/*}"
+fi
 fi
 
 
@@ -1024,23 +1091,27 @@ ui_print2 "Đóng gói lại tất cả..."
 ui_print
 # Nén lại
 
-mkdir -p $MODPATH/system/framework
-[ -e /data/tools/tmp/framework ] && repmali framework jar
-[ -e /data/tools/tmp/framework.jar ] && cp -rf /data/tools/tmp/framework.jar $MODPATH/system/framework/framework.jar
-[ -e /data/tools/tmp/miui-framework ] && repmali miui-framework jar
-[ -e /data/tools/tmp/miui-framework.jar ] && cp -rf /data/tools/tmp/miui-framework.jar $MODPATH/system/framework
 
-[ -e /data/tools/tmp/services ] && repmali services jar
-[ -e /data/tools/tmp/miui-services ] && repmali miui-services jar
+mkdir -p "$MODPATH/system/framework"
 
-[ -e /data/tools/tmp/services.jar ] && cp -rf /data/tools/tmp/services.jar $MODPATH/system/framework
-[ -e /data/tools/tmp/miui-services.jar ] && cp -rf /data/tools/tmp/miui-services.jar $MODPATH/system/framework
+[ -e /data/tools/tmp/framework ] && repmali framework jar $MODPATH/system/framework
+[ -e /data/tools/tmp/miui-framework ] && repmali miui-framework jar $MODPATH/system/framework
+[ -e /data/tools/tmp/services ] && repmali services jar $MODPATH/system/framework
+[ -e /data/tools/tmp/miui-services ] && repmali miui-services jar $MODPATH/system/framework
+
+[ -e /data/tools/tmp/com.android.settings ] && repapk com.android.settings
+[ -e /data/tools/tmp/com.android.systemui ] && repapk com.android.systemui
+[ -e /data/tools/tmp/com.android.thememanager ] && repapk com.android.thememanager
+[ -e /data/tools/tmp/com.miui.phrase ] && repapk com.miui.phrase
+[ -e /data/tools/tmp/com.miui.powerkeeper ] && repapk com.miui.powerkeeper
+
+cp -rf $MPATH/* $MODPATH
 
 for Bala in product vendor system_ext; do
 [ -e $MODPATH/$Bala ] && mv -f $MODPATH/$Bala $MODPATH/system
 done
 
-[ "$Tc" != 0 ] && ui_print2 "OK: $Tc, Error: $Tb" || ui_print2 "Hoàn thành"
+ui_print2 "Hoàn thành"
 ui_print
 ETime
 ui_print
