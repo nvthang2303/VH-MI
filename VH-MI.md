@@ -1,5 +1,10 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 19:50-13/07/2022
+
++ Thêm tính năng fix thông báo nền china
++ Sửa lỗi 1 số thứ
+
 Cập nhật: 22:00-09/07/2022
 
 + Sửa lỗi và căn chỉnh lại chọn lựa
