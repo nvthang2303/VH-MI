@@ -757,7 +757,20 @@ android/miui
 android/view
 com/android/internal/app
 miui/security
-miui/view"
+miui/view
+android/os/storage
+android/provider
+android/widget
+android/app
+miui/securityspace"
+
+khf="
+
+android/content/pm
+
+"
+
+
 
 [ -e /data/tools/tmp/com.android.systemui ] || unapk com.android.systemui
 Lisit "com.android.systemui/smali*/" "com/android/systemui/qs
@@ -790,12 +803,12 @@ pm uninstall com.miui.weather2 >&2
 Pakff="$(pm path "com.miui.weather2" | cut -d : -f2)"
 if [ -e "$Pakff" ];then
 mkdir -p "$MODPATH${Pakff%/*}"
-Taive https://github.com/kakathic/VH-MI/releases/download/Apk/Thoitiet_china.apk "$MODPATH$Pakff"
+Taive https://github.com/kakathic/VH-MI/releases/download/Apk/ThoiTiet.apk "$MODPATH$Pakff"
 unzip -oq "$MODPATH$Pakff" lib/arm64-v8a/* -d "$MODPATH${Pakff%/*}"
 mv -f "$MODPATH${Pakff%/*}"/lib/arm64-v8a "$MODPATH${Pakff%/*}"/lib/arm64
 else
 mkdir -p "$MODPATH/system/app/ThoiTiet"
-Taive https://github.com/kakathic/VH-MI/releases/download/Apk/Thoitiet_china.apk "$MODPATH/system/app/ThoiTiet/ThoiTiet.apk"
+Taive https://github.com/kakathic/VH-MI/releases/download/Apk/ThoiTiet.apk "$MODPATH/system/app/ThoiTiet/ThoiTiet.apk"
 unzip -oq "$MODPATH/system/app/ThoiTiet/ThoiTiet.apk" lib/arm64-v8a/* -d "$MODPATH/system/app/ThoiTiet"
 mv -f "$MODPATH/system/app/ThoiTiet"/lib/arm64-v8a "$MODPATH/system/app/ThoiTiet"/lib/arm64
 fi
