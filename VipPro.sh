@@ -1,7 +1,7 @@
 
 # Giống như echo
-ui_print2 () { echo "    $1"; sleep 0.05; }
-ui_print () { echo "$1"; sleep 0.05; }
+ui_print2 () { echo "    $1"; sleep 0.005; }
+ui_print () { echo "$1"; sleep 0.005; }
 
 # Phím âm lượng
 Vl () { 
@@ -118,21 +118,23 @@ zipalign -f 4 "/data/tools/tmp/$1.apk" "$MODPATH/$pathapk2"
 sed () { toybox sed "$@"; }
 cut () { toybox cut "$@"; }
 
-
-# Xoá dexoat
 Xoamount () {
-mount -o rw,remount "/" >&2
-mount -o rw,remount "/system" >&2
-mount -o rw,remount "/system_root" >&2
-rm -fr /system/framework/oat
-rm -fr /system/framework/arm64
-rm -fr /system/framework/arm
-for vahkf in $(find /system/framework/*.vdex); do
-rm -fr "$vahkf"
+[ "$API" -ge 31 ] && Phdhb="miui-services" || Phdhb="services"
+[ "$API" -ge 31 ] && fwvev="boot-miui-framework" || fwvev="boot-framework"
+Like1="/system/framework/$fwvev.vdex
+/system/framework/arm64/$fwvev.vdex
+/system/framework/arm64/$fwvev.oat
+/system/framework/arm64/$fwvev.art
+/system/framework/arm/$fwvev.vdex
+/system/framework/arm/$fwvev.oat
+/system/framework/arm/$fwvev.art
+/system/framework/oat/arm64/$Phdhb.vdex
+/system/framework/oat/arm64/$Phdhb.odex
+/system/framework/oat/arm64/$Phdhb.art"
+for Akkdh in $Like1; do
+[ -e "$Akkdh" ] && mkdir -p "$MODPATH/${Akkdh%/*}"
+[ -e "$Akkdh" ] && echo > $MODPATH/$Akkdh
 done
-mount -o ro,remount "/system_root" >&2
-mount -o ro,remount "/system" >&2
-mount -o ro,remount "/" >&2 || mount -o ro,remount "/" >&2
 }
 
 STime () {
@@ -291,7 +293,7 @@ ui_print
 ui_print2 "Chọn: $globals"
 ui_print
 else
-Vl 2
+Vl 3
 globals=$input
 fi
 
@@ -688,19 +690,6 @@ else
 ui_print2 "Fix thông báo"
 ui_print
 
-[ -e /system/framework/oat ] && Xoamount
-
-if [ -e /system/framework/oat ];then
-ui_print2 "Vui lòng xoá các mục sau nếu không sẽ bị bootloop !"
-ui_print
-ui_print2 "/system/framework/oat"
-ui_print2 "/system/framework/arm64"
-ui_print2 "/system/framework/arm"
-ui_print "$(find /system/framework/*.vdex)" | awk '{print "    " $1}'
-abort
-fi
-
-
 AUTOTT () {
 for vahhf in $(grep -Rl "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" /data/tools/tmp/$1); do
 echo "Mod: $vahhf" >&2
@@ -778,7 +767,10 @@ miui/security
 miui/view"
 
 [ -e /data/tools/tmp/com.android.systemui ] || unapk com.android.systemui
-Lisit "com.android.systemui/smali*/" "com/android/systemui/qs"
+Lisit "com.android.systemui/smali*/" "com/android/systemui/qs
+com/android/settingslib/util
+com/android/keyguard/magazine/utils
+com/android/systemui/qs/tiles"
 
 [ -e /data/tools/tmp/com.miui.powerkeeper ] || unapk com.miui.powerkeeper
 Lisit "com.miui.powerkeeper/smali*/" "com/miui/powerkeeper/ai
@@ -789,6 +781,8 @@ com/miui/powerkeeper/statemachine
 com/miui/powerkeeper/ui
 com/miui/powerkeeper/utils
 miui/provider
+com/miui/powerkeeper/millet
+miui/cta
 miui/telephony"
 
 fi
@@ -832,7 +826,6 @@ if [ "$getapps" != 1 ];then
 ui_print2 "Gỡ Getapps"
 ui_print
 
-[ -e /system/framework/oat ] && Xoamount
 pm uninstall com.xiaomi.market >&2
 Ssys=$(find /system/*/*Market*/ -name .replace)
 
@@ -886,7 +879,7 @@ modui com.android.systemui
 else
 mkdir -p "$MODPATH${Lapp%/*}"
 cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
-cp -rf "${Lapp%.*}.2.txt" "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%.*}.txt" "$MODPATH${Lapp%/*}"
 fi
 fi
 
@@ -948,20 +941,6 @@ fi
 if [ "$keyboard" != 1 ];then
 ui_print2 "Bàn phím nâng cao"
 ui_print
-
-[ -e /system/framework/oat ] && Xoamount
-
-if [ -e /system/framework/oat ];then
-ui_print2 "Vui lòng xoá các mục sau nếu không sẽ bị bootloop !"
-ui_print
-ui_print2 "/system/framework/oat"
-ui_print2 "/system/framework/arm64"
-ui_print2 "/system/framework/arm"
-ui_print "$(find /system/framework/*.vdex)" | awk '{print "    " $1}'
-abort
-fi
-
-
 
 Listbp="$(ime list -s | cut -d '/' -f1 | sed -e '/com.iflytek.inputmethod.miui/d' -e '/com.sohu.inputmethod.sogou.xiaomi/d' -e '/com.baidu.input_mi/d' -e '/com.miui.securityinputmethod/d')"
 
@@ -1082,7 +1061,7 @@ modset com.android.settings
 else
 mkdir -p "$MODPATH${Lapp%/*}"
 cp -rf "${Lapp%/*}"/*.apk "$MODPATH${Lapp%/*}"
-cp -rf "${Lapp%.*}.2.txt" "$MODPATH${Lapp%/*}"
+cp -rf "${Lapp%.*}.txt" "$MODPATH${Lapp%/*}"
 fi
 fi
 
@@ -1104,6 +1083,10 @@ mkdir -p "$MODPATH/system/framework"
 [ -e /data/tools/tmp/com.android.thememanager ] && repapk com.android.thememanager
 [ -e /data/tools/tmp/com.miui.phrase ] && repapk com.miui.phrase
 [ -e /data/tools/tmp/com.miui.powerkeeper ] && repapk com.miui.powerkeeper
+
+if [ "$globals" == 2 ] || [ "$keyboard" == 2 ] || [ "$getapps" == 2 ];then
+Xoamount
+fi
 
 cp -rf $MPATH/* $MODPATH
 
