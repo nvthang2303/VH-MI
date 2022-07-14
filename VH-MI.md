@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 13:50-14/07/2022
+
++ Hỗ trợ các tính năng nâng cao cho android 12
+
 Cập nhật: 19:50-13/07/2022
 
 + Thêm tính năng fix thông báo nền china
