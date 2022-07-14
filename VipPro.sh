@@ -116,24 +116,16 @@ zipalign -f 4 "/data/tools/tmp/$1.apk" "$MODPATH/$pathapk2"
 Xoamount () {
 mkdir -p /data/tools/1
 cd /data/tools
-[ "$API" -ge 31 ] && Phdhb="miui-services" || Phdhb="services"
-[ "$API" -ge 31 ] && fwvev="boot-miui-framework" || fwvev="boot-framework"
-Like1="/system/framework/$fwvev.vdex
-/system/framework/arm64/$fwvev.vdex
-/system/framework/arm64/$fwvev.oat
-/system/framework/arm64/$fwvev.art
-/system/framework/arm/$fwvev.vdex
-/system/framework/arm/$fwvev.oat
-/system/framework/arm/$fwvev.art
-/system/framework/oat/arm64/$Phdhb.vdex
-/system/framework/oat/arm64/$Phdhb.odex
-/system/framework/oat/arm64/$Phdhb.art"
+Like1="/system/framework/oat
+/system/framework/arm64
+/system/framework/arm
+$(find /system/framework/*.vdex)"
 for Akkdh in $Like1; do
-[ -e "$Akkdh" ] && mkdir -p "$MODPATH/${Akkdh%/*}"
 [ -e "$Akkdh" ] && ln -sf 1 $MODPATH/$Akkdh
 done
 rm -fr /data/tools/1
 }
+
 
 # Static
 sed () { toybox sed "$@"; }
