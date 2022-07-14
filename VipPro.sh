@@ -752,8 +752,7 @@ if [ ! -e /data/tools/tmp/framework ];then
 [ -e /system/framework/miui-framework.jar ] || unbaksmali /system/framework/framework.jar
 fi
 
-Lisit "*framework/classes*/" "android/content/pm
-android/hardware/miuiface
+Lisit "*framework/classes*/" "android/hardware/miuiface
 android/miui
 android/view
 com/android/internal/app
@@ -784,7 +783,7 @@ fi
 
 
 
-if false;then
+if true;then
 ui_print2 "Thời tiết mod"
 ui_print
 pm uninstall com.miui.weather2 >&2
@@ -1087,6 +1086,8 @@ cp -rf $MPATH/* $MODPATH
 for Bala in product vendor system_ext; do
 [ -e $MODPATH/$Bala ] && mv -f $MODPATH/$Bala $MODPATH/system
 done
+
+[ -e /data/adb/modules/safetynet-fix ] && echo > /data/adb/modules/safetynet-fix/remove
 
 ui_print2 "Hoàn thành"
 ui_print
