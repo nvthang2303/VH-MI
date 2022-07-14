@@ -114,16 +114,13 @@ zipalign -f 4 "/data/tools/tmp/$1.apk" "$MODPATH/$pathapk2"
 }
 
 Xoamount () {
-mkdir -p /data/tools/1
-cd /data/tools
 Like1="/system/framework/oat
 /system/framework/arm64
 /system/framework/arm
 $(find /system/framework/*.vdex)"
 for Akkdh in $Like1; do
-[ -e "$Akkdh" ] && ln -sf 1 $MODPATH/$Akkdh
+[ -e "$Akkdh" ] && echo -n > $MODPATH/$Akkdh
 done
-rm -fr /data/tools/1
 }
 
 
