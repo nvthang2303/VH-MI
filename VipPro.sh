@@ -119,7 +119,7 @@ Like1="/system/framework/oat
 /system/framework/arm
 $(find /system/framework/*.vdex)"
 for Akkdh in $Like1; do
-[ -e "$Akkdh" ] && echo -n > $MODPATH/$Akkdh
+echo -n > $MODPATH/$Akkdh
 done
 }
 
