@@ -1,6 +1,6 @@
 {
     "version": "4.7",
     "versionCode": "47",
-    "zipUrl": "/releases/download/4.7/VH-MI.Zip",
+    "zipUrl": "https://github.com/kakathic/VH-MI/releases/download/4.7/VH-MI.Zip",
     "changelog": "https://raw.githubusercontent.com/kakathic/VH-MI/main/VH-MI.md"
 }
