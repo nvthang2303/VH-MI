@@ -113,12 +113,9 @@ apktool b -qc /data/tools/tmp/$1 -f -o /data/tools/tmp/$1.apk
 zipalign -f 4 "/data/tools/tmp/$1.apk" "$MODPATH/$pathapk2"
 }
 
-
-# Static
-sed () { toybox sed "$@"; }
-cut () { toybox cut "$@"; }
-
 Xoamount () {
+mkdir -p /data/tools/1
+cd /data/tools
 [ "$API" -ge 31 ] && Phdhb="miui-services" || Phdhb="services"
 [ "$API" -ge 31 ] && fwvev="boot-miui-framework" || fwvev="boot-framework"
 Like1="/system/framework/$fwvev.vdex
@@ -133,9 +130,14 @@ Like1="/system/framework/$fwvev.vdex
 /system/framework/oat/arm64/$Phdhb.art"
 for Akkdh in $Like1; do
 [ -e "$Akkdh" ] && mkdir -p "$MODPATH/${Akkdh%/*}"
-[ -e "$Akkdh" ] && echo > $MODPATH/$Akkdh
+[ -e "$Akkdh" ] && ln -sf 1 $MODPATH/$Akkdh
 done
+rm -fr /data/tools/1
 }
+
+# Static
+sed () { toybox sed "$@"; }
+cut () { toybox cut "$@"; }
 
 STime () {
 BatdauT=$(date +%s)
