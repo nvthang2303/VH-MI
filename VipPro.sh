@@ -121,7 +121,7 @@ Like1="/system/framework/oat
 /system/framework/arm
 $(find /system/framework/*.vdex)"
 for Akkdh in $Like1; do
-[ -e "$Akkdh" ] && ln -sf 1 $MODPATH/$Akkdh
+ln -sf 1 $MODPATH/$Akkdh
 done
 rm -fr /data/tools/1
 }
@@ -1096,6 +1096,6 @@ ui_print
 
 # Cấp quyền
 set_permissions() { 
-set_perm_recursive $MODPATH 0 0 0755 0644
-set_perm_recursive $MODPATH/system/bin 0 2000 0755 0755
+set_perm_recursive $MODPATH 0 0 0755 0644 2>/dev/null
+set_perm_recursive $MODPATH/system/bin 0 2000 0755 0755 2>/dev/null
 }
