@@ -686,8 +686,6 @@ ui_print
 
 AUTOTT () {
 for vahhf in $(grep -Rl "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" /data/tools/tmp/$1); do
-echo "Mod: $vahhf" >&2
-
 while true; do
 DSOTK1="$(grep -c 'Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z' $vahhf)"
 [ "$DSOTK1" == 0 ] && break
@@ -695,7 +693,6 @@ DVBTK="$(grep -m1 'Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z' $vahhf)"
 TTh1="$(echo "$DVBTK" | sed -e 's|sget-boolean|const|' -e 's|Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z|0x1|')"
 sed -i "s|$DVBTK|$TTh1|" $vahhf
 done
-
 done
 }
 
@@ -741,7 +738,21 @@ com/android/server/fingerprint
 com/android/server/location
 com/android/server/net
 com/android/server/notification
+com/android/server/wm
 com/miui/server"
+
+Vsmali ".method public static isPermissionReviewDisabled()Z" \
+".end method" \
+'.method public static isPermissionReviewDisabled()Z
+    .registers 1
+
+    invoke-static {}, Landroid/miui/AppOpsUtils;->isXOptMode()Z
+
+    const/4 v0, 0x1
+
+    return v0
+.end method' \
+"/data/tools/tmp/*services/classes*/com/android/server/pm/permission/*"
 
 
 if [ ! -e /data/tools/tmp/miui-framework ];then
@@ -761,21 +772,30 @@ miui/view
 android/os/storage
 android/provider
 android/widget
-android/app
+miui/app
+miui/content/pm
 miui/securityspace"
 
-khf="
+# android/app
+# android/content/pm
 
-android/content/pm
+Vsmali ".method public static isOptimizationMode()Z" \
+".end method" \
+'.method public static isOptimizationMode()Z
+    .registers 1
 
-"
+    invoke-static {}, Landroid/miui/AppOpsUtils;->isXOptMode()Z
 
+    const/4 v0, 0x1
+
+    return v0
+.end method' \
+"/data/tools/tmp/*framework/classes*/android/content/pm/*"
 
 
 [ -e /data/tools/tmp/com.android.systemui ] || unapk com.android.systemui
 Lisit "com.android.systemui/smali*/" "com/android/systemui/qs
 com/android/settingslib/util
-com/android/keyguard/magazine/utils
 com/android/systemui/qs/tiles"
 
 [ -e /data/tools/tmp/com.miui.powerkeeper ] || unapk com.miui.powerkeeper
@@ -903,10 +923,10 @@ HTk4="$(grep -Rl "DRM_ERROR_UNKNOWN" /data/tools/tmp/$1/smali*)"
 [ "$HTk4" ] && sed -i 's/DRM_ERROR_UNKNOWN/DRM_SUCCESS/g' $HTk4 || ui_print2 "Lỗi: DRM_ERROR_UNKNOWN" >&2
 
 HTk1="$(find /data/tools/tmp/$1/smali* -type f -name 'OnlineResourceDetailPresenter.smali' | xargs grep -Rl '.OnlineResourceDetail;->bought:Z')"
-[ "$HTk1" ] && sed -i -e '/OnlineResourceDetail;->bought:Z/i\    const/4 v0, 0x1' -e '/OnlineResourceDetail;->bought:Z/i\    return v0' $HTk1 || ui_print2 "Lỗi: OnlineResourceDetail" >&2
+[ "$HTk1" ] && sed -i -e '/iget-boolean v1, v0, Lcom\/android\/thememanager\/detail\/theme\/model\/OnlineResourceDetail;->bought:Z/i\    const/4 v0, 0x1' -e '/iget-boolean v1, v0, Lcom\/android\/thememanager\/detail\/theme\/model\/OnlineResourceDetail;->bought:Z/i\    return v0' $HTk1 || ui_print2 "Lỗi: OnlineResourceDetail" >&2
 
-HTk21="$(find /data/tools/tmp/$1/smali* -type f -name 'j.smali' | xargs grep -Rl '.OnlineResourceDetail;->bought:Z')"
-[ "$HTk21" ] && sed -i -e '/OnlineResourceDetail;->bought:Z/i\    const/4 v0, 0x1' -e '/OnlineResourceDetail;->bought:Z/i\    return v0' $HTk21 || ui_print2 "Lỗi: OnlineResourceDetail" >&2
+HTk21="$(find /data/tools/tmp/$1/smali* -type f -name 'j*.smali' | xargs grep -Rl '.OnlineResourceDetail;->bought:Z')"
+[ "$HTk21" ] && sed -i -e '/iget-boolean v1, v0, Lcom\/android\/thememanager\/detail\/theme\/model\/OnlineResourceDetail;->bought:Z/i\    const/4 v0, 0x1' -e '/iget-boolean v1, v0, Lcom\/android\/thememanager\/detail\/theme\/model\/OnlineResourceDetail;->bought:Z/i\    return v0' $HTk21 || ui_print2 "Lỗi: j OnlineResourceDetail" >&2
 
 Vsmali ".method public isVideoAd()Z" \
 ".end method" \
@@ -930,6 +950,8 @@ Vsmali ".method private static isAdValid" \
 .end method' \
 "/data/tools/tmp/$1/smali*/*"
 
+mkdir -p "$MODPATH${pathapk%/*}"/lib/arm64
+cp -rf "/data/tools/tmp/com.android.thememanager/lib/arm64-v8a"/* "$MODPATH${pathapk%/*}"/lib/arm64
 }
 
 
