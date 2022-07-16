@@ -1,14 +1,14 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 10:22-16/07/2022
+
++ Thêm cho phép cài đặt ứng dụng hệ thống
++ Thêm lịch, thời tiết
+
 Cập nhật: 07:50-15/07/2022
 
 + Cập nhật lại hệ thống cài đặt
 + Fix lỗi tải theme 
-
-Cập nhật: 13:50-14/07/2022
-
-+ Hỗ trợ các tính năng nâng cao cho android 12
-+ Lưu ý gỡ module SafetyNet nếu dùng
 
 Cập nhật: 19:50-13/07/2022
 
