@@ -2,7 +2,7 @@
 
 Tools Việt Hoá MIUI Offline và Online
 #
-#### 🌱 [Tải xuống](https://github.com/kakathic/VH-MI/releases) 🌲
+#### 🌱 [Tải xuống VH-MI.Zip](https://github.com/kakathic/VH-MI/releases) 🌲
 #
 #### 🎁 Tính năng có sẵn:
 
