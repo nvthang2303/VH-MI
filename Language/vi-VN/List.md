@@ -1,3 +1,4 @@
+com.miui.weather2=Weather.apk
 com.lbe.security.miui=AuthManager.apk
 com.miui.backup=Backup.apk
 com.android.bluetooth=Bluetooth.apk
