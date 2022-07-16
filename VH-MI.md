@@ -4,6 +4,7 @@ Cập nhật: 10:22-16/07/2022
 
 + Thêm cho phép cài đặt ứng dụng hệ thống
 + Thêm lịch, thời tiết
++ Mod Global
 
 Cập nhật: 07:50-15/07/2022
 
