@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 00:00-17/07/2022
+
++ Thêm tính năng dùng thử nghiệm VH-MI
+
 Cập nhật: 10:22-16/07/2022
 
 + Thêm cho phép cài đặt ứng dụng hệ thống
