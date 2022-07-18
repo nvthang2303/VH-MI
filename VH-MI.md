@@ -1,5 +1,11 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 08:00-18/07/2022
+
++ Thêm Android Auto
++ Sửa lỗi Android 12
++ Fix all lỗi 
+
 Cập nhật: 00:00-17/07/2022
 
 + Thêm tính năng dùng thử nghiệm VH-MI
