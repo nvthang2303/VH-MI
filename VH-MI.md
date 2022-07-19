@@ -1,5 +1,12 @@
 #### 🆕 Mới nhất:
 
+Cập nhật: 10:00-19/07/2022
+
+- Module hoạt động ổn định hơn
+- Thêm tính năng hủy khi đang cài đặt:
++ Trong thư mục/sdcard/VH-MI/Stop
++ Tạo file Stop thì nó sẽ tự dừng quá trình cài đặt.
+
 Cập nhật: 08:00-18/07/2022
 
 + Thêm Android Auto
