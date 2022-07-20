@@ -1,5 +1,9 @@
 #### 🆕 Mới nhất:
 
+Tool VH-MI 5.4:
+
++ Sửa lỗi sao lưu
+
 Cập nhật: 10:00-19/07/2022
 
 - Module hoạt động ổn định hơn
