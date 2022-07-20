@@ -1,5 +1,10 @@
 #### 🆕 Mới nhất:
 
+5.5
+
++ Thêm clock pro
++ Thêm lịch âm màn hình khóa 
+
 5.4:
 
 + Sửa lỗi sao lưu
