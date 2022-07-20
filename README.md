@@ -42,6 +42,6 @@ Kênh: [Telegram](http://t.me/toolvi)
 
 Xem video tùy chỉnh nâng cao: [Link Video](https://t.me/toolvi/282)
 
-[Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Font](https://github.com/kakathic/VH-MI/releases/tag/Font) | [Data](https://github.com/kakathic/VH-MI/releases/tag/V1.0) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
+[Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Font](https://github.com/kakathic/VH-MI/releases/tag/Font) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
 
 
