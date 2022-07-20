@@ -1,6 +1,6 @@
 #### 🆕 Mới nhất:
 
-Tool VH-MI 5.4:
+5.4:
 
 + Sửa lỗi sao lưu
 
