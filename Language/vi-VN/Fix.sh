@@ -3,6 +3,7 @@
 
 if [ "$pkg" == "com.android.systemui" ];then
 sed -i \
+-e 's|>EEEE dd/MM<|>E, dd.MM - (e.N)<|g' \
 -e 's|qs_control_customize_save_text">Đã xong<|qs_control_customize_save_text">Xong<|g' \
 -e 's|<string name="status_bar_clock_date_weekday_format">EEE, d MMM</string>|<string name="status_bar_clock_date_weekday_format">E, dd.MM - (e.N)</string>|g' \
 -e 's|<string name="status_bar_clock_date_weekday_format_12">EEE, d MMM</string>|<string name="status_bar_clock_date_weekday_format_12">a E, dd - MM</string>|g' \
