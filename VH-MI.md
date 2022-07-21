@@ -1,5 +1,10 @@
 #### 🆕 Mới nhất:
 
+5.6
+
++ Thêm mod ứng dụng bảo mật
++ Fix lỗi
+
 5.5
 
 + Thêm clock pro
