@@ -1,5 +1,10 @@
 #### 🆕 Mới nhất:
 
+5.7
+
++ Sửa lỗi nhỏ
++ Mod bảo mật sẽ gộp vào fix thông báo
+
 5.6
 
 + Thêm mod ứng dụng bảo mật
