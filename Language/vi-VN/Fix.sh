@@ -15,6 +15,7 @@ fi
 
 if [ "$pkg" == "com.android.calendar" ];then
 sed -i \
+-e '/accessibility_month_page_selected_prefix/d' \
 -e 's|: )||g' \
 -e 's|: (||g' \
 -e 's|lunar_nian">20<|lunar_nian">2<|g' \
