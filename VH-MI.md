@@ -5,7 +5,8 @@
 + Sửa lỗi nhỏ
 + Mod bảo mật sẽ gộp vào fix thông báo
 + Hiện Google trong cài đặt
-+ Một số thứ ở cài đặt sẽ thay đổi 
++ Một số thứ ở cài đặt sẽ thay đổi
+
 5.6
 
 + Thêm mod ứng dụng bảo mật
