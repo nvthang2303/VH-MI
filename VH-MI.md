@@ -3,6 +3,7 @@
 5.8
 
 + Sửa lỗi dịch ứng dụng 
++ Thay đổi thư mục lưu font 
 
 5.7
 
