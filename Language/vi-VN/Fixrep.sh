@@ -8,14 +8,14 @@ RepapkF
 
 
 # Trùng string
+while true; do
 if [ "$(grep -cm1 'is already defined.' /data/tools/tmp/Fix.txt)" == 1 ];then
-while $(grep -c 'is already defined.' /data/tools/tmp/Fix.txt); do
 Sotk=$(grep -m1 'is already defined.' /data/tools/tmp/Fix.txt | cut -d : -f3)
 sed -i ''$Sotk'd' $Park/res/*/*.xml
 sed -i '/'$Sotk'/d' /data/tools/tmp/Fix.txt
-done
 fi
-
+[ "$(grep -c 'is already defined.' /data/tools/tmp/Fix.txt)" == 0 ] && break
+done
 
 
 
