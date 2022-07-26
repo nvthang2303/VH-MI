@@ -2,8 +2,6 @@
 
 Tools Việt Hoá MIUI Offline và Online
 
-#### 🌱 [Tải xuống VH-MI.Zip](https://github.com/kakathic/VH-MI/releases) 🌲
-
 #### 🎁 Tính năng có sẵn:
 
 1. Thêm tính năng nâng cao bàn phím
@@ -14,7 +12,7 @@ Tools Việt Hoá MIUI Offline và Online
 
 4. Thêm lịch âm vào Thanh thông báo.
 
-5. Fix thông báo chuyển nền global ( beta )
+5. Fix thông báo & chuyển nền global ( beta )
  
 6. Thêm bộ cài Gapps các dịch vụ cơ bản của Google hỗ trợ Android 11 sắp có cho 12.
 
@@ -27,6 +25,10 @@ Tools Việt Hoá MIUI Offline và Online
 - Mỗi lần khởi động lại máy nó sẽ tự tải bộ Widgets đã được việt hóa nếu có
 
 - Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `su -c Appvault` nó sẽ tự tải nếu như có.
+
+#### 🌱 Tải xuống: [VH-MI.Zip](https://github.com/kakathic/VH-MI/releases)
+
+- Hãy tải file Zip về và dùng magisk để cài đặt module đó 
 
 #### ☕ Ủng hộ:
 
