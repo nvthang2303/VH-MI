@@ -26,7 +26,7 @@ Tools Việt Hoá MIUI Offline và Online
 
 - Hoặc ở ứng dụng Mt Manager ở chỗ Terminal gõ code: `su -c Appvault` nó sẽ tự tải nếu như có.
 
-#### 🦠 Tải xuống: [VH-MI.Zip](https://github.com/kakathic/VH-MI/releases)
+#### 🦠 Tải xuống: [VH-MI](https://github.com/kakathic/VH-MI/releases)
 
 - Hãy tải file Zip về và dùng magisk để cài đặt module đó 
 
