@@ -1,4 +1,4 @@
-#### 🆕 Mới nhất:
+#### 🆕 Mới nhất: [Tải về VH-MI.Zip](https://github.com/kakathic/VH-MI/releases)
 
 6.0
 
