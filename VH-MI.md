@@ -1,5 +1,10 @@
 #### 🆕 Mới nhất:
 
+6.0
+
++ Thay đổi cơ cấu hoạt động
++ Nên gỡ tool trước khi cài đặt bản 6.0
+
 5.9
 
 + Hỗ trợ Android 10
