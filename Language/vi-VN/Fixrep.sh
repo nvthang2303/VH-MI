@@ -24,13 +24,13 @@ RepapkF
 fi
 
 # String lỗi thiếu ký tự
-if [ "$(grep -cm1 'invalid token' /data/tools/tmp/$pkg.txt)" == 1 ];then
+if [ "$(grep -cm1 'well-formed' /data/tools/tmp/$pkg.txt)" == 1 ];then
 while true; do
-jtt5uu=$(grep -m1 'invalid token' /data/tools/tmp/$pkg.txt | cut -d : -f2)
-vrgrh=$(grep -m1 'invalid token' /data/tools/tmp/$pkg.txt | cut -d : -f3)
+jtt5uu=$(grep -m1 'well-formed' /data/tools/tmp/$pkg.txt | cut -d : -f2)
+vrgrh=$(grep -m1 'well-formed' /data/tools/tmp/$pkg.txt | cut -d : -f3)
 sed -i "/$vrgrh/c \ " $jtt5uu
 sed -i '/'$vrgrh'/d' /data/tools/tmp/$pkg.txt
-[ "$(grep -cm1 'invalid token' /data/tools/tmp/$pkg.txt)" == 0 ] && break
+[ "$(grep -cm1 'well-formed' /data/tools/tmp/$pkg.txt)" == 0 ] && break
 done
 RepapkF
 fi
