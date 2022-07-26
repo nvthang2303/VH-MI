@@ -1,6 +1,6 @@
 
 RepapkF () {
-apktool b /data/tools/tmp/*/*/main/$path -f -o "/data/tools/tmp/Apk/tmp/Z.$pkg.apk" 2>&1 >/data/tools/tmp/$pkg.txt
+apktool b /data/tools/tmp/*/*/main/$path -f -o "/data/tools/tmp/Apk/tmp/Z.$pkg.apk" >/data/tools/tmp/$pkg.txt 2>>/data/tools/tmp/$pkg.txt
 [ -e /data/tools/$pkg.txt ] || cp -rf /data/tools/tmp/$pkg.txt /data/tools/$pkg.txt
 mkdir -p "$MPATH$Overlay"
 apksign "/data/tools/tmp/Apk/tmp/Z.$pkg.apk" "$MPATH$Overlay/Z.$pkg.apk"
