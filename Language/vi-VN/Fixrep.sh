@@ -24,7 +24,7 @@ RepapkF
 fi
 
 if [ "$(grep -cm1 'invalid token' /data/tools/tmp/$pkg.txt)" == 1 ];then
-vrgrh=$(grep -m1 'invalid token' /data/tools/tmp/$pkg.txt | cut -d : -f2)
+vrgrh=$(grep -m1 'invalid token' /data/tools/tmp/$pkg.txt | cut -d : -f3)
 sed -i ''$vrgrh'd' $Park/res/*/strings.xml
 RepapkF
 fi
