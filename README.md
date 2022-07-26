@@ -1,6 +1,6 @@
 # VH-MI
 
-Tools Việt Hoá MIUI Offline và Online
+Tools Việt Hoá MIUI Online
 
 #### 🎁 Tính năng có sẵn:
 
