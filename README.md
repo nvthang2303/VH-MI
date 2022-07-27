@@ -24,7 +24,7 @@ Tools Việt Hoá rom MIUI Online
 - Hãy tải file Zip về và dùng magisk để cài đặt module đó 
 
 ☕ **Ủng hộ**
-
++ Tính năng thử nghiệm chỉ có tác dụng trong ngày hôm đó qua ngày mới sẽ tự khởi động lại máy.
 + Teckombank: `19034902604017`
 + Paypal: [kakathic](http://paypal.me/kakathic)
 
