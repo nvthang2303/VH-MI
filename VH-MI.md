@@ -130,4 +130,3 @@
 + Tối ưu hóa
 
 🚨 **Các phiên bản cũ không có nhật ký.**
-----
