@@ -5,14 +5,14 @@ Tools Việt Hoá rom MIUI Online
 + [Demo ảnh](./Demo.md)
 
 🎁 **Tính năng có sẵn**
-
+#
 + Thêm Tiếng Việt cho rom miui
 + Thêm lịch âm
 + Thêm thời tiết Global 
 + Thêm lịch Global
 + Thêm font việt hóa
 + Thêm Clock pro
-
+#
 + Gỡ bỏ ứng dụng Getapps
   + Gỡ ứng dụng mà không bị treo logo
 + Thêm Gapps
@@ -34,7 +34,7 @@ Tools Việt Hoá rom MIUI Online
   + Chỉ Việt hóa 1 số
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
-
+#
 🦠 **Tải xuống**: [VH-MI](https://github.com/kakathic/VH-MI/releases)
 
 - Hãy tải file Zip về và dùng magisk để cài đặt module đó 
