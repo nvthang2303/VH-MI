@@ -1,8 +1,8 @@
-#### 🚧 Thông tin ghi ghi chú
+#### 🚧 Thông tin các phiên bản
 
-+ [Tải về](https://github.com/kakathic/VH-MI/releases)
++ [Xem](https://github.com/kakathic/VH-MI/releases) và tải các phiên bản mới nhất.
 
-+ [Trang chủ]()
++ [Trang chủ](https://kakathic.github.io/VH-MI/)
 
 #### 🆕 Các thay đổi:
 
