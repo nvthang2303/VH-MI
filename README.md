@@ -2,7 +2,7 @@
 
 Tools Việt Hoá rom MIUI Online
 
-+ [Ảnh Demo](https://github.com/kakathic/VH-MI/blob/kakathic-patch-1/demo.md)
++ [Ảnh Demo](./Demo.md)
 
 🎁 **Tính năng có sẵn**
 
