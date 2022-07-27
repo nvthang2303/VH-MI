@@ -30,7 +30,7 @@ Tools Việt Hoá rom MIUI Online
   + Sử dụng Theme china
   + Widget của china
 + Kho widget đã việt hóa
-  + Không phải là tất cả
+  + Chỉ Việt hóa 1 số
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
 
@@ -42,7 +42,7 @@ Tools Việt Hoá rom MIUI Online
 + Tính năng thử nghiệm chỉ có tác dụng trong ngày hôm đó qua ngày mới sẽ tự khởi động lại máy.
 + Hãy ủng hộ 10k trở nên để sử dụng vĩnh viễn.
 + Gửi kèm theo Tên máy và id tài khoản mi
-+ Ví dụ: `raphael, 1525337373`
++ Ví dụ: raphael, 1525337373
 + Teckombank: `19034902604017`
 + Paypal: [kakathic](http://paypal.me/kakathic)
 
