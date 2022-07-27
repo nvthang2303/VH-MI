@@ -35,10 +35,10 @@ Tools Việt Hoá MIUI Online
 + Teckombank: `19034902604017`
 + Paypal: [kakathic](http://paypal.me/kakathic)
 
-#### 🦇 Nhóm hỗ trợ
+#### 🦇 Hỗ trợ
 
 + Nhóm: [Telegram](http://t.me/toolvn)
-+ Kênh: [Telegram](http://t.me/toolvi)
++ Kênh chính thức: [Telegram](http://t.me/toolvi)
 
 #### ⚠️ Hướng dẫn
 
