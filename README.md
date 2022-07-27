@@ -58,7 +58,7 @@ Tools Việt Hoá rom MIUI Online
 + Nhóm: [Telegram](http://t.me/toolvn)
 + Kênh chính thức: [Telegram](http://t.me/toolvi)
 
-⚠️ **Hướng dẫn**
+📱 **Hướng dẫn**
 
 + [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk): Hủy quá trình chạy của module
 
