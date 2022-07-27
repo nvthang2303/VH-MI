@@ -42,8 +42,9 @@ Kênh: [Telegram](http://t.me/toolvi)
 
 #### ⚠️ Hướng dẫn
 
-Hủy quá trình chạy của module: [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk)
++ Hủy quá trình chạy của module: [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk)
 
++ Chọn các tính năng tự động: [Xem video](https://drive.google.com/file/d/1-1lQ5HWlpx_uovdUDEFZsQ6hv9kpDpg5/view?usp=drivesdk)
 
 [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Font](https://github.com/kakathic/VH-MI/releases/tag/Font) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
 
