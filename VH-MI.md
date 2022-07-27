@@ -1,10 +1,10 @@
 #### 🚧 Thông tin các phiên bản
 
-+ [Xem](https://github.com/kakathic/VH-MI/releases) và tải các phiên bản mới nhất.
++ [Tổng hợp các phiên bản VH-MI](https://github.com/kakathic/VH-MI/releases)
 
 + [Trang chủ](https://kakathic.github.io/VH-MI/)
 
-#### 🆕 Các thay đổi:
+#### 🦅 Các thay đổi:
 
 6.0
 
