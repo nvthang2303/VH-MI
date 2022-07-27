@@ -12,6 +12,7 @@ Tools Việt Hoá rom MIUI Online
 + Thêm lịch Global
 + Thêm font việt hóa
 + Thêm Clock pro
+
 + Gỡ bỏ ứng dụng Getapps
   + Gỡ ứng dụng mà không bị treo logo
 + Thêm Gapps
