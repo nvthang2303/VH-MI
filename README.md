@@ -8,31 +8,40 @@ Tools Việt Hoá rom MIUI Online
 
 + Thêm Tiếng Việt cho rom miui
 + Thêm lịch âm
++ Thêm thời tiết Global 
++ Thêm lịch Global
++ Thêm font việt hóa
++ Thêm Clock pro
+
 + Gỡ bỏ ứng dụng Getapps
   + Gỡ ứng dụng mà không bị treo logo
+
 + Thêm Gapps
   + Thêm dịch vụ Google sử dụng Google play v.v
+
 + Mở khóa cài đặt theme bên thứ ba
   + Bỏ quảng cáo
   + Cho phép cài đặt theme bên thứ ba 
+
 + Cho phép apk hệ thống
-  + Bạn có thể cập nhật ứng dụng hệ thống bằng cách cài đặt apk 
-+ Thêm thời tiết Global 
-+ Thêm lịch Global 
+  + Cập nhật ứng dụng hệ thống bằng cách cài đặt apk 
+ 
 + Sửa thông báo chậm ở nền china
   + Bỏ thông báo khay nhớ tạm
   + Sửa thông báo chậm
+
 + Chuyển đổi nền global
   + Sử dụng các ứng dụng nền Global
+
 + Nền Global mod
   + Sử dụng Theme china
   + Widget của china
+
 + Kho widget đã việt hóa
   + Không phải là tất cả
+
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
-+ Thêm font việt hóa
-+ Thêm Clock pro
 
 🦠 **Tải xuống**: [VH-MI](https://github.com/kakathic/VH-MI/releases)
 
