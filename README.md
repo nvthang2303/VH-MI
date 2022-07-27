@@ -25,7 +25,7 @@ Tools Việt Hoá rom MIUI Online
 
 ☕ **Ủng hộ**
 + Tính năng thử nghiệm chỉ có tác dụng trong ngày hôm đó qua ngày mới sẽ tự khởi động lại máy.
-+ Hãy ủng hộ 10k trở nên để sử dụng module vĩnh viễn.
++ Hãy ủng hộ 10k trở nên để sử dụng vĩnh viễn.
 + Teckombank: `19034902604017`
 + Paypal: [kakathic](http://paypal.me/kakathic)
 
