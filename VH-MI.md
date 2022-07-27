@@ -42,59 +42,59 @@
 
 + Sửa lỗi sao lưu
 
-Cập nhật: 10:00-19/07/2022
+5.3
 
 - Module hoạt động ổn định hơn
 - Thêm tính năng hủy khi đang cài đặt:
 + Trong thư mục/sdcard/VH-MI/stop
 + Tạo file stop thì nó sẽ tự dừng quá trình cài đặt.
 
-Cập nhật: 08:00-18/07/2022
+5.2
 
 + Thêm Android Auto
 + Sửa lỗi Android 12
 + Fix all lỗi 
 
-Cập nhật: 00:00-17/07/2022
+5.1
 
 + Thêm tính năng dùng thử nghiệm VH-MI
 
-Cập nhật: 10:22-16/07/2022
+5.0
 
 + Thêm cho phép cài đặt ứng dụng hệ thống
 + Thêm lịch, thời tiết
 + Mod Global
 
-Cập nhật: 07:50-15/07/2022
+4.9
 
 + Cập nhật lại hệ thống cài đặt
 + Fix lỗi tải theme 
 
-Cập nhật: 19:50-13/07/2022
+4.8
 
 + Thêm tính năng fix thông báo nền china
 + Sửa lỗi 1 số thứ
 
-Cập nhật: 22:00-09/07/2022
+4.7
 
 + Sửa lỗi và căn chỉnh lại chọn lựa
 
-Cập nhật: 23:00-06/07/2022
+4.6
 
 + Tính năng online hoàn toàn
 + Giúp đỡ phải cập nhật module nhiều lần
 + Sửa chữa online fix lỗi nhanh chóng
 
-Cập nhật: 23:00-06/07/2022
+4.5
 
 + Sửa lỗi khi cập nhật
 + Fix lỗi không nhận id
 
-Cập nhật: 06:20-05/07/2022
+4.4
 
 + Sửa lỗi toàn bộ
 
-Cập nhật: 18:02-04/07/2022
+4.3
 
 + Tính năng trả phí bắt đầu áp dụng hãy cân nhắc trước khi cập nhật!
 + Hãy gửi thiết bị và id khi thông báo lỗi
@@ -102,26 +102,28 @@ Cập nhật: 18:02-04/07/2022
 + Chỉ sử dụng cho thiết bị hiện tại và tài khoản mi account hiện tại
 + Có thể liên hệ tài khoản Telegram: @kakathic hoặc tài khoản Facebook: fb.com/kakathic 
 
-Cập nhật: 17:50-01/07/2022
+4.2
 
 + Thêm tính năng chuyển nền global ( fix thông báo chậm beta)
 
-Cập nhật: 20:19-30/06/2022
+4.1
 
 + Fix lỗi bị lỗi ứng dụng chủ đề khi cập nhật
 
-Cập nhật: 18:23-20/06/2022
+4.0
 
 + Fix tự động chạy
 
-Cập nhật: 18:42-18/06/2022
+3.9
 
 + Thêm tính năng tắt thông báo nhắc nhở dùng bộ nhớ tạm
 
-Cập nhật: 12:00-14/06/2022
+3.8
 
 + Sửa lại cách hủy khi đang cài module do bản magisk mới.
 
-Cập nhật: 21:00-18/05/2022
+3.7
 
 + Tối ưu hóa
+
+#### 🚨 Các phiên bản cũ không có nhật ký.
