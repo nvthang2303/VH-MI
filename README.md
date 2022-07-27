@@ -40,9 +40,10 @@ Paypal: [kakathic](http://paypal.me/kakathic)
 Nhóm: [Telegram](http://t.me/toolvn),
 Kênh: [Telegram](http://t.me/toolvi)
 
-#### ⚠️ Nâng cao
+#### ⚠️ Hướng dẫn
 
-Xem video tùy chỉnh nâng cao: [Link Video](https://t.me/toolvi/282)
+Hủy quá trình chạy của module: [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk)
+
 
 [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Font](https://github.com/kakathic/VH-MI/releases/tag/Font) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
 
