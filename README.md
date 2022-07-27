@@ -32,13 +32,13 @@ Tools Việt Hoá MIUI Online
 
 #### ☕ Ủng hộ:
 
-Teckombank: `19034902604017`,
-Paypal: [kakathic](http://paypal.me/kakathic)
++ Teckombank: `19034902604017`
++ Paypal: [kakathic](http://paypal.me/kakathic)
 
 #### 🦇 Nhóm hỗ trợ
 
-Nhóm: [Telegram](http://t.me/toolvn),
-Kênh: [Telegram](http://t.me/toolvi)
++ Nhóm: [Telegram](http://t.me/toolvn)
++ Kênh: [Telegram](http://t.me/toolvi)
 
 #### ⚠️ Hướng dẫn
 
@@ -46,6 +46,14 @@ Kênh: [Telegram](http://t.me/toolvi)
 
 + [Xem video](https://drive.google.com/file/d/1-1lQ5HWlpx_uovdUDEFZsQ6hv9kpDpg5/view?usp=drivesdk): Chọn các tính năng tự động
 
-[Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Font](https://github.com/kakathic/VH-MI/releases/tag/Font) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
+#### 🍫 Kho dữ liệu:
+
++ [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) 
+
++ [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) 
+
++ [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) 
+
++ [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
 
 
