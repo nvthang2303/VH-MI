@@ -6,6 +6,10 @@
 
 🦅 **Các thay đổi**:
 
+6.1
+
++ Fix lỗi cài đặt ứng dụng hệ thống
+
 6.0
 
 + Thay đổi cơ cấu hoạt động
