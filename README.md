@@ -2,6 +2,8 @@
 
 Tools Việt Hoá rom MIUI Online
 
++ [Xem Demo](./kakathic-patch-1/Screenshot_2022-07-27-15-16-18-053_com.miui.home.jpg)
+
 🎁 **Tính năng có sẵn**
 
 + Thêm Tiếng Việt cho rom miui
