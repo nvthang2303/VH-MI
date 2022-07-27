@@ -12,34 +12,25 @@ Tools Việt Hoá rom MIUI Online
 + Thêm lịch Global
 + Thêm font việt hóa
 + Thêm Clock pro
-
 + Gỡ bỏ ứng dụng Getapps
   + Gỡ ứng dụng mà không bị treo logo
-
 + Thêm Gapps
   + Thêm dịch vụ Google sử dụng Google play v.v
-
 + Mở khóa cài đặt theme bên thứ ba
   + Bỏ quảng cáo
   + Cho phép cài đặt theme bên thứ ba 
-
 + Cho phép apk hệ thống
   + Cập nhật ứng dụng hệ thống bằng cách cài đặt apk 
- 
 + Sửa thông báo chậm ở nền china
   + Bỏ thông báo khay nhớ tạm
   + Sửa thông báo chậm
-
 + Chuyển đổi nền global
   + Sử dụng các ứng dụng nền Global
-
 + Nền Global mod
   + Sử dụng Theme china
   + Widget của china
-
 + Kho widget đã việt hóa
   + Không phải là tất cả
-
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
 
@@ -50,6 +41,8 @@ Tools Việt Hoá rom MIUI Online
 ☕ **Ủng hộ**
 + Tính năng thử nghiệm chỉ có tác dụng trong ngày hôm đó qua ngày mới sẽ tự khởi động lại máy.
 + Hãy ủng hộ 10k trở nên để sử dụng vĩnh viễn.
++ Gửi kèm theo Tên máy và id tài khoản mi
++ Ví dụ: `raphael, 1525337373`
 + Teckombank: `19034902604017`
 + Paypal: [kakathic](http://paypal.me/kakathic)
 
