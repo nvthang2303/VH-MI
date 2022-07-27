@@ -1,3 +1,3 @@
 <img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo0.jpg" height="auto" width="49%" /> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo1.jpg" height="auto" width="49%" />
-<img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo3.jpg" height="auto" width="49%" /> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo4.jpg" height="auto" width="49%" />
-<img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo5.jpg" height="auto" width="49%" /> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo6.jpg" height="auto" width="49%" />
+<img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo2.jpg" height="auto" width="49%" /> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo3.jpg" height="auto" width="49%" />
+<img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo4.jpg" height="auto" width="49%" /> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/Demo5.jpg" height="auto" width="49%" />
