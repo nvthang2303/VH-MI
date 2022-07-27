@@ -36,6 +36,3 @@ if [ "$pkg" == "com.miui.weather2" ];then
 sed -i 's|indices_title_feel">Cảm giác như<|indices_title_feel">Cảm giác<|g' /data/tools/tmp/*/*/main/$path/res/*/*.xml
 fi
 
-if [ "$pkg" == "com.miui.personalassistant" ];then
-sed -i 's|<string name="pa_picker_tab_title_recommend">Khuyến khích</string|<string name="pa_picker_tab_title_recommend">Khuyến khích</string>|' /data/tools/tmp/*/*/main/$path/res/*/*.xml
-fi
