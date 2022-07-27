@@ -46,6 +46,10 @@ Tools Việt Hoá MIUI Online
 
 + [Xem video](https://drive.google.com/file/d/1-1lQ5HWlpx_uovdUDEFZsQ6hv9kpDpg5/view?usp=drivesdk): Chọn các tính năng tự động
 
+#### 📑 Nhật ký thay đổi
+
++ [Thông tin](./VH-MI.md)
+
 #### 🍫 Kho dữ liệu:
 
 + [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) 
