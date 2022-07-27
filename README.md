@@ -2,16 +2,28 @@
 
 Tools Việt Hoá rom MIUI Online
 
-🎁 **Tính năng có sẵn**:
+🎁 **Tính năng có sẵn**
 
 + Thêm Tiếng Việt cho rom miui
-
++ Thêm lịch âm
++ Gỡ bỏ ứng dụng Getapps
++ Thêm Gapps
++ Mở khóa cài đặt theme bên thứ ba
++ Cho phép apk hệ thống
++ Thêm thời tiết
++ Thêm lịch
++ Sửa thông báo chậm ở nền china
++ Chuyển đổi nền global
++ Nền Global mod china sử dụng theme và widget của china
++ Kho widget đã việt hóa
++ Hiển thị bàn phím nâng cao
++ Thêm font việt hóa
 
 🦠 **Tải xuống**: [VH-MI](https://github.com/kakathic/VH-MI/releases)
 
 - Hãy tải file Zip về và dùng magisk để cài đặt module đó 
 
-☕ **Ủng hộ**:
+☕ **Ủng hộ**
 
 + Teckombank: `19034902604017`
 + Paypal: [kakathic](http://paypal.me/kakathic)
@@ -31,7 +43,7 @@ Tools Việt Hoá rom MIUI Online
 
 + [Thông tin](./VH-MI.md)
 
-🍫 **Kho dữ liệu**:
+🍫 **Kho dữ liệu**
 
 + [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) 
 
