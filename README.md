@@ -64,6 +64,8 @@ Tools Việt Hoá rom MIUI Online
 
 + [Xem video](https://drive.google.com/file/d/1-1lQ5HWlpx_uovdUDEFZsQ6hv9kpDpg5/view?usp=drivesdk): Chọn các tính năng tự động
 
++ [Xem video][https://drive.google.com/file/d/1-2aXizFbq9IWqspQ_Q7zSL1g-GTh2d55/view?usp=drivesdk): Thêm Font chữ riêng của bạn, tên font hãy để là `MiLanProVF.ttf`
+
 📑 **Nhật ký thay đổi**
 
 + [Thông tin](./VH-MI.md)
