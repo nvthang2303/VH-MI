@@ -2,7 +2,7 @@
 
 Là một công cụ Việt Hoá rom MIUI Online, và thêm các tính năng khác.
 
-+ [🖼️ Ảnh chụp màn hình](./Demo.md)
++ [Ảnh chụp màn hình](./Demo.md)
 
 #
 🏆 **Tính năng hiện tại**
