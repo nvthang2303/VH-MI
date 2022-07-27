@@ -49,8 +49,6 @@ Tools Việt Hoá rom MIUI Online
 
 🍫 **Kho dữ liệu**
 
-+ [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) 
-
-+ [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
++ [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
 
 
