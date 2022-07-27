@@ -8,10 +8,15 @@
 ----
 + Thêm Tiếng Việt cho rom miui
   + Thêm lịch âm
+  + Thêm Clock pro
++ Thêm font việt hoá
+  + Font có sẵn iOS
+  + Tự thêm font hãy xem video hướng dẫn ở dưới.
++ Các ứng dụng Global 
   + Thêm thời tiết Global 
   + Thêm lịch Global
-  + Thêm font việt hóa
-  + Thêm Clock pro
+  + Thêm bảo mật Global (Nền Global)
+  + Theme (Nền Global)
 + Gỡ bỏ ứng dụng Getapps
   + Gỡ ứng dụng mà không bị treo logo
 + Thêm Gapps
