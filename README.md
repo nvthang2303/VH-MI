@@ -2,7 +2,7 @@
 
 Tools Việt Hoá rom MIUI Online
 
-+ [Xem Demo](./kakathic-patch-1/Screenshot_2022-07-27-15-16-18-053_com.miui.home.jpg)
++ [Xem Demo](../kakathic-patch-1/demo.md)
 
 🎁 **Tính năng có sẵn**
 
@@ -49,12 +49,8 @@ Tools Việt Hoá rom MIUI Online
 
 🍫 **Kho dữ liệu**
 
-+ [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) 
++ [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) 
 
-+ [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) 
-
-+ [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) 
-
-+ [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
++ [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget)
 
 
