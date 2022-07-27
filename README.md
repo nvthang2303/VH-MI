@@ -18,6 +18,7 @@ Tools Việt Hoá rom MIUI Online
 + Kho widget đã việt hóa
 + Hiển thị bàn phím nâng cao
 + Thêm font việt hóa
++ Thêm Clock pro
 
 🦠 **Tải xuống**: [VH-MI](https://github.com/kakathic/VH-MI/releases)
 
