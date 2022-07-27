@@ -1,4 +1,10 @@
-#### 🆕 Mới nhất: [Tải về](https://github.com/kakathic/VH-MI/releases)
+#### 🚧 Thông tin ghi ghi chú
+
++ [Tải về](https://github.com/kakathic/VH-MI/releases)
+
++ [Trang chủ]()
+
+#### 🆕 Các thay đổi:
 
 6.0
 
