@@ -2,7 +2,7 @@
 
 Tools Việt Hoá rom MIUI Online
 
-+ [Ảnh Demo](./Demo.md)
++ [Demo ảnh](./Demo.md)
 
 🎁 **Tính năng có sẵn**
 
