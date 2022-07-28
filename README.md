@@ -1,4 +1,4 @@
-**VH-MI**
+**🪴 VH-MI**
 ----
 + Là một công cụ Việt Hoá rom MIUI Online, và thêm các tính năng khác.
 
