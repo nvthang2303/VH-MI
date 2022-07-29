@@ -21,9 +21,10 @@
 
 - Sau khi ủng hộ xong hãy gửi ảnh chụp màn hình giao dịch
 
-- Và nhớ gửi kèm theo nội dung `raphael, 1525337373`
+> Và nhớ gửi kèm theo nội dung:
+`raphael, 1525337373`
 
-- Gửi đến: [Telegram](http://t.me/kakathic) | [Facebook](https://m.me/kakathic)
+> Gửi đến: [Telegram](http://t.me/kakathic) | [Facebook](https://m.me/kakathic)
 
 - Nếu quá lâu không được trả lời hãy gửi vào nhóm [Telegram](http://t.me/toolvn) sẽ có người duyệt giúp bạn.
 
@@ -33,6 +34,4 @@
 
 > <img src="https://github.com/kakathic/VH-MI/releases/download/Font/sp1.jpg" height="auto" width="99%" /> 
 
-----
 ## 🎊 Cảm ơn bạn đã ủng hộ.
-____
