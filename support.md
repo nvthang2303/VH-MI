@@ -4,7 +4,7 @@
 
 - Vì để module được hoạt động lâu dài bạn hãy ủng hộ ad để module được tiếp tục hỗ trợ lâu dài.
 
-- Bạn có thể ủng hộ 10k vào số tài khoản dưới đây 
+- Ủng hộ 10k
 
 > Teckombank: `19034902604017`
 
