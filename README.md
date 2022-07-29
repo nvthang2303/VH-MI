@@ -1,6 +1,3 @@
-**🪴 VH-MI**
-----
-
 + Là một công cụ Việt Hoá rom MIUI Online, và bổ sung các tính năng mod khác.
 
 + [Ảnh demo](./Demo.md)
