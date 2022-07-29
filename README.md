@@ -47,7 +47,7 @@
 
 - Sử dụng phím âm lượng tăng, giảm để điều chỉnh số và chọn, ấn nút nguồn để hủy nếu chọn sai.
 
-☕ **Ủng hộ**
+**Ủng hộ**
 ----
 
 + [Xem chi tiết](support.md)
