@@ -34,4 +34,4 @@
 
 > <img src="https://github.com/kakathic/VH-MI/releases/download/Font/sp1.jpg" height="auto" width="99%" /> 
 
-## 🎊 Cảm ơn bạn đã ủng hộ.
+## 🎊 Cảm ơn bạn đã ủng hộ
