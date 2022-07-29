@@ -1,11 +1,13 @@
 **🪴 VH-MI**
 ----
-+ Là một công cụ Việt Hoá rom MIUI Online, và thêm các tính năng khác.
 
-+ [Ảnh chụp màn hình](./Demo.md)
++ Là một công cụ Việt Hoá rom MIUI Online, và bổ sung các tính năng mod khác.
+
++ [Ảnh demo](./Demo.md)
 
 🏆 **Tính năng hiện tại**
 ----
+
 + Thêm Tiếng Việt cho rom miui
   + Thêm lịch âm
   + Thêm Clock pro
@@ -41,6 +43,7 @@
 
 🦠 **Tải xuống**
 ----
+
 - [VH-MI](https://github.com/kakathic/VH-MI/releases).Zip
 
 - Hãy tải file Zip về và dùng magisk để cài đặt module đó 
@@ -50,15 +53,18 @@
 ☕ **Ủng hộ**
 ----
 
-+ [Xem hướng dẫn](support.md)
++ Xem: [Hướng dẫn](support.md)
 
 🦇 **Hỗ trợ**
 ----
+
 + Nhóm: [Telegram](http://t.me/toolvn)
+
 + Kênh chính thức: [Telegram](http://t.me/toolvi)
 
 📱 **Hướng dẫn**
 ----
+
 > [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk): Hủy quá trình chạy của module
 
 > [Xem video](https://drive.google.com/file/d/1-1lQ5HWlpx_uovdUDEFZsQ6hv9kpDpg5/view?usp=drivesdk): Chọn các tính năng tự động
@@ -67,8 +73,10 @@
 
 📑 **Nhật ký thay đổi**
 ----
-+ [Thông tin](./VH-MI.md)
+
++ [Thông tin](VH-MI.md)
 
 🍫 **Kho dữ liệu**
 ----
+
 > [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget) 
