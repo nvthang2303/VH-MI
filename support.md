@@ -21,7 +21,9 @@
 
 - Sau khi ủng hộ xong hãy gửi ảnh chụp màn hình giao dịch
 
-> Gửi đến: [Telegram](http://t.me/kakathic) | [Facebook](https://m.me/kakathic)
+**📧 Gửi đến**
+
+> [Telegram](http://t.me/kakathic) | [Facebook](https://m.me/kakathic)
 
 - Nếu quá lâu không được trả lời hãy gửi vào nhóm [Telegram](http://t.me/toolvn) sẽ có người duyệt giúp bạn.
 
