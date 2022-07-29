@@ -6,6 +6,8 @@
 
 - Ủng hộ 10k
 
+- Bạn có thể ủng hộ nhiều hơn để mình có thêm động lực phát triển, cảm ơn.
+
 > Teckombank: `19034902604017`
 
 > Tên: NGUYEN MINH HIEU
@@ -28,7 +30,10 @@
 
 - Hai ảnh ở dưới cho bạn biết id tài khoản mi và tên máy.
 
-<img src="https://github.com/kakathic/VH-MI/releases/download/Font/sp0.jpg" height="auto" width="49%" /> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/sp1.jpg" height="auto" width="49%" /> 
+> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/sp0.jpg" height="auto" width="99%" />
 
-**🎊 Cảm ơn bạn đã ủng hộ 🎉**
+> <img src="https://github.com/kakathic/VH-MI/releases/download/Font/sp1.jpg" height="auto" width="99%" /> 
 
+----
+## 🎊 Cảm ơn bạn đã ủng hộ.
+____
