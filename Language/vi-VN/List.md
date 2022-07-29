@@ -64,3 +64,4 @@ com.miui.thirdappassistant=com.miui.thirdappassistant.apk
 com.miui.mediaeditor=MiuiGallery.apk
 com.miui.fm=FM.apk
 com.android.camera=MiuiCamera.apk
+miuix.stub=miuix.stub.apk
