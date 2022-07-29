@@ -11,24 +11,21 @@
 
 > Tên: NGUYEN MINH HIEU
 
-#### ✈️ Nội dung gửi:
+**📨 Nội dung gửi:**
 
-> Tên máy: raphael
++ Tên máy: raphael
 
-> Tài khoản Xiaomi id: `1525337373`
++ Xiaomi id: 1525337373
 
 - Nếu bạn dùng nhiều máy bạn sẽ phải ủng hộ nhiều hơn, 10k/1 thiết bị.
 
 - Sau khi ủng hộ xong hãy gửi ảnh chụp màn hình giao dịch
 
-> Và nhớ gửi kèm theo nội dung:
-`raphael, 1525337373`
-
 > Gửi đến: [Telegram](http://t.me/kakathic) | [Facebook](https://m.me/kakathic)
 
 - Nếu quá lâu không được trả lời hãy gửi vào nhóm [Telegram](http://t.me/toolvn) sẽ có người duyệt giúp bạn.
 
-- Hai ảnh ở dưới cho bạn biết id tài khoản mi và tên máy.
+- Hai ảnh ở dưới cho bạn biết tài khoản mi id và tên máy.
 
 > <img src="https://github.com/kakathic/VH-MI/releases/download/Font/sp0.jpg" height="auto" width="99%" />
 
