@@ -2,7 +2,7 @@
 **💵 Hướng dẫn ủng hộ**
 ----
 
-- Vì để module được hoạt động lâu dài bạn hãy ủng hộ ad để module được tiếp tục hỗ trợ lâu dài.
+- Vì để module hỗ trợ lâu dài bạn hãy ủng hộ ad để module được tiếp tục hỗ trợ.
 
 - Ủng hộ 10k
 
@@ -10,9 +10,13 @@
 
 > Tên: NGUYEN MINH HIEU
 
-- Nội dung: raphael, 1525337373
+#### ✈️ Nội dung gửi:
 
-- Tên máy, id tài khoản mi, nếu bạn dùng nhiều máy bạn sẽ phải ủng hộ nhiều hơn 10k chỉ được 1 thiết bị.
+> Tên máy: raphael
+
+> Tài khoản Xiaomi id: `1525337373`
+
+- Nếu bạn dùng nhiều máy bạn sẽ phải ủng hộ nhiều hơn, 10k chỉ được 1 thiết bị.
 
 - Sau khi ủng hộ xong hãy gửi ảnh chụp màn hình giao dịch
 
