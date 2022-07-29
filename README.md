@@ -39,9 +39,13 @@
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
 
-🦠 **Tải xuống**: [VH-MI](https://github.com/kakathic/VH-MI/releases)
+🦠 **Tải xuống**
 ----
+- [VH-MI](https://github.com/kakathic/VH-MI/releases).Zip
+
 - Hãy tải file Zip về và dùng magisk để cài đặt module đó 
+
+- Sử dụng phím âm lượng tăng, giảm để điều chỉnh số và chọn, ấn nút nguồn để hủy nếu chọn sai.
 
 ☕ **Ủng hộ**
 ----
