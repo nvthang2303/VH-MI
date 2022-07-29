@@ -53,7 +53,7 @@
 ☕ **Ủng hộ**
 ----
 
-+ Xem: [Hướng dẫn](support.md)
++ [Xem chi tiết](support.md)
 
 🦇 **Hỗ trợ**
 ----
@@ -74,7 +74,7 @@
 📑 **Nhật ký thay đổi**
 ----
 
-+ [Thông tin](VH-MI.md)
++ [Xem thông tin](VH-MI.md)
 
 🍫 **Kho dữ liệu**
 ----
