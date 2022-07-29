@@ -45,12 +45,8 @@
 
 ☕ **Ủng hộ**
 ----
-+ Tính năng thử nghiệm chỉ có tác dụng trong ngày hôm đó qua ngày mới sẽ tự khởi động lại máy.
-+ Hãy ủng hộ 10k trở nên để sử dụng vĩnh viễn.
-+ Gửi kèm theo Tên máy và id tài khoản mi
-+ Ví dụ: raphael, 1525337373
-+ Teckombank: `19034902604017`
-+ Paypal: [kakathic](http://paypal.me/kakathic)
+
++ [Xem hướng dẫn](support.md)
 
 🦇 **Hỗ trợ**
 ----
@@ -59,11 +55,11 @@
 
 📱 **Hướng dẫn**
 ----
-+ [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk): Hủy quá trình chạy của module
+> [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk): Hủy quá trình chạy của module
 
-+ [Xem video](https://drive.google.com/file/d/1-1lQ5HWlpx_uovdUDEFZsQ6hv9kpDpg5/view?usp=drivesdk): Chọn các tính năng tự động
+> [Xem video](https://drive.google.com/file/d/1-1lQ5HWlpx_uovdUDEFZsQ6hv9kpDpg5/view?usp=drivesdk): Chọn các tính năng tự động
 
-+ [Xem video](https://drive.google.com/file/d/1-2aXizFbq9IWqspQ_Q7zSL1g-GTh2d55/view?usp=drivesdk): Thêm Font chữ riêng của bạn, tên font hãy để là `MiLanProVF.ttf`
+> [Xem video](https://drive.google.com/file/d/1-2aXizFbq9IWqspQ_Q7zSL1g-GTh2d55/view?usp=drivesdk): Thêm Font chữ riêng của bạn, tên font hãy để là `MiLanProVF.ttf`
 
 📑 **Nhật ký thay đổi**
 ----
