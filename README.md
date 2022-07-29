@@ -2,7 +2,7 @@
 
 + [Ảnh demo](./Demo.md)
 
-🏆 **Tính năng hiện tại**
+**Tính năng hiện tại**
 ----
 
 + Thêm Tiếng Việt cho rom miui
@@ -38,7 +38,7 @@
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
 
-🦠 **Tải xuống**
+**Tải xuống**
 ----
 
 - [VH-MI](https://github.com/kakathic/VH-MI/releases).Zip
@@ -52,14 +52,14 @@
 
 + [Xem chi tiết](support.md)
 
-🦇 **Hỗ trợ**
+**Hỗ trợ**
 ----
 
 + Nhóm: [Telegram](http://t.me/toolvn)
 
 + Kênh chính thức: [Telegram](http://t.me/toolvi)
 
-📱 **Hướng dẫn**
+**Hướng dẫn**
 ----
 
 + [Xem video](https://drive.google.com/file/d/1-0Vdb0U9pNvOBPsg3dSCOm505y31Bueb/view?usp=drivesdk): Hủy quá trình chạy của module
@@ -68,12 +68,12 @@
 
 + [Xem video](https://drive.google.com/file/d/1-2aXizFbq9IWqspQ_Q7zSL1g-GTh2d55/view?usp=drivesdk): Thêm Font chữ riêng của bạn, tên font hãy để là `MiLanProVF.ttf`
 
-📑 **Nhật ký thay đổi**
+**Nhật ký thay đổi**
 ----
 
 + [Xem thông tin](VH-MI.md)
 
-🍫 **Kho dữ liệu**
+**Kho dữ liệu**
 ----
 
 + [Gapps](https://github.com/kakathic/VH-MI/releases/tag/Gapps) | [Data](https://github.com/kakathic/VH-MI/releases/tag/Data) | [Apk](https://github.com/kakathic/VH-MI/releases/tag/Apk) | [Widget](https://github.com/kakathic/VH-MI/releases/tag/Widget) 
