@@ -6,6 +6,11 @@
 
 **Nhật ký thay đổi**
 ----
+
+6.2
+
++ Tối ưu hóa module
+
 6.1
 
 + Fix lỗi cài đặt ứng dụng hệ thống
