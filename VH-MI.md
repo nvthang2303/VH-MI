@@ -1,10 +1,10 @@
-🚧 **Xem thêm thông tin**
+**Xem thêm thông tin**
 ----
 + [Tổng hợp các phiên bản VH-MI](https://github.com/kakathic/VH-MI/releases)
 
 + [Trang chủ](https://kakathic.github.io/VH-MI/)
 
-🦅 **Nhật ký thay đổi**
+**Nhật ký thay đổi**
 ----
 6.1
 
@@ -129,4 +129,4 @@
 
 + Tối ưu hóa
 
-🚨 **Các phiên bản cũ không có nhật ký.**
+**Các phiên bản cũ không có nhật ký.**
