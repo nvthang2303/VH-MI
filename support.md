@@ -16,7 +16,7 @@
 
 > Tài khoản Xiaomi id: `1525337373`
 
-- Nếu bạn dùng nhiều máy bạn sẽ phải ủng hộ nhiều hơn, 10k chỉ được 1 thiết bị.
+- Nếu bạn dùng nhiều máy bạn sẽ phải ủng hộ nhiều hơn, 10k/1 thiết bị.
 
 - Sau khi ủng hộ xong hãy gửi ảnh chụp màn hình giao dịch
 
