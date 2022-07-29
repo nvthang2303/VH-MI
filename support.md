@@ -11,7 +11,7 @@
 
 > Tên: NGUYEN MINH HIEU
 
-**📨 Nội dung gửi:**
+**📨 Nội dung gửi**
 
 + Tên máy: raphael
 
