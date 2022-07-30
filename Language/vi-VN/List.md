@@ -54,7 +54,6 @@ com.android.vpndialogs=VpnDialogs.apk
 com.xiaomi.account=XiaomiAccount.apk
 com.xiaomi.simactivate.service=XiaomiSimActivateService.apk
 android=framework-res.apk
-com.miui.core=miui.apk
 cn.wps.moffice_eng.xiaomi.lite=wps-lite.apk
 com.mi.health=MiFitness.apk
 com.miui.home=MiuiHome.apk
@@ -65,3 +64,4 @@ com.miui.mediaeditor=MiuiGallery.apk
 com.miui.fm=FM.apk
 com.android.camera=MiuiCamera.apk
 miuix.stub=miuix.stub.apk
+com.miui.core
