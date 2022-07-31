@@ -36,3 +36,10 @@ jobs:
           echo test, and deploy your project.
           ls
           zip -r 1.zip *
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        if: ${{ success() && startsWith(github.ref, 'refs/tags/')}}
+        with:
+          tag: ${{ github.ref }}
+          files: bin/*
+          generate_release_notes: true
