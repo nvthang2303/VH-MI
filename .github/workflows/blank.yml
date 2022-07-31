@@ -39,6 +39,7 @@ jobs:
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
-          tag: ${{ github.ref }}
+          tag: Tool VH-MI 6.3
+          tag_name: 6.3
           files: 1.zip
           generate_release_notes: true
