@@ -7,6 +7,10 @@
 **Nhật ký thay đổi**
 ----
 
+6.3
+
++ Hỗ trợ android 13
+
 6.2
 
 + Tối ưu hóa module
