@@ -9,6 +9,7 @@
 
 7.0
 
++ Lưu ý từ bản cũ cập nhật lên vui lòng gỡ bỏ bản cũ và cài đặt bản mới 
 + Nâng cấp lại module
 + Quá trình chạy module sẽ hiện trên thông báo 
 + Fix lỗi
