@@ -13,8 +13,6 @@
 + Quá trình chạy module sẽ hiện trên thông báo 
 + Fix lỗi
 
-X
-
 6.3
 
 + Hỗ trợ android 13
