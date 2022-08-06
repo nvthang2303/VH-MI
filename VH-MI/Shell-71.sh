@@ -829,8 +829,8 @@ Xan
 if [ "$widget2" == 2 ];then
 ui_print2 "Tải Widget"
 ui_print
-chmod 777 $MODPATH/system/bin/Appvault
-. $MODPATH/system/bin/Appvault >&2
+chmod 777 $MPATH/system/bin/Appvault
+. $MPATH/system/bin/Appvault >&2
 fi
 
 Xan
