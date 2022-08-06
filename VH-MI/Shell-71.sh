@@ -281,8 +281,8 @@ fi
 
 # Bắt đầu
 Apilt=$(grep -m1 com.xiaomi /data/system/sync/*.* | tr ' ' '\n' | grep -m1 account= | cut -d \" -f2)
-[ -z "$Apilt" ] && Apilt=$(grep -am1 'type' /data/system/sync/accounts.xml | head -n1 | cut -d '/' -f1)
-[ -z "$Apilt" ] && Apilt="Lỗi id"
+[ -z "$Apilt" ] && Apilt=$(grep -aB1 'type' /data/system/sync/accounts.xml | head -n1 | cut -d '/' -f1)
+[ -z "$Apilt" ] && Apilt="Lỗi id TK Mi"
 
 Lituss="$(Xem https://raw.githubusercontent.com/kakathic/VH-MI/main/User/$(getprop ro.product.device))"
 
@@ -1021,6 +1021,10 @@ Vsmali '.method public static supportPaperEyeCare()Z' \
 "$TMPDIR/rac/$Lpkg/classes*/*"
 }
 
+ehrhrb () {
+Lisit "$Ften/classes*/" "/*.smali" "miui/security" "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1"
+}
+
 modsv () {
 echo "ro.product.vip=$(getprop ro.product.device)_global" >> $TMPDIR/system.prop
 Lisit "$Sten/classes*/" "/*.smali" "com/android/server/clipboard
@@ -1112,7 +1116,6 @@ done
     return v0
 .end method' \
 "$TMPDIR/rac/com.android.settings/classes*/*"
-[ -e "$TMPDIR/rac/$Ften" ] && Lisit "$Ften/classes*/" "/*.smali" "miui/security" "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1"
 }
 
 modthoitiet () {
@@ -1144,6 +1147,7 @@ Xan
 if [ "$getapps" == 2 ];then
 ui_print2 "Gỡ Getapps"
 ui_print
+Xservices
 pm uninstall com.xiaomi.market >&2
 PAPP com.xiaomi.market
 if [ -e ${framework%/*}/tmp/getapps ];then
@@ -1192,8 +1196,10 @@ Xan
 if [ "$globals" == 2 ];then
 ui_print2 "China Mod"
 ui_print
-Xservices
+Xoamount
 VipSV modsv
+Xan
+VipFW ehrhrb
 Xan
 VipApk com.android.settings modset
 Xan
