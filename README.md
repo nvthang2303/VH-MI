@@ -68,7 +68,7 @@
 
 + [Xem video](https://drive.google.com/file/d/1-2aXizFbq9IWqspQ_Q7zSL1g-GTh2d55/view?usp=drivesdk): Thêm Font chữ riêng của bạn, tên font hãy để là `MiLanProVF.ttf`
 
-+ [Xem video](https://drive.google.com/file/d/1-2aXizFbq9IWqspQ_Q7zSL1g-GTh2d55/view?usp=drivesdk): thay màu nền của tính năng bàn phím nâng cao cho trùng với bàn phím.
++ [Xem video](https://drive.google.com/file/d/1-2aXizFbq9IWqspQ_Q7zSL1g-GTh2d55/view?usp=drivesdk): Thay màu nền của tính năng bàn phím nâng cao cho trùng với bàn phím.
 
 **Nhật ký thay đổi**
 ----
