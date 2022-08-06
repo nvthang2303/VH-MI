@@ -5,10 +5,11 @@
 VipApk () {
 PAPP "$1"
 if [ ! -e ${Lapp%.*}.$2 ];then
-mkdir -p $MODPATH${Lapp%/*}
-echo > $MODPATH${Lapp%.*}.$2
 [ -e $TMPDIR/rac/$1 ] || unapk
 $2
+viptmz="$(cat $TMPDIR/rac/$Lpkg.txt)"
+mkdir -p ${viptmz%/*}
+echo > ${viptmz%.*}.$2
 else
 SLapp $2
 fi
@@ -906,7 +907,7 @@ done
     return v0
 .end method' \
 "$TMPDIR/rac/com.android.settings/smali*/*"
-[ -e "$TMPDIR/rac/$Ften" ] && Lisit "$Ften/classes*/" "/*.smali" "miui/security" "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1"
+#[ -e "$TMPDIR/rac/$Ften" ] && Lisit "$Ften/classes*/" "/*.smali" "miui/security" "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1"
 }
 
 Xan
@@ -919,6 +920,7 @@ PAPP com.xiaomi.market
 if [ -e ${framework%/*}/tmp/getapps ];then
 FREEZE "$(cat ${framework%/*}/tmp/getapps)"
 cp -rf "$services" $MODPATH${framework%/*}
+cp -rf ${framework%/*}/tmp/getapps $MODPATH${framework%/*}/tmp
 else
 [ -e "$TMPDIR/rac/${Sten%.*}" ] || undex "$services"
 Getapss
@@ -1002,14 +1004,14 @@ Compress com.miui.home
 Xan
 Compress com.miui.phrase
 Xan
-sleep 5
+[ -e $TMPDIR/rac/com.android.settings ] && sleep 5
 Compress com.android.settings
 Xan
-sleep 5
+[ -e $TMPDIR/rac/$Sten ] && sleep 5
 # Framework 
 [ -e $TMPDIR/rac/$Sten ] && repdex $services
 Xan
-sleep 5
+[ -e $TMPDIR/rac/$Ften ] && sleep 5
 [ -e $TMPDIR/rac/$Ften ] && repdex $framework
 Xan
 
