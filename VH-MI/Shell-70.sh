@@ -4,8 +4,10 @@
 # Mod Apk 
 VipApk () {
 PAPP "$1"
-if [ ! -e "${Lapp%.*}.$2" ];then
-unapk $2
+if [ ! -e ${Lapp%.*}.$2 ];then
+mkdir -p $MODPATH${Lapp%/*}
+echo > $MODPATH${Lapp%.*}.$2
+[ -e $TMPDIR/rac/$1 ] || unapk
 $2
 else
 SLapp $2
@@ -54,20 +56,20 @@ Compress () { [ -e $TMPDIR/rac/$1 ] && repapk $1; }
 Fixrep () {
 
 RepapkF () {
-apktool b $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/tmp/Z.$pkg.apk" 2>>$Dtool/log/$pkg.txt >>$Dtool/log/$pkg.txt
-[ -e $Dtool/log/$pkg.txt ] || cp -rf $Dtool/log/$pkg.txt $Dtool/error/$pkg.txt
+apktool b $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/tmp/Z.$pkg.apk" 2>>$TMPDIR/rac/$pkg.txt >>$TMPDIR/rac/$pkg.txt
+[ -e $TMPDIR/rac/$pkg.txt ] || cp -rf $TMPDIR/rac/$pkg.txt $Dtool/error/$pkg.txt
 apksign "$TMPDIR/rac/Apk/Z.$pkg.apk" "$MPATH$Overlay/Z.$pkg.apk" 2>/dev/null >/dev/null
 }
-
+RepapkF
 # Trùng string
-if [ "$(grep -cm1 'is already defined.' $Dtool/log/$pkg.txt)" == 1 ];then
+if [ "$(grep -cm1 'is already defined.' $TMPDIR/rac/$pkg.txt)" == 1 ];then
 while true; do
-Linktk=$(grep -m1 'is already defined.' $Dtool/log/$pkg.txt | cut -d : -f2)
-Vbtk=$(grep -m1 'is already defined.' $Dtool/log/$pkg.txt | awk '{print $6}')
+Linktk=$(grep -m1 'is already defined.' $TMPDIR/rac/$pkg.txt | cut -d : -f2)
+Vbtk=$(grep -m1 'is already defined.' $TMPDIR/rac/$pkg.txt | awk '{print $6}')
 sotk=$(grep -nm1 "$Vbtk" $Linktk | cut -d : -f1)
 sed -i ''$sotk'd' $Linktk
-sed -i '/'$Vbtk'/d' $Dtool/log/$pkg.txt
-[ "$(grep -cm1 'is already defined.' $Dtool/log/$pkg.txt)" == 0 ] && break
+sed -i '/'$Vbtk'/d' $TMPDIR/rac/$pkg.txt
+[ "$(grep -cm1 'is already defined.' $TMPDIR/rac/$pkg.txt)" == 0 ] && break
 done
 RepapkF
 fi
@@ -432,7 +434,7 @@ ui_print
 [ -e /system/product/overlay ] && Overlay=/system/product/overlay || Overlay=/system/vendor/overlay
 
 if [ -e $Dbackup.txt ];then
-ui_print2 "Thêm Tiếng Việt"
+ui_print2 "Đã thêm $(Getp LinkTn)"
 ui_print
 else
 
@@ -518,7 +520,7 @@ sed -i \
 -e 's|fmt_time_12hour_minute_pm">h:mm a<|fmt_time_12hour_minute_pm">hh:mm aa<|g' \
 -e 's|qs_control_customize_save_text">Đã xong<|qs_control_customize_save_text">Xong<|g' \
 -e 's|<string name="status_bar_clock_date_weekday_format">EEE, d MMM</string>|<string name="status_bar_clock_date_weekday_format">E, dd.MM - (e.N)</string>|g' \
--e 's|<string name="status_bar_clock_date_weekday_format_12">EEE, d MMM</string>|<string name="status_bar_clock_date_weekday_format_12">aa E, dd - MM</string>|g' \
+-e 's|<string name="status_bar_clock_date_weekday_format_12">EEE, d MMM</string>|<string name="status_bar_clock_date_weekday_format_12">E, dd.MM - (e.N)</string>|g' \
 -e 's|<string name="status_bar_clock_date_time_format">H:mm E, d MMM</string>|<string name="status_bar_clock_date_time_format">HH:mm - E, dd.MM - (e.N)</string>|g' \
 -e 's|<string name="status_bar_clock_date_time_format_12">h:mm aa, E, d MMM</string>|<string name="status_bar_clock_date_time_format_12">hh:mm aa - E, dd.MM - (e.N)</string>|g' \
 -e 's|<string name="kilobyte_per_second">KB/s</string>|<string name="megabyte_per_second">M/s </string>|g' \
@@ -669,7 +671,6 @@ if [ ! -e "$Dbackup/system/app/$Lpkg/$Lpkg.txt" ];then
 Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk" "$TMPDIR/rac/$Lpkg.apk"
 apktool d -q -r -f $TMPDIR/rac/$Lpkg.apk -o $TMPDIR/rac/$Lpkg
 echo "$Dbackup/system/app/$Lpkg/$Lpkg.apk" > "$TMPDIR/rac/$Lpkg.txt"
-echo "txt" > "$TMPDIR/rac/$Lpkg.ini"
 evbhe="$(Timkiem "ro.miui.region" "$TMPDIR/rac/$Lpkg/smali*" "*.smali")"
 for rgeg in $evbhe; do
 [ "$rgeg" ] && sed -i 's|ro.miui.region|ro.khu.vuc|g' $rgeg
@@ -677,8 +678,9 @@ done
 AutoAll "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1" "$Lpkg/smali*"
 AutoAll "Le/h/a;->a:Z" "0x1" "$Lpkg/smali*" "0x1" "$Lpkg/smali*"
 rm -fr $Dbackup/system/*/overlay/*$Lpkg
+mkdir -p "$Dbackup/system/app/$Lpkg"
 repapk $Lpkg 
-[ -e "/system/app/$Lpkg/$Lpkg.apk" ] || echo "${Lapp%/*}" > "$Dbackup/system/app/$Lpkg/$Lpkg.txt"
+echo "${Lapp%/*}" > "$Dbackup/system/app/$Lpkg/$Lpkg.txt"
 else
 [ "$(cat ${Lapp%.*}.txt)" ] && mktouch $MPATH$(cat ${Lapp%.*}.txt)/.replace
 mkdir -p "$Dbackup${Lapp%/*}"
@@ -1000,12 +1002,14 @@ Compress com.miui.home
 Xan
 Compress com.miui.phrase
 Xan
+sleep 5
 Compress com.android.settings
 Xan
-
+sleep 5
 # Framework 
 [ -e $TMPDIR/rac/$Sten ] && repdex $services
 Xan
+sleep 5
 [ -e $TMPDIR/rac/$Ften ] && repdex $framework
 Xan
 
