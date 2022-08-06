@@ -1,20 +1,21 @@
 # kakathic
+[ "$version" ] || exit
 
 # Mod Apk 
 VipApk () {
 PAPP "$1"
 if [ ! -e "${Lapp%.*}.$2" ];then
-unapk
+unapk $2
 $2
 else
-SLapp
+SLapp $2
 fi
 }
 
 # Mod Framework
 VipFW () { 
 echo > $MODPATH${framework%/*}/tmp/$1
-if [ -e ${framework%/*}/$1 ];then
+if [ -e ${framework%/*}/tmp/$1 ];then
 cp -rf "$framework" $MODPATH${framework%/*}
 else
 [ -e $TMPDIR/rac/$Ften ] || undex "$framework"
@@ -25,7 +26,7 @@ fi
 # Mod Services
 VipSV () {
 echo > $MODPATH${services%/*}/tmp/$1
-if [ -e ${services%/*}/$1 ];then
+if [ -e ${services%/*}/tmp/$1 ];then
 cp -rf "$services" $MODPATH${services%/*}
 else
 [ -e $TMPDIR/rac/$Sten ] || undex "$services"
@@ -53,21 +54,20 @@ Compress () { [ -e $TMPDIR/rac/$1 ] && repapk $1; }
 Fixrep () {
 
 RepapkF () {
-apktool b $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/tmp/Z.$pkg.apk" 2>>$TMPDIR/rac/$pkg.txt >>$TMPDIR/rac/$pkg.txt
-[ -e $Dtool/log/$pkg.txt ] || cp -rf $TMPDIR/rac/$pkg.txt $Dtool/log/$pkg.txt
+apktool b $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/tmp/Z.$pkg.apk" 2>>$Dtool/log/$pkg.txt >>$Dtool/log/$pkg.txt
+[ -e $Dtool/log/$pkg.txt ] || cp -rf $Dtool/log/$pkg.txt $Dtool/error/$pkg.txt
 apksign "$TMPDIR/rac/Apk/Z.$pkg.apk" "$MPATH$Overlay/Z.$pkg.apk" 2>/dev/null >/dev/null
 }
-RepapkF
 
 # Trùng string
-if [ "$(grep -cm1 'is already defined.' $TMPDIR/rac/$pkg.txt)" == 1 ];then
+if [ "$(grep -cm1 'is already defined.' $Dtool/log/$pkg.txt)" == 1 ];then
 while true; do
-Linktk=$(grep -m1 'is already defined.' $TMPDIR/rac/$pkg.txt | cut -d : -f2)
-Vbtk=$(grep -m1 'is already defined.' $TMPDIR/rac/$pkg.txt | awk '{print $6}')
+Linktk=$(grep -m1 'is already defined.' $Dtool/log/$pkg.txt | cut -d : -f2)
+Vbtk=$(grep -m1 'is already defined.' $Dtool/log/$pkg.txt | awk '{print $6}')
 sotk=$(grep -nm1 "$Vbtk" $Linktk | cut -d : -f1)
 sed -i ''$sotk'd' $Linktk
-sed -i '/'$Vbtk'/d' $TMPDIR/rac/$pkg.txt
-[ "$(grep -cm1 'is already defined.' $TMPDIR/rac/$pkg.txt)" == 0 ] && break
+sed -i '/'$Vbtk'/d' $Dtool/log/$pkg.txt
+[ "$(grep -cm1 'is already defined.' $Dtool/log/$pkg.txt)" == 0 ] && break
 done
 RepapkF
 fi
@@ -505,6 +505,15 @@ Fix
 # Thêm lịch âm và sửa đổi bộ đếm dữ liệu
 if [ "$pkg" == "com.android.systemui" ] && [ "$Licham" == 2 ];then
 sed -i \
+-e 's|\"midnight">SA<|\"midnight">Đêm<|' \
+-e 's|\"early_morning">SA<|\"early_morning">Sáng<|' \
+-e 's|\"morning">SA<|\"morning">Sáng<|' \
+-e 's|\"afternoon">CH<|\"afternoon">Chiều<|' \
+-e 's|\"noon">CH<|\"noon">Trưa<|' \
+-e 's|\"evening">CH<|\"evening">Tối<|' \
+-e 's|\"night">CH<|\"night">Đêm<|' \
+-e 's|\"am">SA<|\"am">AM<|' \
+-e 's|\"pm">CH<|\"pm">PM<|' \
 -e 's|>EEEE dd/MM<|>E, dd.MM - (e.N)<|g' \
 -e 's|fmt_time_12hour_minute_pm">h:mm a<|fmt_time_12hour_minute_pm">hh:mm aa<|g' \
 -e 's|qs_control_customize_save_text">Đã xong<|qs_control_customize_save_text">Xong<|g' \
@@ -554,17 +563,6 @@ Sedcl miuisystem.apk
 Sedcl framework-ext-res.apk
 
 [ "$Licham" == 2 ] && sed -i -e 's|>EEEE dd/MM<|>E, dd.MM - (e.N)<|g' $TMPDIR/rac/*/*/main/miuisystem.apk/res/*/*.xml
-
-sed -i -e 's|midnight">SA<|midnight">Đêm<|' \
--e 's|early_morning">SA<|early_morning">Sáng<|' \
--e 's|morning">SA<|morning">Sáng<|' \
--e 's|afternoon">CH<|afternoon">Chiều<|' \
--e 's|noon">CH<|noon">Trưa<|' \
--e 's|evening">CH<|evening">Tối<|' \
--e 's|night">CH<|night">Đêm<|' \
--e 's|am">SA<|am">AM<|' \
--e 's|pm">CH<|am">PM<|' \
-$TMPDIR/rac/*/*/main/miui.apk/res/*/*.xml
 
 cat $TMPDIR/rac/*/*/main/miui.apk/res/*/*.xml >> $TMPDIR/Pack/theme_values.xml
 cat $TMPDIR/rac/*/*/main/framework-ext-res.apk/res/*/*.xml >> $TMPDIR/Pack/theme_values.xml
@@ -671,6 +669,7 @@ if [ ! -e "$Dbackup/system/app/$Lpkg/$Lpkg.txt" ];then
 Taive "https://github.com/kakathic/VH-MI/releases/download/Apk/Weather2.apk" "$TMPDIR/rac/$Lpkg.apk"
 apktool d -q -r -f $TMPDIR/rac/$Lpkg.apk -o $TMPDIR/rac/$Lpkg
 echo "$Dbackup/system/app/$Lpkg/$Lpkg.apk" > "$TMPDIR/rac/$Lpkg.txt"
+echo "txt" > "$TMPDIR/rac/$Lpkg.ini"
 evbhe="$(Timkiem "ro.miui.region" "$TMPDIR/rac/$Lpkg/smali*" "*.smali")"
 for rgeg in $evbhe; do
 [ "$rgeg" ] && sed -i 's|ro.miui.region|ro.khu.vuc|g' $rgeg
@@ -678,7 +677,7 @@ done
 AutoAll "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1" "$Lpkg/smali*"
 AutoAll "Le/h/a;->a:Z" "0x1" "$Lpkg/smali*" "0x1" "$Lpkg/smali*"
 rm -fr $Dbackup/system/*/overlay/*$Lpkg
-repapk $Lpkg
+repapk $Lpkg 
 [ -e "/system/app/$Lpkg/$Lpkg.apk" ] || echo "${Lapp%/*}" > "$Dbackup/system/app/$Lpkg/$Lpkg.txt"
 else
 [ "$(cat ${Lapp%.*}.txt)" ] && mktouch $MPATH$(cat ${Lapp%.*}.txt)/.replace
@@ -815,14 +814,6 @@ Vsmali '.method public static supportPartialScreenShot()Z' \
     return v1
 .end method' \
 "$TMPDIR/rac/$Lpkg/smali*/*"
-Vsmali '.method public static isAgpsEnabled()Z' \
-'.end method' \
-'.method public static isAgpsEnabled()Z
-    .registers 2
-    const/4 v1, 0x1
-    return v1
-.end method' \
-"$TMPDIR/rac/$Lpkg/smali*/*"
 Vsmali '.method public static supportAnimateCheck()Z' \
 '.end method' \
 '.method public static supportAnimateCheck()Z
@@ -839,25 +830,6 @@ Vsmali '.method public static supportPaperEyeCare()Z' \
     return v0
 .end method' \
 "$TMPDIR/rac/$Lpkg/smali*/*"
-Vsmali '.method public static isNotSupported()Z' \
-'.end method' \
-'.method public static isNotSupported()Z
-    .registers 1
-    const/4 v0, 0x1
-    return v0
-.end method' \
-"$TMPDIR/rac/$Lpkg/smali*/com/android/settings/lab" \
-"MiuiFlashbackController.smali"
-
-Vsmali '.method public static isNotSupported()Z' \
-'.end method' \
-'.method public static isNotSupported()Z
-    .registers 1
-    const/4 v0, 0x1
-    return v0
-.end method' \
-"$TMPDIR/rac/$Lpkg/smali*/com/android/settings/lab" \
-"MiuiLabGestureController.smali"
 }
 
 modsv () {
