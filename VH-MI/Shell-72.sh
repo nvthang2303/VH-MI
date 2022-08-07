@@ -239,24 +239,6 @@ Compress () {
 [ -e $TMPDIR/rac/$1 ] && sleep 2
 }
 
-# Tự động sửa chữa 
-Fixrep () {
-if [ -e $Dtool/backup/Fixrep-$DATE.sh ];then
-Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fixrep.sh $Dtool/backup/Fixrep-$DATE.sh
-chmod 777 $Dtool/backup/Fixrep-$DATE.sh
-fi
-[ -e $Dtool/backup/Fixrep-$DATE.sh ] && . $Dtool/backup/Fixrep-$DATE.sh || Xan "- Lỗi: Tự động sửa string!"
-}
-
-# Thay thế văn bản 
-Fix () {
-if [ -e $Dtool/backup/Fix-$DATE.sh ];then
-Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fix.sh $Dtool/backup/Fix-$DATE.sh
-chmod 777 $Dtool/backup/Fix-$DATE.sh
-fi
-[ -e $Dtool/backup/Fix-$DATE.sh ] && . $Dtool/backup/Fix-$DATE.sh || Xan "- Lỗi: Thay thế văn bản!"
-}
-
 # Bắt đầu
 Apilt=$(grep -m1 com.xiaomi /data/system/sync/*.* | tr ' ' '\n' | grep -m1 account= | cut -d \" -f2)
 [ -z "$Apilt" ] && Apilt=$(grep -aB1 'type' /data/system/sync/accounts.xml | head -n1 | cut -d '/' -f1)
@@ -664,13 +646,24 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 fi
 
 # Fix theo ngôn ngữ
-Fix
+if [ ! -e "$TMPDIR/rac/Fix.sh" ];then
+Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fix.sh $TMPDIR/rac/Fix.sh
+chmod 777 $TMPDIR/rac/Fix.sh
+fi
+[ -e "$TMPDIR/rac/Fix.sh" ] && . "$TMPDIR/rac/Fix.sh" || Xan "- Lỗi: Thay thế văn bản! "
 
 # Đóng gói bằng apktool và ký
 apktool b -q $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/Z.$pkg.apk" 2>/dev/null >/dev/null
 apksign "$TMPDIR/rac/Apk/Z.$pkg.apk" "$Dbackup$Overlay/Z.$pkg.apk" 2>/dev/null >/dev/null
+
 # Auto sửa lỗi
-[ -s "$Dbackup$Overlay/Z.$pkg.apk" ] || Fixrep
+if [ ! -s "$Dbackup$Overlay/Z.$pkg.apk" ];then
+if [ ! -e "$TMPDIR/rac/Fixrep-$DATE.sh" ];then
+Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fixrep.sh $TMPDIR/rac/Fixrep.sh
+chmod 777 $TMPDIR/rac/Fixrep.sh
+fi
+[ -e "$TMPDIR/rac/Fixrep.sh" ] && . $TMPDIR/rac/Fixrep.sh || Xan "- Lỗi: Tự động sửa string!"
+fi
 fi
 
 # Đếm ứng dụng đã được dịch và thông báo
