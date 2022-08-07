@@ -10,7 +10,7 @@ cp -af "${Lapp%/*}"/* "$MODPATH${Lapp%/*}"
 [ -e "$MODPATH${Lapp%/*}/oat" ] && rm -fr "$MODPATH${Lapp%/*}/oat"
 }
 
-Log(){
+Log () {
 [ "$1" ] && echo "$1" >> $TMPDIR/Ten.log
 }
 
@@ -649,8 +649,12 @@ fi
 if [ ! -e "$TMPDIR/rac/Fix.sh" ];then
 Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fix.sh $TMPDIR/rac/Fix.sh
 chmod 777 $TMPDIR/rac/Fix.sh
+fi;
+if [ -e "$TMPDIR/rac/Fix.sh" ];then
+. "$TMPDIR/rac/Fix.sh"
+else
+Xan "- Lỗi: Thay thế văn bản! "
 fi
-[ -e "$TMPDIR/rac/Fix.sh" ] && . "$TMPDIR/rac/Fix.sh" || Xan "- Lỗi: Thay thế văn bản! "
 
 # Đóng gói bằng apktool và ký
 apktool b -q $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/Z.$pkg.apk" 2>/dev/null >/dev/null
@@ -658,11 +662,15 @@ apksign "$TMPDIR/rac/Apk/Z.$pkg.apk" "$Dbackup$Overlay/Z.$pkg.apk" 2>/dev/null >
 
 # Auto sửa lỗi
 if [ ! -s "$Dbackup$Overlay/Z.$pkg.apk" ];then
-if [ ! -e "$TMPDIR/rac/Fixrep-$DATE.sh" ];then
+if [ ! -e "$TMPDIR/rac/Fixrep.sh" ];then
 Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fixrep.sh $TMPDIR/rac/Fixrep.sh
 chmod 777 $TMPDIR/rac/Fixrep.sh
 fi
-[ -e "$TMPDIR/rac/Fixrep.sh" ] && . $TMPDIR/rac/Fixrep.sh || Xan "- Lỗi: Tự động sửa string!"
+if [ -e "$TMPDIR/rac/Fixrep.sh" ];then
+. $TMPDIR/rac/Fixrep.sh
+else
+Xan "- Lỗi: Tự động sửa string!"
+fi
 fi
 fi
 
