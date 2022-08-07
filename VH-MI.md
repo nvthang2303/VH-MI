@@ -6,6 +6,10 @@
 
 **Nhật ký thay đổi**
 ----
+7.2
+
++ Fix thông báo
+
 7.1
 
 + Thêm tính năng sửa màu ở nền bàn phím nâng cao 
