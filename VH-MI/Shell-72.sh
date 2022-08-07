@@ -10,6 +10,10 @@ cp -af "${Lapp%/*}"/* "$MODPATH${Lapp%/*}"
 [ -e "$MODPATH${Lapp%/*}/oat" ] && rm -fr "$MODPATH${Lapp%/*}/oat"
 }
 
+Log(){
+[ "$1" ] && echo "$1" >> $TMPDIR/Ten.log
+}
+
 # Giải mã apk
 unapk () {
 if [ "$(echo "$Lapp" | grep -cm1 '/data/')" == 1 ];then
@@ -85,7 +89,7 @@ Vbd="$(echo "$3" | sed -z 's|\n|\\n|g')"
 for Vka in $Vtk; do
 ui_print "MOD: $(echo "$1" | sed 's|\\||g')" >&2
 sed -i -e "/^$1/,/$2/c $Vbd" "$Vka"
-echo "$Vka" >> $TMPDIR/Ten.log
+Log "$Vka"
 done
 }
 
@@ -99,7 +103,7 @@ DVBTK="$(grep -m1 "$2" $vahhf)"
 TTh1="$(echo "$DVBTK" | sed -e 's|sget-boolean|const|' -e "s|$2|$3|")"
 jsbdbd="$(echo "$DVBTK" | grep -c 'sget-boolean')"
 [ "$jsbdbd" == 1 ] && sed -i "s|$DVBTK|$TTh1|" $vahhf
-echo "$vahhf" >> $TMPDIR/Ten.log
+Log "$vahhf"
 [ "$jsbdbd" != 1 ] && break
 done
 done
@@ -121,7 +125,7 @@ rhheg="$(grep -m1 "$1" $gwgeh)"
 ggege="$(echo "$rhheg" | sed -e 's|sget-boolean|const|' -e "s|$1|$2|")"
 rhbrb="$(echo "$rhheg" | grep -c 'sget-boolean')"
 [ "$rhbrb" == 1 ] && sed -i "s|$rhheg|$ggege|" $gwgeh
-echo "$gwgeh" >> $TMPDIR/Ten.log
+Log "$gwgeh"
 [ "$rhbrb" != 1 ] && break
 done
 done
@@ -230,57 +234,27 @@ pm install -r $TMPDIR/rac/$1.apk >&2
 fi
 }
 
-Compress () { [ -e $TMPDIR/rac/$1 ] && repapk $1; sleep 2; }
+Compress () { 
+[ -e $TMPDIR/rac/$1 ] && repapk $1
+[ -e $TMPDIR/rac/$1 ] && sleep 2
+}
 
 # Tự động sửa chữa 
 Fixrep () {
-
-RepapkF () {
-apktool b $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/tmp/Z.$pkg.apk" 2>> $TMPDIR/rac/$pkg.txt >> $TMPDIR/rac/$pkg.txt
-[ -e $TMPDIR/rac/$pkg.txt ] || cp -rf $TMPDIR/rac/$pkg.txt $Dtool/error/$pkg.txt
-apksign "$TMPDIR/rac/Apk/Z.$pkg.apk" "$MPATH$Overlay/Z.$pkg.apk" 2>/dev/null >/dev/null
-}
-RepapkF
-# Trùng string
-if [ "$(grep -cm1 'is already defined.' $TMPDIR/rac/$pkg.txt)" == 1 ];then
-while true; do
-Linktk=$(grep -m1 'is already defined.' $TMPDIR/rac/$pkg.txt | cut -d : -f2)
-Vbtk=$(grep -m1 'is already defined.' $TMPDIR/rac/$pkg.txt | awk '{print $6}')
-sotk=$(grep -nm1 "$Vbtk" $Linktk | cut -d : -f1)
-sed -i ''$sotk'd' $Linktk
-sed -i '/'$Vbtk'/d' $TMPDIR/rac/$pkg.txt
-[ "$(grep -cm1 'is already defined.' $TMPDIR/rac/$pkg.txt)" == 0 ] && break
-done
-RepapkF
+if [ -e $Dtool/backup/Fixrep-$DATE.sh ];then
+Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fixrep.sh $Dtool/backup/Fixrep-$DATE.sh
+chmod 777 $Dtool/backup/Fixrep-$DATE.sh
 fi
-
+[ -e $Dtool/backup/Fixrep-$DATE.sh ] && . $Dtool/backup/Fixrep-$DATE.sh || Xan "- Lỗi: Tự động sửa string!"
 }
 
 # Thay thế văn bản 
 Fix () {
-[ "$pkg" == "com.miui.securitycenter" ] && sed -i -e 's|`||g' -e '/name=\"allow_notify\"/d' $TMPDIR/rac/*/*/main/$path/res/*/*.xml
-
-if [ "$pkg" == "com.android.settings" ] && [ "$API" -ge 30 ];then
-sed -i 's|privacy_settings_new">Sao lưu, khôi phục, hoặc đặt lại<|privacy_settings_new">Sao lưu, khôi phục<|g' $TMPDIR/rac/*/*/main/$path/res/*/*.xml
-rm -fr $TMPDIR/rac/*/*/main/$path/res/values-mcc460*
+if [ -e $Dtool/backup/Fix-$DATE.sh ];then
+Taive https://raw.githubusercontent.com/kakathic/VH-MI/main/Language/vi-VN/Fix.sh $Dtool/backup/Fix-$DATE.sh
+chmod 777 $Dtool/backup/Fix-$DATE.sh
 fi
-
-[ "$pkg" == "com.android.calendar" ] && sed -i \
--e '/accessibility_month_page_selected_prefix/d' \
--e 's|: )||g' \
--e 's|: (||g' \
--e 's|lunar_nian">20<|lunar_nian">2<|g' \
--e 's|lunar_chu">Tết D.lịch<|lunar_chu">0<|g' \
--e 's|lunar_shi">10<|lunar_shi">1<|g' \
--e 's|event_lunar_month">Tháng<|event_lunar_month">/01<|g' \
--e 's|edit_event_reminder_summary_3_days_before">Trước %2$d ngày và vào ngày đó lúc %1$s<|edit_event_reminder_summary_3_days_before">Trước 3 ngày và vào ngày đó lúc %1$s<|g' $TMPDIR/rac/*/*/main/$path/res/*/*.xml
-
-[ "$pkg" == "com.miui.home" ] && sed -i \
--e 's/status_bar_recent_memory_info1">%1$s | %2$s</status_bar_recent_memory_info1">%1$s trống | %2$s</g' \
--e 's|recents_tv_small_window_text">Ứng dụng cửa sổ nhỏ<|recents_tv_small_window_text">Cửa sổ nhỏ<|g' \
--e 's|>Thông tin ứng dụng<|>Thông tin<|g' $TMPDIR/rac/*/*/main/$path/res/*/*.xml
-
-[ "$pkg" == "com.miui.weather2" ] && sed -i 's|indices_title_feel">Cảm giác như<|indices_title_feel">Cảm giác<|g' $TMPDIR/rac/*/*/main/$path/res/*/*.xml
+[ -e $Dtool/backup/Fix-$DATE.sh ] && . $Dtool/backup/Fix-$DATE.sh || Xan "- Lỗi: Thay thế văn bản!"
 }
 
 # Bắt đầu
@@ -692,32 +666,6 @@ fi
 # Fix theo ngôn ngữ
 Fix
 
-# Thêm lịch âm và sửa đổi bộ đếm dữ liệu
-if [ "$pkg" == "com.android.systemui" ] && [ "$Licham" == 2 ];then
-sed -i \
--e 's|"midnight">SA<|"midnight">Đêm<|' \
--e 's|"early_morning">SA<|"early_morning">Sáng<|' \
--e 's|"morning">SA<|"morning">Sáng<|' \
--e 's|"afternoon">CH<|"afternoon">Chiều<|' \
--e 's|"noon">CH<|"noon">Trưa<|' \
--e 's|"evening">CH<|"evening">Tối<|' \
--e 's|"night">CH<|"night">Đêm<|' \
--e 's|"am">SA<|"am">AM<|' \
--e 's|"pm">CH<|"pm">PM<|' \
--e "s|>EEEE dd/MM<|>$Lichamkk<|g" \
--e 's|fmt_time_12hour_minute">HH:mm<|fmt_time_12hour_minute">hh:mm<|g' \
--e 's|fmt_time_12hour_minute_pm">h:mm a<|fmt_time_12hour_minute_pm">hh:mm aa<|g' \
--e 's|qs_control_customize_save_text">Đã xong<|qs_control_customize_save_text">Xong<|g' \
--e "s|status_bar_clock_date_weekday_format\">EEE, d MMM<|status_bar_clock_date_weekday_format\">$Lichamkk<|g" \
--e "s|status_bar_clock_date_weekday_format_12\">EEE, d MMM<|status_bar_clock_date_weekday_format_12\">$Lichamkk<|g" \
--e "s|status_bar_clock_date_time_format\">H:mm E, d MMM<|status_bar_clock_date_time_format\">HH:mm - $Lichamkk<|g" \
--e "s|status_bar_clock_date_time_format_12\">h:mm aa, E, d MMM<|status_bar_clock_date_time_format_12\">hh:mm aa - $Lichamkk<|g" \
--e 's|kilobyte_per_second">KB/s<|megabyte_per_second">M/s <|g' \
--e 's|megabyte_per_second">MB/s<|kilobyte_per_second">K/s <|g' \
--e "s|status_bar_clock_date_format\">E, d MMM<|status_bar_clock_date_format\">$Lichamkk<|g" \
--e 's|status_bar_clock_date_format_12">E, d MMM<|status_bar_clock_date_format_12">aa E, dd - MM<|g' $TMPDIR/rac/*/*/main/$path/res/*/*.xml
-fi
-
 # Đóng gói bằng apktool và ký
 apktool b -q $TMPDIR/rac/*/*/main/$path -f -o "$TMPDIR/rac/Apk/Z.$pkg.apk" 2>/dev/null >/dev/null
 apksign "$TMPDIR/rac/Apk/Z.$pkg.apk" "$Dbackup$Overlay/Z.$pkg.apk" 2>/dev/null >/dev/null
@@ -931,12 +879,12 @@ kkodh="$(Timkiem "ro.miui.region" "$TMPDIR/rac/$Lpkg/classes*" "*.smali")"
 for dhbe in $kkodh; do
 [ "$dhbe" ] && sed -i 's|ro.miui.region|ro.khu.vuc.cn|g' $dhbe
 done
-echo "$HTk21
+Log "$HTk21
 $HTk1
 $Tksm
 $HTk4
 $kkodh
-$kzbddb" >> $TMPDIR/Ten.log
+$kzbddb"
 AutoAll "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x0" "$Lpkg/classes*"
 }
 
@@ -946,24 +894,33 @@ kk='iput-object v0, p0, Lcom/android/systemui/qs/MiuiNotificationHeaderView;->mC
 const/4 v0, 0x0'
 
 Tkllg="$(Timkiem "$tk" "$TMPDIR/rac/$Lpkg/classes*" "*.smali")"
-echo "$Tkllg" >> $TMPDIR/Ten.log
+Log "$Tkllg"
 [ "$Tkllg" ] && Xan "MOD: Tên nhà mạng"
 [ "$Tkllg" ] && sed -i "s|$tk|$kk|g" $Tkllg || Xan "- Lỗi: mod hiện tên nhà mạng"
 }
 
 bebebebe () {
-Lisit "$Lpkg/classes*/" "/*.smali" "com/miui/powerkeeper/ai
-com/miui/powerkeeper/statemachine
-com/miui/powerkeeper/utils" "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1"
-
+pm clear $Lpkg >&2
+unzip -qo "$TMPDIR/rac/$Lpkg.apk" 'assets/ai_preload_conf' -d $TMPDIR
+if [ -e $TMPDIR/assets/ai_preload_conf ];then
+sed -i 's|"preload_activity": {|"preload_activity": {
+      "com.facebook.katana": ".activity.FbMainTabActivity",
+      "com.zing.zalo": ".ui.ZaloLauncherActivity",
+      "com.google.android.gm": ".ui.MailActivityGmail",
+      "com.facebook.messenger": ".neue.MainActivity",
+      "org.telegram": ".ui.LaunchActivity",|g' $TMPDIR/assets/ai_preload_conf
+cd $TMPDIR
+zip -qr -0 "$TMPDIR/rac/$Lpkg.apk" assets/*
+fi
+AutoAll "Lmiui/os/Build;->IS_STABLE_VERSION:Z" "0x1" "$Lpkg/classes*"
+AutoAll "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1" "$Lpkg/classes*"
 jhfgg="$(Timkiem "ro.product.mod_device" "$TMPDIR/rac/$Lpkg/classes*" "*.smali")"
-echo "$jhfgg" >> $TMPDIR/Ten.log
+Log "$jhfgg"
 [ "$jhfgg" ] && Xan "MOD: Nền global"
 for bjcfhh in $jhfgg; do
 [ "$bjcfhh" ] && sed -i 's|ro.product.mod_device|ro.product.vip|g' $bjcfhh
 done
 }
-
 
 Getapss () {
 Vsmali ".method private checkSystemSelfProtection(Z)V" \
@@ -1004,7 +961,7 @@ Vsmali ".method private checkAppSignature(\[Landroid\/content\/pm\/Signature;Lja
 modset () {
 sjwg="$(echo $TMPDIR/rac/$Lpkg/classes*/com/android/settings/MiuiSettings.smali)"
 sed -i -e '/Lcom\/android\/settings\/R$id;->location_settings:I/a\ const/4 v10, 0x1' -e '/Lcom\/android\/settings\/R$id;->privacy_settings:I/a\ const/4 v10, 0x1' -e 's|sget-boolean v1, Lmiui/os/Build;->IS_GLOBAL_BUILD:Z|const/4 v1, 0x1|' $sjwg
-echo "$sjwg" >> $TMPDIR/Ten.log
+Log "$sjwg"
 [ "$sjwg" ] && Xan "MOD: Hiện google trong cài đặtl"
 Vsmali '.method public static supportPartialScreenShot()Z' \
 '.end method' \
@@ -1044,7 +1001,7 @@ com/android/server
 com/android/server/notification" "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1"
 
 kkodh="$(Timkiem "ro.product.mod_device" "$TMPDIR/rac/$Sten/classes*" "*.smali")"
-echo "$kkodh" >> $TMPDIR/Ten.log
+Log "$kkodh"
 [ "$kkodh" ] && Xan "MOD: Nền global"
 for vgdfhh in $ttgffgg; do
 [ "$vgdfhh" ] && sed -i 's|ro.product.mod_device|ro.product.vip|g' $vgdfhh
@@ -1085,6 +1042,7 @@ AutoAll "Lmiui/os/Build;->IS_STABLE_VERSION:Z" "0x1" "$Lpkg/classes*"
 
 modbaomat () {
 Lisit "$Lpkg/classes*/" "/*.smali" "com/miui/dock" "Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z" "0x1"
+
 Lisit "$Lpkg/classes*/" "/*.smali" "com/miui/securityscan
 com/miui/securityscan/b0
 com/miui/securityscan/cards
@@ -1097,6 +1055,11 @@ com/miui/securityscan/scanner
 com/miui/securityscan/u
 com/miui/securityscan/ui/main
 com/miui/securityscan/ui/settings" "Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z" "0x1"
+
+bebrrh="$(Timkiem "mi_lab_ai_clipboard_enable" "$TMPDIR/rac/$Lpkg/classes*" "*.smali")"
+[ "$bebrrh" ] && sed -i "s|sget-boolean v0, Lmiui/os/Build;->IS_STABLE_VERSION:Z|const/4 v0, 0x1|g" $bebrrh || Xan "- Lỗi: mi_lab_ai_clipboard_enable"
+[ "$bebrrh" ] && Xan "MOD: mi_lab_ai_clipboard_enable"
+
 }
 
 modkey () {
@@ -1124,12 +1087,12 @@ if [ "$Dso1" -le 4 ];then
 [ "$Te3" ] && Xan "MOD: $Sten"
 [ "$Te4" ] && Xan "MOD: $Ften"
 
-echo "
+Log "
 $Te1
 $Te2
 $Te3
 $Te4
-" >> $TMPDIR/Ten.log
+"
 else
 break
 fi
@@ -1148,7 +1111,7 @@ done
 modthoitiet () {
 [ "$( pm path $Lpkg )" ] || echo "/system/app/com.miui.weather2/com.miui.weather2.apk" > $TMPDIR/rac/com.miui.weather2.txt
 evbhe="$(Timkiem "ro.miui.region" "$TMPDIR/rac/$Lpkg/classes*" "*.smali")"
-echo "$evbhe" >> $TMPDIR/Ten.log
+Log "$evbhe"
 [ "$evbhe" ] && Xan "MOD: Khu vực việt nam"
 for rgeg in $evbhe; do
 [ "$rgeg" ] && sed -i 's|ro.miui.region|ro.khu.vuc|g' $rgeg
