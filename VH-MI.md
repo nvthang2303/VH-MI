@@ -6,6 +6,10 @@
 
 **Nhật ký thay đổi**
 ----
+7.3
+
++ Việt hóa widget
+
 7.2
 
 + Fix thông báo
