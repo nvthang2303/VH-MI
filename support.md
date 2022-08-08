@@ -3,7 +3,7 @@
 
 - Vì để module hỗ trợ lâu dài bạn hãy ủng hộ ad để module được tiếp tục hỗ trợ.
 
-- Ủng hộ 10k
+- Ủng hộ 20k
 
 - Bạn có thể ủng hộ nhiều hơn để mình có thêm động lực phát triển, cảm ơn.
 
@@ -17,7 +17,7 @@
 
 + Xiaomi id: 1525337373
 
-- Nếu bạn dùng nhiều máy bạn sẽ phải ủng hộ nhiều hơn, 10k/1 thiết bị.
+- Nếu bạn dùng nhiều máy bạn sẽ phải ủng hộ nhiều hơn, 20k/1 thiết bị.
 
 - Sau khi ủng hộ xong hãy gửi ảnh chụp màn hình giao dịch
 
