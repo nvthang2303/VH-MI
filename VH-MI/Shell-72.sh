@@ -36,8 +36,8 @@ repapk () {
 if [ -e $TMPDIR/rac/$1.txt ];then
 Pathapk="$MODPATH$(cat $TMPDIR/rac/$1.txt)";
 if [ -e "$TMPDIR/rac/$1/lib/$ABI" ];then
-mkdir -p "${Pathapk%/*}/lib"
-unzip -o -q "$TMPDIR/rac/$1.apk" "lib/$ABI/*" -d "${Pathapk%/*}/lib/$ARCH"
+mkdir -p "${Pathapk%/*}/lib/$ARCH"
+unzip -o -q -j "$TMPDIR/rac/$1.apk" "lib/$ABI/*" -d "${Pathapk%/*}/lib/$ARCH"
 fi
 Xan "APK: $1"
 Likapk="$(echo "$Links" | grep "$1" | cut -d '/' -f2 | sort | uniq)"
