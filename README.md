@@ -34,7 +34,7 @@
   + Sử dụng Theme china
   + Widget của china
 + Kho widget đã việt hóa
-  + Chỉ Việt hóa 1 số
+  + Việt hóa tự động lên sẽ không đúng nghĩa
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
 
