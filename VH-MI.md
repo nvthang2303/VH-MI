@@ -6,6 +6,10 @@
 
 **Nhật ký thay đổi**
 ----
+7.4
+
++ Sửa chữa lại VH widget
+
 7.3
 
 + Việt hóa widget
