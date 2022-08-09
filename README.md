@@ -35,6 +35,8 @@
   + Widget của china
 + Kho widget đã việt hóa
   + Việt hóa tự động lên sẽ không đúng nghĩa
+  + Chỉ việt hóa widget bạn đã tải về
+  + Nếu bạn mới tải về muốn việt hóa luôn hãy gõ lệnh `Miuihome` `Appvault` tùy Widget ở ứng dụng.
 + Hiển thị bàn phím nâng cao
   + Hiện 2 nút nhỏ ở mọi bàn phím
 
