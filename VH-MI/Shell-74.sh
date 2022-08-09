@@ -655,6 +655,8 @@ else
 Xan "- Lỗi: Tự động sửa string!"
 fi
 fi
+
+[ ! -s "$Dbackup$Overlay/Z.$pkg.apk" ] && Xan "- Lỗi: $pkg"
 fi
 
 # Đếm ứng dụng đã được dịch và thông báo
